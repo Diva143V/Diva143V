@@ -22,6 +22,16 @@
       <stop offset="42%" stop-color="#FFFFFF" stop-opacity="0"/>
       <stop offset="100%" stop-color="#000000" stop-opacity=".58"/>
     </radialGradient>
+    <radialGradient id="nebulaBlue" cx="64%" cy="34%" r="58%">
+      <stop offset="0%" stop-color="#142146" stop-opacity=".42"/>
+      <stop offset="55%" stop-color="#0A132C" stop-opacity=".16"/>
+      <stop offset="100%" stop-color="#04070F" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="nebulaAmber" cx="76%" cy="56%" r="50%">
+      <stop offset="0%" stop-color="#3D200A" stop-opacity=".30"/>
+      <stop offset="50%" stop-color="#241205" stop-opacity=".12"/>
+      <stop offset="100%" stop-color="#04070F" stop-opacity="0"/>
+    </radialGradient>
     <!-- Shooting star tail gradients (bright head, extra long tail) -->
     <linearGradient id="meteorTailGold" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#FFB020" stop-opacity="0" />
@@ -94,6 +104,8 @@
       .twinkle-b { animation: twinkle 5.2s ease-in-out 1.1s infinite; }
       .twinkle-c { animation: twinkle 6.4s ease-in-out 2.2s infinite; }
       .twinkle-d { animation: twinkle 4.6s ease-in-out 0.6s infinite; }
+      .belt-cw { transform-origin: 0px 0px; animation: orbit-cw 90s linear infinite; }
+      .belt-ccw { transform-origin: 0px 0px; animation: orbit-ccw 120s linear infinite; }
       .planet-orbit-0 { transform-origin: 0px 0px; animation: orbit-cw 18s linear infinite; }
       .moon-orbit-0 { transform-origin: 0px 0px; animation: orbit-ccw 5.5s linear infinite; }
       .orbit-track-0 { animation: dash-flow 18s linear infinite; }
@@ -155,7 +167,7 @@
         50% { opacity: .92; }
       }
       @media (prefers-reduced-motion: reduce) {
-        .rise, .fade, .breathe, .solar-wave, .solar-wave-2, .sun-ring, .beacon-pulse, .planet-halo, .star-drift, .meteor, .twinkle-a, .twinkle-b, .twinkle-c, .twinkle-d, .planet-orbit-0, .planet-orbit-1, .planet-orbit-2, .planet-orbit-3, .planet-orbit-4, .moon-orbit-0, .moon-orbit-1, .moon-orbit-2, .moon-orbit-3, .moon-orbit-4, .orbit-track-0, .orbit-track-1, .orbit-track-2, .orbit-track-3, .orbit-track-4 {
+        .rise, .fade, .breathe, .solar-wave, .solar-wave-2, .sun-ring, .beacon-pulse, .planet-halo, .star-drift, .meteor, .belt-cw, .belt-ccw, .twinkle-a, .twinkle-b, .twinkle-c, .twinkle-d, .planet-orbit-0, .planet-orbit-1, .planet-orbit-2, .planet-orbit-3, .planet-orbit-4, .moon-orbit-0, .moon-orbit-1, .moon-orbit-2, .moon-orbit-3, .moon-orbit-4, .orbit-track-0, .orbit-track-1, .orbit-track-2, .orbit-track-3, .orbit-track-4 {
           animation: none !important;
         }
         .rise, .fade { opacity: 1; transform: none; }
@@ -167,6 +179,8 @@
 
   <g clip-path="url(#heroBounds)">
     <rect width="880" height="520" rx="16" fill="url(#space)"/>
+    <rect width="880" height="520" fill="url(#nebulaBlue)"/>
+    <rect width="880" height="520" fill="url(#nebulaAmber)"/>
     <g class="fade">
       <g class="star-drift">
     <circle cx="68" cy="118" r="0.6" fill="#F4F7FC" opacity="0.22"/>
@@ -267,6 +281,43 @@
     <circle class="orbit orbit-track-2" r="128" stroke="#2A3F66" stroke-width="1" stroke-dasharray="2 7"/>
     <circle class="orbit orbit-track-3" r="162" stroke="#2A3F66" stroke-width="1" stroke-dasharray="2 7"/>
     <circle class="orbit orbit-track-4" r="196" stroke="#2A3F66" stroke-width="1" stroke-dasharray="2 7"/>
+    <circle r="145" fill="none" stroke="#2A3F66" stroke-opacity=".18" stroke-width=".6" stroke-dasharray="1.5 5"/>
+    <g class="belt-cw">
+      <circle cx="141.3" cy="-12.4" r="0.7" fill="#F4F7FC" opacity="0.22"/>
+      <circle cx="131.9" cy="60.1" r="0.9" fill="#F4F7FC" opacity="0.38"/>
+      <circle cx="108.4" cy="101.1" r="1.1" fill="#F4F7FC" opacity="0.54"/>
+      <circle cx="43.4" cy="137.5" r="1.4" fill="#FFB020" opacity="0.30"/>
+      <circle cx="-2.6" cy="147.4" r="0.7" fill="#F4F7FC" opacity="0.46"/>
+      <circle cx="-47.9" cy="135.2" r="0.9" fill="#F4F7FC" opacity="0.22"/>
+      <circle cx="-110.6" cy="96.2" r="1.1" fill="#F4F7FC" opacity="0.38"/>
+      <circle cx="-131.7" cy="54.6" r="1.4" fill="#F4F7FC" opacity="0.54"/>
+      <circle cx="-145.4" cy="10.2" r="0.7" fill="#F4F7FC" opacity="0.30"/>
+      <circle cx="-128.0" cy="-61.0" r="0.9" fill="#F4F7FC" opacity="0.46"/>
+      <circle cx="-104.3" cy="-100.7" r="1.1" fill="#F4F7FC" opacity="0.22"/>
+      <circle cx="-68.4" cy="-131.5" r="1.4" fill="#FFB020" opacity="0.38"/>
+      <circle cx="5.0" cy="-144.1" r="0.7" fill="#F4F7FC" opacity="0.54"/>
+      <circle cx="51.6" cy="-138.1" r="0.9" fill="#F4F7FC" opacity="0.30"/>
+      <circle cx="109.9" cy="-92.2" r="1.1" fill="#F4F7FC" opacity="0.46"/>
+      <circle cx="136.4" cy="-53.7" r="1.4" fill="#F4F7FC" opacity="0.22"/>
+    </g>
+    <g class="belt-ccw">
+      <circle cx="140.4" cy="17.9" r="0.7" fill="#F4F7FC" opacity="0.20"/>
+      <circle cx="123.9" cy="76.7" r="1.2" fill="#F4F7FC" opacity="0.44"/>
+      <circle cx="79.0" cy="118.2" r="1.1" fill="#F4F7FC" opacity="0.28"/>
+      <circle cx="23.5" cy="144.5" r="0.9" fill="#F4F7FC" opacity="0.52"/>
+      <circle cx="-37.6" cy="137.9" r="0.7" fill="#F4F7FC" opacity="0.36"/>
+      <circle cx="-75.2" cy="126.4" r="1.2" fill="#F4F7FC" opacity="0.20"/>
+      <circle cx="-118.0" cy="81.9" r="1.1" fill="#F4F7FC" opacity="0.44"/>
+      <circle cx="-145.4" cy="26.3" r="0.9" fill="#FFB020" opacity="0.28"/>
+      <circle cx="-139.9" cy="-35.5" r="0.7" fill="#F4F7FC" opacity="0.52"/>
+      <circle cx="-128.9" cy="-73.7" r="1.2" fill="#F4F7FC" opacity="0.36"/>
+      <circle cx="-84.7" cy="-117.7" r="1.1" fill="#F4F7FC" opacity="0.20"/>
+      <circle cx="-27.6" cy="-138.8" r="0.9" fill="#F4F7FC" opacity="0.44"/>
+      <circle cx="33.4" cy="-141.8" r="0.7" fill="#F4F7FC" opacity="0.28"/>
+      <circle cx="87.1" cy="-112.4" r="1.2" fill="#F4F7FC" opacity="0.52"/>
+      <circle cx="117.3" cy="-87.6" r="1.1" fill="#F4F7FC" opacity="0.36"/>
+      <circle cx="139.6" cy="-30.3" r="0.9" fill="#F4F7FC" opacity="0.20"/>
+    </g>
     <g>
       <circle r="88" fill="url(#sunGlow)" class="breathe"/>
       <circle r="60" fill="none" stroke="#FFB020" stroke-opacity=".22" stroke-width="1" class="solar-wave"/>
@@ -283,9 +334,11 @@
     <g transform="rotate(208)">
       <g class="planet-orbit-0">
         <g transform="translate(60 0)">
-          <circle r="13.5" fill="#38BDF8" opacity=".14" class="planet-halo"/>
+          <circle r="13.5" fill="#38BDF8" opacity=".16" class="planet-halo"/>
+          <circle r="8.8" fill="#38BDF8" opacity=".08"/>
           <circle r="7.0" fill="#38BDF8"/>
           <circle r="7.0" fill="url(#sphere)"/>
+          <circle r="7.0" fill="none" stroke="#FFFFFF" stroke-opacity=".24" stroke-width=".75"/>
           <circle r="7.0" fill="none" stroke="#38BDF8" stroke-opacity=".75"/>
           <circle r="15.5" fill="none" stroke="#38BDF8" stroke-opacity=".28" stroke-width=".75" stroke-dasharray="1.5 3"/>
           <g class="moon-orbit-0">
@@ -298,9 +351,11 @@
     <g transform="rotate(334)">
       <g class="planet-orbit-1">
         <g transform="translate(94 0)">
-          <circle r="17.8" fill="#818CF8" opacity=".14" class="planet-halo"/>
+          <circle r="17.8" fill="#818CF8" opacity=".16" class="planet-halo"/>
+          <circle r="11.5" fill="#818CF8" opacity=".08"/>
           <circle r="7.0" fill="#818CF8"/>
           <circle r="7.0" fill="url(#sphere)"/>
+          <circle r="7.0" fill="none" stroke="#FFFFFF" stroke-opacity=".24" stroke-width=".75"/>
           <circle r="7.0" fill="none" stroke="#818CF8" stroke-opacity=".75"/>
           <circle r="15.5" fill="none" stroke="#818CF8" stroke-opacity=".28" stroke-width=".75" stroke-dasharray="1.5 3"/>
           <g class="moon-orbit-1">
@@ -312,10 +367,14 @@
     <g transform="rotate(154)">
       <g class="planet-orbit-2">
         <g transform="translate(128 0)">
-          <circle r="22.0" fill="#E28743" opacity=".14" class="planet-halo"/>
+          <circle r="22.0" fill="#E28743" opacity=".16" class="planet-halo"/>
+          <circle r="14.3" fill="#E28743" opacity=".08"/>
           <circle r="8.5" fill="#E28743"/>
           <circle r="8.5" fill="url(#sphere)"/>
+          <circle r="8.5" fill="none" stroke="#FFFFFF" stroke-opacity=".24" stroke-width=".75"/>
           <circle r="8.5" fill="none" stroke="#E28743" stroke-opacity=".75"/>
+          <ellipse rx="18.0" ry="6.5" transform="rotate(-24)" fill="none" stroke="#E28743" stroke-opacity=".42" stroke-width="1.2" stroke-dasharray="2 3"/>
+          <ellipse rx="20.4" ry="7.4" transform="rotate(-24)" fill="none" stroke="#E28743" stroke-opacity=".18" stroke-width=".7"/>
           <circle r="17.0" fill="none" stroke="#E28743" stroke-opacity=".28" stroke-width=".75" stroke-dasharray="1.5 3"/>
           <g class="moon-orbit-2">
             <circle cx="9.0" cy="-14.4" r="1.7" fill="#F4F7FC" opacity=".92"/>
@@ -326,9 +385,11 @@
     <g transform="rotate(22)">
       <g class="planet-orbit-3">
         <g transform="translate(162 0)">
-          <circle r="26.2" fill="#60A5FA" opacity=".14" class="planet-halo"/>
+          <circle r="26.2" fill="#60A5FA" opacity=".16" class="planet-halo"/>
+          <circle r="17.1" fill="#60A5FA" opacity=".08"/>
           <circle r="10.8" fill="#60A5FA"/>
           <circle r="10.8" fill="url(#sphere)"/>
+          <circle r="10.8" fill="none" stroke="#FFFFFF" stroke-opacity=".24" stroke-width=".75"/>
           <circle r="10.8" fill="none" stroke="#60A5FA" stroke-opacity=".75"/>
           <circle r="19.3" fill="none" stroke="#60A5FA" stroke-opacity=".28" stroke-width=".75" stroke-dasharray="1.5 3"/>
           <g class="moon-orbit-3">
@@ -340,9 +401,11 @@
     <g transform="rotate(112)">
       <g class="planet-orbit-4">
         <g transform="translate(196 0)">
-          <circle r="30.5" fill="#FFB020" opacity=".14" class="planet-halo"/>
+          <circle r="30.5" fill="#FFB020" opacity=".16" class="planet-halo"/>
+          <circle r="19.8" fill="#FFB020" opacity=".08"/>
           <circle r="13.1" fill="#FFB020"/>
           <circle r="13.1" fill="url(#sphere)"/>
+          <circle r="13.1" fill="none" stroke="#FFFFFF" stroke-opacity=".24" stroke-width=".75"/>
           <circle r="13.1" fill="none" stroke="#FFB020" stroke-opacity=".75"/>
         </g>
       </g>

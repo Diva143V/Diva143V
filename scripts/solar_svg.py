@@ -307,6 +307,48 @@ def _hero_sun(avatar: str) -> str:
     </g>"""
 
 
+def _asteroid_belt() -> str:
+    # Deterministic dual-layer counter-rotating asteroid belt between Rust (r=128) and TypeScript (r=162)
+    cw_particles = []
+    ccw_particles = []
+
+    # Layer 1 (Clockwise, 16 particles)
+    for i in range(16):
+        angle = (i * 22.5 + (i * 7) % 11 - 5) * (math.pi / 180.0)
+        r_dist = 145.0 + ((i * 13) % 9 - 4) * 0.8
+        px = r_dist * math.cos(angle)
+        py = r_dist * math.sin(angle)
+        size = 0.7 + ((i * 5) % 4) * 0.22
+        color = GOLD if i in (3, 11) else INK
+        op = 0.22 + ((i * 17) % 5) * 0.08
+        cw_particles.append(
+            f'      <circle cx="{px:.1f}" cy="{py:.1f}" r="{size:.1f}" fill="{color}" opacity="{op:.2f}"/>'
+        )
+
+    # Layer 2 (Counter-Clockwise, 16 particles)
+    for i in range(16):
+        angle = (i * 22.5 + 11.25 + (i * 11) % 9 - 4) * (math.pi / 180.0)
+        r_dist = 145.0 + ((i * 17) % 11 - 5) * 0.7
+        px = r_dist * math.cos(angle)
+        py = r_dist * math.sin(angle)
+        size = 0.65 + ((i * 7) % 4) * 0.2
+        color = GOLD if i == 7 else INK
+        op = 0.20 + ((i * 13) % 5) * 0.08
+        ccw_particles.append(
+            f'      <circle cx="{px:.1f}" cy="{py:.1f}" r="{size:.1f}" fill="{color}" opacity="{op:.2f}"/>'
+        )
+
+    cw_block = "\n".join(cw_particles)
+    ccw_block = "\n".join(ccw_particles)
+    return f"""    <circle r="145" fill="none" stroke="{TRACK}" stroke-opacity=".18" stroke-width=".6" stroke-dasharray="1.5 5"/>
+    <g class="belt-cw">
+{cw_block}
+    </g>
+    <g class="belt-ccw">
+{ccw_block}
+    </g>"""
+
+
 def _orbiting_planet(index: int, p: content.Planet) -> str:
     body = max(7.0, p.radius / 15.0)
     halo = p.radius / 8.0 + 6.0
@@ -328,13 +370,29 @@ def _orbiting_planet(index: int, p: content.Planet) -> str:
             + "\n".join(moon_dots)
             + "\n          </g>"
         )
+
+    rings = ""
+    if p.name == "Rust":
+        ring_rx = body + 9.5
+        ring_ry = (body + 9.5) * 0.36
+        rings = (
+            f'\n          <ellipse rx="{ring_rx:.1f}" ry="{ring_ry:.1f}" '
+            f'transform="rotate(-24)" fill="none" stroke="{p.color}" '
+            f'stroke-opacity=".42" stroke-width="1.2" stroke-dasharray="2 3"/>'
+            f'\n          <ellipse rx="{ring_rx + 2.4:.1f}" ry="{(ring_ry + 0.9):.1f}" '
+            f'transform="rotate(-24)" fill="none" stroke="{p.color}" '
+            f'stroke-opacity=".18" stroke-width=".7"/>'
+        )
+
     return f"""    <g transform="rotate({p.angle})">
       <g class="planet-orbit-{index}">
         <g transform="translate({p.radius} 0)">
-          <circle r="{halo:.1f}" fill="{p.color}" opacity=".14" class="planet-halo"/>
+          <circle r="{halo:.1f}" fill="{p.color}" opacity=".16" class="planet-halo"/>
+          <circle r="{halo * 0.65:.1f}" fill="{p.color}" opacity=".08"/>
           <circle r="{body:.1f}" fill="{p.color}"/>
           <circle r="{body:.1f}" fill="url(#sphere)"/>
-          <circle r="{body:.1f}" fill="none" stroke="{p.color}" stroke-opacity=".75"/>{moons}
+          <circle r="{body:.1f}" fill="none" stroke="#FFFFFF" stroke-opacity=".24" stroke-width=".75"/>
+          <circle r="{body:.1f}" fill="none" stroke="{p.color}" stroke-opacity=".75"/>{rings}{moons}
         </g>
       </g>
     </g>"""
@@ -380,6 +438,8 @@ def build_hero() -> str:
             ".planet-halo",
             ".star-drift",
             ".meteor",
+            ".belt-cw",
+            ".belt-ccw",
             ".twinkle-a",
             ".twinkle-b",
             ".twinkle-c",
@@ -411,6 +471,16 @@ def build_hero() -> str:
       <stop offset="42%" stop-color="#FFFFFF" stop-opacity="0"/>
       <stop offset="100%" stop-color="#000000" stop-opacity=".58"/>
     </radialGradient>
+    <radialGradient id="nebulaBlue" cx="64%" cy="34%" r="58%">
+      <stop offset="0%" stop-color="#142146" stop-opacity=".42"/>
+      <stop offset="55%" stop-color="#0A132C" stop-opacity=".16"/>
+      <stop offset="100%" stop-color="{BG}" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="nebulaAmber" cx="76%" cy="56%" r="50%">
+      <stop offset="0%" stop-color="#3D200A" stop-opacity=".30"/>
+      <stop offset="50%" stop-color="#241205" stop-opacity=".12"/>
+      <stop offset="100%" stop-color="{BG}" stop-opacity="0"/>
+    </radialGradient>
 {_meteor_defs()}
     <clipPath id="sunClip"><circle r="44"/></clipPath>
     <clipPath id="heroBounds"><rect width="880" height="520" rx="16"/></clipPath>
@@ -433,6 +503,8 @@ def build_hero() -> str:
       .twinkle-b {{ animation: twinkle 5.2s ease-in-out 1.1s infinite; }}
       .twinkle-c {{ animation: twinkle 6.4s ease-in-out 2.2s infinite; }}
       .twinkle-d {{ animation: twinkle 4.6s ease-in-out 0.6s infinite; }}
+      .belt-cw {{ transform-origin: 0px 0px; animation: orbit-cw 90s linear infinite; }}
+      .belt-ccw {{ transform-origin: 0px 0px; animation: orbit-ccw 120s linear infinite; }}
 {orbit_css_block}
       @keyframes rise {{
         from {{ opacity: 0; transform: translateY(12px); }}
@@ -492,6 +564,8 @@ def build_hero() -> str:
 
   <g clip-path="url(#heroBounds)">
     <rect width="880" height="520" rx="16" fill="url(#space)"/>
+    <rect width="880" height="520" fill="url(#nebulaBlue)"/>
+    <rect width="880" height="520" fill="url(#nebulaAmber)"/>
     <g class="fade">
       <g class="star-drift">
 {_dust_stars()}
@@ -529,6 +603,7 @@ def build_hero() -> str:
 
     <g class="fade" transform="translate(662 258)">
 {orbits}
+{_asteroid_belt()}
 {_hero_sun(avatar)}
 {planets}
     </g>
