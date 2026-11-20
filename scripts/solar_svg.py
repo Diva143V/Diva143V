@@ -30,8 +30,10 @@ TRACK = "#2A3F66"
 GOLD = "#FFB020"
 CYAN = "#38BDF8"
 
-SANS = "-apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif"
-MONO = "ui-monospace, 'Cascadia Mono', 'SFMono-Regular', Consolas, monospace"
+FONT_IMPORT = "@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&amp;family=Space+Grotesk:wght@500;600;700;800&amp;display=swap');"
+DISPLAY = "'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI Variable Display', 'Segoe UI', system-ui, sans-serif"
+MONO = "'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'SFMono-Regular', Consolas, ui-monospace, monospace"
+SANS = "'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI Variable Text', 'Segoe UI', system-ui, sans-serif"
 
 
 class Star(NamedTuple):
@@ -413,6 +415,7 @@ def build_hero() -> str:
     <clipPath id="sunClip"><circle r="44"/></clipPath>
     <clipPath id="heroBounds"><rect width="880" height="520" rx="16"/></clipPath>
     <style>
+      {FONT_IMPORT}
       .rise {{ animation: rise 900ms cubic-bezier(.2,.7,.2,1) both; }}
       .d1 {{ animation-delay: 80ms; }}
       .d2 {{ animation-delay: 170ms; }}
@@ -481,7 +484,8 @@ def build_hero() -> str:
           animation: none !important;
         }}
         .rise, .fade {{ opacity: 1; transform: none; }}
-        .meteor {{ display: none; }}
+        .meteor, .comet {{ display: none; }}
+        .comet {{ display: none; }}
       }}
     </style>
   </defs>
@@ -596,6 +600,7 @@ def build_about() -> str:
     <clipPath id="aboutClip"><circle r="46"/></clipPath>
     <clipPath id="aboutBounds"><rect width="880" height="214" rx="14"/></clipPath>
     <style>
+      {FONT_IMPORT}
       .breathe {{ animation: breathe 5.5s ease-in-out infinite; }}
       .ring-spin {{ transform-origin: 0px 0px; animation: spin 26s linear infinite; }}
       .sat-orbit {{ transform-origin: 0px 0px; animation: spin 11s linear infinite; }}
@@ -701,6 +706,7 @@ def build_card(project: content.Project) -> str:
       <stop offset="100%" stop-color="{project.accent}" stop-opacity=".95"/>
     </linearGradient>
     <style>
+      {FONT_IMPORT}
       .moon-spin {{ transform-origin: 0px 0px; animation: spin {orbit_dur:.1f}s linear infinite; }}
       .ring-spin {{ transform-origin: 0px 0px; animation: spinRev {ring_dur}s linear infinite; }}
       .pulse {{ animation: pulse 3.2s ease-in-out infinite; }}
@@ -827,6 +833,7 @@ def build_stack() -> str:
 {_meteor_defs()}
     <clipPath id="stackBounds"><rect width="880" height="226" rx="14"/></clipPath>
     <style>
+      {FONT_IMPORT}
       .pulse {{ animation: pulse 3s ease-in-out infinite; }}
       .halo {{ animation: haloSoft 3.4s ease-in-out infinite; }}
       .twinkle-a {{ animation: twinkle 3.8s ease-in-out infinite; }}
@@ -918,6 +925,7 @@ def build_log() -> str:
 {_meteor_defs()}
     <clipPath id="logClip"><rect width="880" height="148" rx="14"/></clipPath>
     <style>
+      {FONT_IMPORT}
       .beacon {{ animation: pulse 2.4s ease-in-out infinite; }}
       .scan {{ animation: scan 7s linear infinite; }}
       .twinkle-a {{ animation: twinkle 3.8s ease-in-out infinite; }}
@@ -993,6 +1001,7 @@ def build_log() -> str:
 def build_footer() -> str:
     body = f"""  <defs>
     <style>
+      {FONT_IMPORT}
       .beacon-core {{ animation: corePulse 2.4s ease-in-out infinite; }}
       .ripple-1 {{ transform-origin: 44px 43px; animation: ripple 3.2s ease-out infinite; }}
       .ripple-2 {{ transform-origin: 44px 43px; animation: ripple 3.2s ease-out 1.6s infinite; }}

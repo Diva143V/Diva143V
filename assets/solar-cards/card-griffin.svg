@@ -8,6 +8,7 @@
       <stop offset="100%" stop-color="#38BDF8" stop-opacity=".95"/>
     </linearGradient>
     <style>
+      @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&amp;family=Space+Grotesk:wght@500;600;700;800&amp;display=swap');
       .moon-spin { transform-origin: 0px 0px; animation: spin 13.1s linear infinite; }
       .ring-spin { transform-origin: 0px 0px; animation: spinRev 22s linear infinite; }
       .pulse { animation: pulse 3.2s ease-in-out infinite; }
@@ -46,23 +47,23 @@
   </g>
 
   <g transform="translate(20 27)">
-    <text x="0" y="0" font-family="ui-monospace, 'Cascadia Mono', 'SFMono-Regular', Consolas, monospace" font-size="8.5" font-weight="700" fill="#38BDF8" letter-spacing="0.6">MOON 02 // BIOMEDICAL EVIDENCE</text>
+    <text x="0" y="0" font-family="'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'SFMono-Regular', Consolas, ui-monospace, monospace" font-size="8.5" font-weight="700" fill="#38BDF8" letter-spacing="0.6">MOON 02 // BIOMEDICAL EVIDENCE</text>
     <g transform="translate(388 0)">
       <g class="arrow-nudge">
-        <text x="0" y="0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif" font-size="14" font-weight="400" fill="#5E6E85" text-anchor="end">↗</text>
+        <text x="0" y="0" font-family="'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI Variable Text', 'Segoe UI', system-ui, sans-serif" font-size="14" font-weight="400" fill="#5E6E85" text-anchor="end">↗</text>
       </g>
     </g>
   </g>
-  <text x="20" y="56" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif" font-size="19" font-weight="800" fill="#F4F7FC">Griffin</text>
-  <text x="20" y="77" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif" font-size="11.5" font-weight="600" fill="#F4F7FC">Collects biomedical papers and makes their claims comparable.</text>
-  <text x="20" y="98" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif" font-size="9.5" font-weight="400" fill="#93A1B6">Ten sources in, ChromaDB retrieval and local-model extraction out,</text>
-  <text x="20" y="113" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif" font-size="9.5" font-weight="400" fill="#93A1B6">with contradictions surfaced instead of averaged away. Python and Reflex.</text>
+  <text x="20" y="56" font-family="'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI Variable Text', 'Segoe UI', system-ui, sans-serif" font-size="19" font-weight="800" fill="#F4F7FC">Griffin</text>
+  <text x="20" y="77" font-family="'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI Variable Text', 'Segoe UI', system-ui, sans-serif" font-size="11.5" font-weight="600" fill="#F4F7FC">Collects biomedical papers and makes their claims comparable.</text>
+  <text x="20" y="98" font-family="'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI Variable Text', 'Segoe UI', system-ui, sans-serif" font-size="9.5" font-weight="400" fill="#93A1B6">Ten sources in, ChromaDB retrieval and local-model extraction out,</text>
+  <text x="20" y="113" font-family="'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI Variable Text', 'Segoe UI', system-ui, sans-serif" font-size="9.5" font-weight="400" fill="#93A1B6">with contradictions surfaced instead of averaged away. Python and Reflex.</text>
 
   <g transform="translate(0 133)">
-      <rect x="20.0" y="0" width="49.2" height="19" rx="3" fill="#0C1424" stroke="#1B2A44"/><text x="44.6" y="13" font-family="ui-monospace, 'Cascadia Mono', 'SFMono-Regular', Consolas, monospace" font-size="8.5" font-weight="400" fill="#F4F7FC" text-anchor="middle">Python</text>
-      <rect x="75.2" y="0" width="61.6" height="19" rx="3" fill="#0C1424" stroke="#1B2A44"/><text x="106" y="13" font-family="ui-monospace, 'Cascadia Mono', 'SFMono-Regular', Consolas, monospace" font-size="8.5" font-weight="400" fill="#F4F7FC" text-anchor="middle">ChromaDB</text>
-      <rect x="142.8" y="0" width="49.2" height="19" rx="3" fill="#0C1424" stroke="#1B2A44"/><text x="167.4" y="13" font-family="ui-monospace, 'Cascadia Mono', 'SFMono-Regular', Consolas, monospace" font-size="8.5" font-weight="400" fill="#F4F7FC" text-anchor="middle">Ollama</text>
-      <rect x="198.0" y="0" width="49.2" height="19" rx="3" fill="#0C1424" stroke="#1B2A44"/><text x="222.6" y="13" font-family="ui-monospace, 'Cascadia Mono', 'SFMono-Regular', Consolas, monospace" font-size="8.5" font-weight="400" fill="#F4F7FC" text-anchor="middle">Reflex</text>
+      <rect x="20.0" y="0" width="49.2" height="19" rx="3" fill="#0C1424" stroke="#1B2A44"/><text x="44.6" y="13" font-family="'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'SFMono-Regular', Consolas, ui-monospace, monospace" font-size="8.5" font-weight="400" fill="#F4F7FC" text-anchor="middle">Python</text>
+      <rect x="75.2" y="0" width="61.6" height="19" rx="3" fill="#0C1424" stroke="#1B2A44"/><text x="106" y="13" font-family="'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'SFMono-Regular', Consolas, ui-monospace, monospace" font-size="8.5" font-weight="400" fill="#F4F7FC" text-anchor="middle">ChromaDB</text>
+      <rect x="142.8" y="0" width="49.2" height="19" rx="3" fill="#0C1424" stroke="#1B2A44"/><text x="167.4" y="13" font-family="'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'SFMono-Regular', Consolas, ui-monospace, monospace" font-size="8.5" font-weight="400" fill="#F4F7FC" text-anchor="middle">Ollama</text>
+      <rect x="198.0" y="0" width="49.2" height="19" rx="3" fill="#0C1424" stroke="#1B2A44"/><text x="222.6" y="13" font-family="'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'SFMono-Regular', Consolas, ui-monospace, monospace" font-size="8.5" font-weight="400" fill="#F4F7FC" text-anchor="middle">Reflex</text>
   </g>
 
 </svg>

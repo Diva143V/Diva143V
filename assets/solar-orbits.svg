@@ -52,6 +52,7 @@
     <clipPath id="sunClip"><circle r="44"/></clipPath>
     <clipPath id="heroBounds"><rect width="880" height="520" rx="16"/></clipPath>
     <style>
+      @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&amp;family=Space+Grotesk:wght@500;600;700;800&amp;display=swap');
       .rise { animation: rise 900ms cubic-bezier(.2,.7,.2,1) both; }
       .d1 { animation-delay: 80ms; }
       .d2 { animation-delay: 170ms; }
@@ -158,7 +159,8 @@
           animation: none !important;
         }
         .rise, .fade { opacity: 1; transform: none; }
-        .meteor { display: none; }
+        .meteor, .comet { display: none; }
+        .comet { display: none; }
       }
     </style>
   </defs>
@@ -233,30 +235,30 @@
 
     <g class="rise d1">
       <circle cx="49" cy="41" r="4" fill="#FFB020" class="beacon-pulse"/>
-      <text x="63" y="46" font-family="ui-monospace, 'Cascadia Mono', 'SFMono-Regular', Consolas, monospace" font-size="11" font-weight="700" fill="#FFB020" letter-spacing="1.7">SOLAR SYSTEM // DIVA143V</text>
+      <text x="63" y="46" font-family="'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'SFMono-Regular', Consolas, ui-monospace, monospace" font-size="11" font-weight="700" fill="#FFB020" letter-spacing="1.7">SOLAR SYSTEM // DIVA143V</text>
     </g>
     <g class="rise d1">
-      <text x="836" y="46" font-family="ui-monospace, 'Cascadia Mono', 'SFMono-Regular', Consolas, monospace" font-size="9" font-weight="400" fill="#5E6E85" letter-spacing="0.4" text-anchor="end">PLANETS = LANGUAGES / MOONS = PROJECTS</text>
+      <text x="836" y="46" font-family="'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'SFMono-Regular', Consolas, ui-monospace, monospace" font-size="9" font-weight="400" fill="#5E6E85" letter-spacing="0.4" text-anchor="end">PLANETS = LANGUAGES / MOONS = PROJECTS</text>
     </g>
     <line class="fade" x1="48" y1="72" x2="832" y2="72" stroke="#1B2A44"/>
 
     <g class="rise d1">
-      <text x="48" y="160" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif" font-size="64" font-weight="800" fill="#F4F7FC" id="name-1" letter-spacing="-2">DIWAKAR</text>
+      <text x="48" y="160" font-family="'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI Variable Text', 'Segoe UI', system-ui, sans-serif" font-size="64" font-weight="800" fill="#F4F7FC" id="name-1" letter-spacing="-2">DIWAKAR</text>
     </g>
     <g class="rise d2">
-      <text x="48" y="220" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif" font-size="64" font-weight="800" fill="#F4F7FC" id="name-2" letter-spacing="-2">VENKAT</text>
+      <text x="48" y="220" font-family="'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI Variable Text', 'Segoe UI', system-ui, sans-serif" font-size="64" font-weight="800" fill="#F4F7FC" id="name-2" letter-spacing="-2">VENKAT</text>
     </g>
     <g class="rise d3">
-      <text x="48" y="280" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif" font-size="64" font-weight="800" fill="#FFB020" id="name-3" letter-spacing="-2">PEDDADA</text>
+      <text x="48" y="280" font-family="'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI Variable Text', 'Segoe UI', system-ui, sans-serif" font-size="64" font-weight="800" fill="#FFB020" id="name-3" letter-spacing="-2">PEDDADA</text>
     </g>
 
     <g class="rise d2">
-      <text x="48" y="342" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif" font-size="17" font-weight="400" fill="#93A1B6" id="tagline-1">I build the layer between a live signal</text>
-      <text x="48" y="366" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif" font-size="17" font-weight="400" fill="#93A1B6" id="tagline-2">and the person waiting for it.</text>
+      <text x="48" y="342" font-family="'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI Variable Text', 'Segoe UI', system-ui, sans-serif" font-size="17" font-weight="400" fill="#93A1B6" id="tagline-1">I build the layer between a live signal</text>
+      <text x="48" y="366" font-family="'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI Variable Text', 'Segoe UI', system-ui, sans-serif" font-size="17" font-weight="400" fill="#93A1B6" id="tagline-2">and the person waiting for it.</text>
     </g>
     <line class="fade" x1="48" y1="394" x2="112" y2="394" stroke="#FFB020" stroke-width="2"/>
     <g class="rise d3">
-      <text x="48" y="424" font-family="ui-monospace, 'Cascadia Mono', 'SFMono-Regular', Consolas, monospace" font-size="11.5" font-weight="400" fill="#5E6E85" letter-spacing="0.4">AI developer / Visakhapatnam, India</text>
+      <text x="48" y="424" font-family="'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'SFMono-Regular', Consolas, ui-monospace, monospace" font-size="11.5" font-weight="400" fill="#5E6E85" letter-spacing="0.4">AI developer / Visakhapatnam, India</text>
     </g>
 
     <g class="fade" transform="translate(662 258)">

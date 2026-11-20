@@ -31,6 +31,7 @@
     </filter>
     <clipPath id="stackBounds"><rect width="880" height="226" rx="14"/></clipPath>
     <style>
+      @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&amp;family=Space+Grotesk:wght@500;600;700;800&amp;display=swap');
       .pulse { animation: pulse 3s ease-in-out infinite; }
       .halo { animation: haloSoft 3.4s ease-in-out infinite; }
       .twinkle-a { animation: twinkle 3.8s ease-in-out infinite; }
@@ -126,7 +127,7 @@
 
     <g transform="translate(28 29)">
       <circle cx="5" cy="5" r="4" fill="#FFB020" class="pulse"/>
-      <text x="18" y="9" font-family="ui-monospace, 'Cascadia Mono', 'SFMono-Regular', Consolas, monospace" font-size="10" font-weight="700" fill="#FFB020" letter-spacing="1.2">THE PLANETS // LANGUAGES &amp; ORBITS</text>
+      <text x="18" y="9" font-family="'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'SFMono-Regular', Consolas, ui-monospace, monospace" font-size="10" font-weight="700" fill="#FFB020" letter-spacing="1.2">THE PLANETS // LANGUAGES &amp; ORBITS</text>
     </g>
     <line x1="28" y1="44" x2="852" y2="44" stroke="#1B2A44"/>
 
@@ -139,13 +140,13 @@
       <circle r="4.5" fill="#38BDF8"/>
       <circle r="6.5" fill="#38BDF8" opacity=".16" class="halo"/>
     </g>
-    <text x="50" y="62" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif" font-size="12.5" font-weight="700" fill="#F4F7FC">Python</text>
-    <text x="168" y="62" font-family="ui-monospace, 'Cascadia Mono', 'SFMono-Regular', Consolas, monospace" font-size="9.5" font-weight="400" fill="#38BDF8">Orbit 1 / inner</text>
+    <text x="50" y="62" font-family="'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI Variable Text', 'Segoe UI', system-ui, sans-serif" font-size="12.5" font-weight="700" fill="#F4F7FC">Python</text>
+    <text x="168" y="62" font-family="'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'SFMono-Regular', Consolas, ui-monospace, monospace" font-size="9.5" font-weight="400" fill="#38BDF8">Orbit 1 / inner</text>
     <line x1="268" y1="58" x2="298" y2="58" stroke="#38BDF8" stroke-opacity=".45" stroke-width="1.5" stroke-dasharray="4 4" class="conduit-0"/>
     <circle cx="268" cy="58" r="2.2" fill="#38BDF8" class="sig-dot-0"/>
     <circle cx="298" cy="58" r="2" fill="#38BDF8"/>
-    <text x="308" y="62" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif" font-size="10" font-weight="400" fill="#93A1B6">Biomedical RAG, local models, data pipelines</text>
-    <text x="654" y="62" font-family="ui-monospace, 'Cascadia Mono', 'SFMono-Regular', Consolas, monospace" font-size="9.5" font-weight="400" fill="#38BDF8">Griffin / SyGriffin</text>
+    <text x="308" y="62" font-family="'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI Variable Text', 'Segoe UI', system-ui, sans-serif" font-size="10" font-weight="400" fill="#93A1B6">Biomedical RAG, local models, data pipelines</text>
+    <text x="654" y="62" font-family="'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'SFMono-Regular', Consolas, ui-monospace, monospace" font-size="9.5" font-weight="400" fill="#38BDF8">Griffin / SyGriffin</text>
   </g>
   <g>
     <g transform="translate(34 89)">
@@ -156,13 +157,13 @@
       <circle r="4.5" fill="#C084FC"/>
       <circle r="6.5" fill="#C084FC" opacity=".16" class="halo"/>
     </g>
-    <text x="50" y="93" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif" font-size="12.5" font-weight="700" fill="#F4F7FC">C# / .NET</text>
-    <text x="168" y="93" font-family="ui-monospace, 'Cascadia Mono', 'SFMono-Regular', Consolas, monospace" font-size="9.5" font-weight="400" fill="#C084FC">Orbit 2</text>
+    <text x="50" y="93" font-family="'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI Variable Text', 'Segoe UI', system-ui, sans-serif" font-size="12.5" font-weight="700" fill="#F4F7FC">C# / .NET</text>
+    <text x="168" y="93" font-family="'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'SFMono-Regular', Consolas, ui-monospace, monospace" font-size="9.5" font-weight="400" fill="#C084FC">Orbit 2</text>
     <line x1="268" y1="89" x2="298" y2="89" stroke="#C084FC" stroke-opacity=".45" stroke-width="1.5" stroke-dasharray="4 4" class="conduit-1"/>
     <circle cx="268" cy="89" r="2.2" fill="#C084FC" class="sig-dot-1"/>
     <circle cx="298" cy="89" r="2" fill="#C084FC"/>
-    <text x="308" y="93" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif" font-size="10" font-weight="400" fill="#93A1B6">Windows overlays, live captions, WPF</text>
-    <text x="654" y="93" font-family="ui-monospace, 'Cascadia Mono', 'SFMono-Regular', Consolas, monospace" font-size="9.5" font-weight="400" fill="#C084FC">LiveSubs</text>
+    <text x="308" y="93" font-family="'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI Variable Text', 'Segoe UI', system-ui, sans-serif" font-size="10" font-weight="400" fill="#93A1B6">Windows overlays, live captions, WPF</text>
+    <text x="654" y="93" font-family="'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'SFMono-Regular', Consolas, ui-monospace, monospace" font-size="9.5" font-weight="400" fill="#C084FC">LiveSubs</text>
   </g>
   <g>
     <g transform="translate(34 120)">
@@ -173,13 +174,13 @@
       <circle r="4.5" fill="#FB923C"/>
       <circle r="6.5" fill="#FB923C" opacity=".16" class="halo"/>
     </g>
-    <text x="50" y="124" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif" font-size="12.5" font-weight="700" fill="#F4F7FC">Rust</text>
-    <text x="168" y="124" font-family="ui-monospace, 'Cascadia Mono', 'SFMono-Regular', Consolas, monospace" font-size="9.5" font-weight="400" fill="#FB923C">Orbit 3</text>
+    <text x="50" y="124" font-family="'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI Variable Text', 'Segoe UI', system-ui, sans-serif" font-size="12.5" font-weight="700" fill="#F4F7FC">Rust</text>
+    <text x="168" y="124" font-family="'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'SFMono-Regular', Consolas, ui-monospace, monospace" font-size="9.5" font-weight="400" fill="#FB923C">Orbit 3</text>
     <line x1="268" y1="120" x2="298" y2="120" stroke="#FB923C" stroke-opacity=".45" stroke-width="1.5" stroke-dasharray="4 4" class="conduit-2"/>
     <circle cx="268" cy="120" r="2.2" fill="#FB923C" class="sig-dot-2"/>
     <circle cx="298" cy="120" r="2" fill="#FB923C"/>
-    <text x="308" y="124" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif" font-size="10" font-weight="400" fill="#93A1B6">MCP server, graph core, Tauri</text>
-    <text x="654" y="124" font-family="ui-monospace, 'Cascadia Mono', 'SFMono-Regular', Consolas, monospace" font-size="9.5" font-weight="400" fill="#FB923C">Knox</text>
+    <text x="308" y="124" font-family="'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI Variable Text', 'Segoe UI', system-ui, sans-serif" font-size="10" font-weight="400" fill="#93A1B6">MCP server, graph core, Tauri</text>
+    <text x="654" y="124" font-family="'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'SFMono-Regular', Consolas, ui-monospace, monospace" font-size="9.5" font-weight="400" fill="#FB923C">Knox</text>
   </g>
   <g>
     <g transform="translate(34 151)">
@@ -190,13 +191,13 @@
       <circle r="4.5" fill="#60A5FA"/>
       <circle r="6.5" fill="#60A5FA" opacity=".16" class="halo"/>
     </g>
-    <text x="50" y="155" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif" font-size="12.5" font-weight="700" fill="#F4F7FC">TypeScript</text>
-    <text x="168" y="155" font-family="ui-monospace, 'Cascadia Mono', 'SFMono-Regular', Consolas, monospace" font-size="9.5" font-weight="400" fill="#60A5FA">Orbit 4</text>
+    <text x="50" y="155" font-family="'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI Variable Text', 'Segoe UI', system-ui, sans-serif" font-size="12.5" font-weight="700" fill="#F4F7FC">TypeScript</text>
+    <text x="168" y="155" font-family="'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'SFMono-Regular', Consolas, ui-monospace, monospace" font-size="9.5" font-weight="400" fill="#60A5FA">Orbit 4</text>
     <line x1="268" y1="151" x2="298" y2="151" stroke="#60A5FA" stroke-opacity=".45" stroke-width="1.5" stroke-dasharray="4 4" class="conduit-3"/>
     <circle cx="268" cy="151" r="2.2" fill="#60A5FA" class="sig-dot-3"/>
     <circle cx="298" cy="151" r="2" fill="#60A5FA"/>
-    <text x="308" y="155" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif" font-size="10" font-weight="400" fill="#93A1B6">React, Vite, interface work</text>
-    <text x="654" y="155" font-family="ui-monospace, 'Cascadia Mono', 'SFMono-Regular', Consolas, monospace" font-size="9.5" font-weight="400" fill="#60A5FA">myselfdiva</text>
+    <text x="308" y="155" font-family="'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI Variable Text', 'Segoe UI', system-ui, sans-serif" font-size="10" font-weight="400" fill="#93A1B6">React, Vite, interface work</text>
+    <text x="654" y="155" font-family="'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'SFMono-Regular', Consolas, ui-monospace, monospace" font-size="9.5" font-weight="400" fill="#60A5FA">myselfdiva</text>
   </g>
   <g>
     <g transform="translate(34 182)">
@@ -207,16 +208,16 @@
       <circle r="4.5" fill="#F472B6"/>
       <circle r="6.5" fill="#F472B6" opacity=".16" class="halo"/>
     </g>
-    <text x="50" y="186" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif" font-size="12.5" font-weight="700" fill="#F4F7FC">C++</text>
-    <text x="168" y="186" font-family="ui-monospace, 'Cascadia Mono', 'SFMono-Regular', Consolas, monospace" font-size="9.5" font-weight="400" fill="#F472B6">Orbit 5 / outer</text>
+    <text x="50" y="186" font-family="'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI Variable Text', 'Segoe UI', system-ui, sans-serif" font-size="12.5" font-weight="700" fill="#F4F7FC">C++</text>
+    <text x="168" y="186" font-family="'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'SFMono-Regular', Consolas, ui-monospace, monospace" font-size="9.5" font-weight="400" fill="#F472B6">Orbit 5 / outer</text>
     <line x1="268" y1="182" x2="298" y2="182" stroke="#F472B6" stroke-opacity=".45" stroke-width="1.5" stroke-dasharray="4 4" class="conduit-4"/>
     <circle cx="268" cy="182" r="2.2" fill="#F472B6" class="sig-dot-4"/>
     <circle cx="298" cy="182" r="2" fill="#F472B6"/>
-    <text x="308" y="186" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif" font-size="10" font-weight="400" fill="#93A1B6">Algorithms and data structures</text>
-    <text x="654" y="186" font-family="ui-monospace, 'Cascadia Mono', 'SFMono-Regular', Consolas, monospace" font-size="9.5" font-weight="400" fill="#F472B6">HackMe 2024</text>
+    <text x="308" y="186" font-family="'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI Variable Text', 'Segoe UI', system-ui, sans-serif" font-size="10" font-weight="400" fill="#93A1B6">Algorithms and data structures</text>
+    <text x="654" y="186" font-family="'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'SFMono-Regular', Consolas, ui-monospace, monospace" font-size="9.5" font-weight="400" fill="#F472B6">HackMe 2024</text>
   </g>
 
-    <text x="28" y="214" font-family="ui-monospace, 'Cascadia Mono', 'SFMono-Regular', Consolas, monospace" font-size="9" font-weight="400" fill="#5E6E85">Orbit order is a reading order, not a ranking.</text>
+    <text x="28" y="214" font-family="'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'SFMono-Regular', Consolas, ui-monospace, monospace" font-size="9" font-weight="400" fill="#5E6E85">Orbit order is a reading order, not a ranking.</text>
   </g>
   <rect x=".5" y=".5" width="879" height="225" rx="13.5" stroke="#1B2A44"/>
 
