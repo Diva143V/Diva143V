@@ -1,0 +1,67 @@
+<svg width="850" height="135" viewBox="0 0 850 135" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="cardGrad_polaris" x1="0" y1="0" x2="850" y2="135" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0B1024"/>
+      <stop offset="100%" stop-color="#0D1530"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="850" height="135" rx="10" fill="url(#cardGrad_polaris)"/>
+  <rect x="0.5" y="0.5" width="849" height="134" rx="9.5" stroke="#1E293B" stroke-width="1"/>
+  <line x1="0" y1="0" x2="4" y2="135" stroke="#22D3EE" stroke-width="4"/>
+
+  <!-- Header line -->
+  <g transform="translate(24, 22)">
+    <text x="0" y="0" font-family="-apple-system, BlinkMacSystemFont, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="19" font-weight="800" fill="#F8FAFC">
+      Polaris (Kg-Library-API)
+    </text>
+    <rect x="298" y="-13" width="176.5" height="18" rx="3.5" fill="#050510" stroke="#22D3EE" stroke-width="1"/>
+    <text x="305" y="0" font-family="monospace" font-size="9" font-weight="700" fill="#22D3EE">
+      KNOWLEDGE GRAPH // ACTIVE
+    </text>
+    <text x="630" y="0" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="13" font-weight="700" fill="#22D3EE">
+      1 &#9733;
+    </text>
+  </g>
+
+  <!-- Tagline -->
+  <text x="24" y="52" font-family="-apple-system, BlinkMacSystemFont, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="12" font-weight="600" fill="#22D3EE">
+    Modular Knowledge Graph &amp; Think-on-Graph (ToG) Reasoning API
+  </text>
+
+  <!-- Description -->
+  <text x="24" y="74" font-family="-apple-system, BlinkMacSystemFont, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="11.5" fill="#94A3B8">
+    High-performance, storage-agnostic KG library and annotation store enforcing 'Core + Packs' modularity with hybrid Think-on-Graph reasoning workers for complex query paths.
+  </text>
+
+  <!-- Stack badges -->
+  <g transform="translate(0, 96)">
+    
+            <rect x="24" y="0" width="61.0" height="20" rx="4" fill="#050510" stroke="#1E293B" stroke-width="1"/>
+            <text x="54.5" y="14" text-anchor="middle" font-family="monospace" font-size="10" fill="#F8FAFC">Python</text>
+            
+            <rect x="93.0" y="0" width="121.0" height="20" rx="4" fill="#050510" stroke="#1E293B" stroke-width="1"/>
+            <text x="153.5" y="14" text-anchor="middle" font-family="monospace" font-size="10" fill="#F8FAFC">Think-on-Graph</text>
+            
+            <rect x="222.0" y="0" width="136.0" height="20" rx="4" fill="#050510" stroke="#1E293B" stroke-width="1"/>
+            <text x="290.0" y="14" text-anchor="middle" font-family="monospace" font-size="10" fill="#F8FAFC">Annotation Store</text>
+            
+            <rect x="366.0" y="0" width="61.0" height="20" rx="4" fill="#050510" stroke="#1E293B" stroke-width="1"/>
+            <text x="396.5" y="14" text-anchor="middle" font-family="monospace" font-size="10" fill="#F8FAFC">Docker</text>
+            
+            <rect x="435.0" y="0" width="76.0" height="20" rx="4" fill="#050510" stroke="#1E293B" stroke-width="1"/>
+            <text x="473.0" y="14" text-anchor="middle" font-family="monospace" font-size="10" fill="#F8FAFC">REST API</text>
+            
+  </g>
+
+  <!-- Motif -->
+  
+            <g transform="translate(690, 32)" opacity="0.85">
+              <rect x="0" y="22" width="28" height="28" rx="4" fill="#0B1024" stroke="#22D3EE" stroke-width="1.2"/>
+              <text x="14" y="40" text-anchor="middle" font-family="monospace" font-size="10" fill="#22D3EE">C</text>
+              <line x1="28" y1="36" x2="52" y2="18" stroke="#22D3EE" stroke-width="1.2" stroke-dasharray="2 2"/>
+              <line x1="28" y1="36" x2="52" y2="54" stroke="#22D3EE" stroke-width="1.2" stroke-dasharray="2 2"/>
+              <rect x="52" y="6" width="24" height="24" rx="4" fill="#0B1024" stroke="#22D3EE" stroke-width="1"/>
+              <rect x="52" y="42" width="24" height="24" rx="4" fill="#0B1024" stroke="#22D3EE" stroke-width="1"/>
+            </g>
+</svg>

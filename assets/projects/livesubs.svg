@@ -1,0 +1,69 @@
+<svg width="850" height="135" viewBox="0 0 850 135" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="cardGrad_livesubs" x1="0" y1="0" x2="850" y2="135" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0B1024"/>
+      <stop offset="100%" stop-color="#0D1530"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="850" height="135" rx="10" fill="url(#cardGrad_livesubs)"/>
+  <rect x="0.5" y="0.5" width="849" height="134" rx="9.5" stroke="#1E293B" stroke-width="1"/>
+  <line x1="0" y1="0" x2="4" y2="135" stroke="#22D3EE" stroke-width="4"/>
+
+  <!-- Header line -->
+  <g transform="translate(24, 22)">
+    <text x="0" y="0" font-family="-apple-system, BlinkMacSystemFont, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="19" font-weight="800" fill="#F8FAFC">
+      LiveSubs
+    </text>
+    <rect x="106" y="-13" width="183.0" height="18" rx="3.5" fill="#050510" stroke="#22D3EE" stroke-width="1"/>
+    <text x="113" y="0" font-family="monospace" font-size="9" font-weight="700" fill="#22D3EE">
+      DESKTOP OVERLAY // SHIPPED
+    </text>
+    <text x="630" y="0" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="13" font-weight="700" fill="#22D3EE">
+      7 &#9733;
+    </text>
+  </g>
+
+  <!-- Tagline -->
+  <text x="24" y="52" font-family="-apple-system, BlinkMacSystemFont, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="12" font-weight="600" fill="#22D3EE">
+    Real-Time Subtitle &amp; Translation Windows Desktop Overlay
+  </text>
+
+  <!-- Description -->
+  <text x="24" y="74" font-family="-apple-system, BlinkMacSystemFont, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="11.5" fill="#94A3B8">
+    Hooks Windows Live Captions, translates recognized speech via modular LLM/traditional APIs, and renders transparent always-on-top subtitles over any conference call or video.
+  </text>
+
+  <!-- Stack badges -->
+  <g transform="translate(0, 96)">
+    
+            <rect x="24" y="0" width="31.0" height="20" rx="4" fill="#050510" stroke="#1E293B" stroke-width="1"/>
+            <text x="39.5" y="14" text-anchor="middle" font-family="monospace" font-size="10" fill="#F8FAFC">C#</text>
+            
+            <rect x="63.0" y="0" width="46.0" height="20" rx="4" fill="#050510" stroke="#1E293B" stroke-width="1"/>
+            <text x="86.0" y="14" text-anchor="middle" font-family="monospace" font-size="10" fill="#F8FAFC">.NET</text>
+            
+            <rect x="117.0" y="0" width="173.5" height="20" rx="4" fill="#050510" stroke="#1E293B" stroke-width="1"/>
+            <text x="203.75" y="14" text-anchor="middle" font-family="monospace" font-size="10" fill="#F8FAFC">Windows Live Captions</text>
+            
+            <rect x="298.5" y="0" width="136.0" height="20" rx="4" fill="#050510" stroke="#1E293B" stroke-width="1"/>
+            <text x="366.5" y="14" text-anchor="middle" font-family="monospace" font-size="10" fill="#F8FAFC">Translation APIs</text>
+            
+            <rect x="442.5" y="0" width="158.5" height="20" rx="4" fill="#050510" stroke="#1E293B" stroke-width="1"/>
+            <text x="521.75" y="14" text-anchor="middle" font-family="monospace" font-size="10" fill="#F8FAFC">DirectX/WPF Overlay</text>
+            
+  </g>
+
+  <!-- Motif -->
+  
+            <g transform="translate(690, 40)" opacity="0.8">
+              <rect x="0" y="24" width="4" height="24" rx="2" fill="#22D3EE" opacity="0.6"/>
+              <rect x="8" y="14" width="4" height="44" rx="2" fill="#22D3EE" opacity="0.9"/>
+              <rect x="16" y="4" width="4" height="64" rx="2" fill="#22D3EE"/>
+              <rect x="24" y="20" width="4" height="32" rx="2" fill="#22D3EE" opacity="0.7"/>
+              <rect x="32" y="8" width="4" height="56" rx="2" fill="#22D3EE" opacity="0.9"/>
+              <rect x="40" y="26" width="4" height="20" rx="2" fill="#22D3EE" opacity="0.5"/>
+              <rect x="48" y="16" width="4" height="40" rx="2" fill="#22D3EE" opacity="0.8"/>
+              <rect x="56" y="28" width="4" height="16" rx="2" fill="#22D3EE" opacity="0.4"/>
+            </g>
+</svg>
