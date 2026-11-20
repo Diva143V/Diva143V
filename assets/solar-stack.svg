@@ -2,12 +2,19 @@
   <title id="title">Languages and orbits</title>
   <desc id="desc">Five languages, the kind of work each one supports, and the projects that use them.</desc>
   <defs>
+    <linearGradient id="stackCometTail" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0"/>
+      <stop offset="65%" stop-color="#38BDF8" stop-opacity=".30"/>
+      <stop offset="100%" stop-color="#38BDF8" stop-opacity=".92"/>
+    </linearGradient>
+    <clipPath id="stackBounds"><rect width="880" height="226" rx="14"/></clipPath>
     <style>
       .pulse { animation: pulse 3s ease-in-out infinite; }
       .halo { animation: haloSoft 3.4s ease-in-out infinite; }
       .twinkle-a { animation: twinkle 3.8s ease-in-out infinite; }
       .twinkle-b { animation: twinkle 5.0s ease-in-out 1.1s infinite; }
       .twinkle-c { animation: twinkle 6.2s ease-in-out 2.0s infinite; }
+      .comet-stack { animation: cometStack 21s linear 8s infinite both; }
       .mini-orbit-0 { transform-origin: 0px 0px; animation: spin 6.0s linear infinite; }
       .sig-dot-0 { animation: slidePulse 2.60s ease-in-out 0.00s infinite; }
       .conduit-0 { animation: dashCrawl 3.5s linear infinite; }
@@ -34,27 +41,42 @@
         85% { opacity: 1; }
         100% { transform: translateX(30px); opacity: 0; }
       }
+      @keyframes cometStack {
+        0% { opacity: 0; transform: translate(-80px, 35px); }
+        6% { opacity: .82; }
+        35% { opacity: .78; }
+        43% { opacity: 0; transform: translate(940px, 195px); }
+        100% { opacity: 0; transform: translate(940px, 195px); }
+      }
       @media (prefers-reduced-motion: reduce) {
-        .pulse, .halo, .twinkle-a, .twinkle-b, .twinkle-c, .mini-orbit-0, .mini-orbit-1, .mini-orbit-2, .mini-orbit-3, .mini-orbit-4, .sig-dot-0, .sig-dot-1, .sig-dot-2, .sig-dot-3, .sig-dot-4, .conduit-0, .conduit-1, .conduit-2, .conduit-3, .conduit-4 { animation: none !important; }
+        .pulse, .halo, .twinkle-a, .twinkle-b, .twinkle-c, .mini-orbit-0, .mini-orbit-1, .mini-orbit-2, .mini-orbit-3, .mini-orbit-4, .sig-dot-0, .sig-dot-1, .sig-dot-2, .sig-dot-3, .sig-dot-4, .conduit-0, .conduit-1, .conduit-2, .conduit-3, .conduit-4, .comet-stack { animation: none !important; }
+        .comet-stack { display: none; }
       }
     </style>
   </defs>
 
-  <rect width="880" height="226" rx="14" fill="#080D18"/>
-  <rect x=".5" y=".5" width="879" height="225" rx="13.5" stroke="#1B2A44"/>
-  <g>
+  <g clip-path="url(#stackBounds)">
+    <rect width="880" height="226" rx="14" fill="#080D18"/>
+    <g>
     <circle cx="812" cy="26" r="0.8" fill="#F4F7FC" opacity="0.35" class="twinkle-a"/>
     <circle cx="844" cy="72" r="1" fill="#F4F7FC" opacity="0.35" class="twinkle-b"/>
     <circle cx="826" cy="134" r="0.7" fill="#F4F7FC" opacity="0.35" class="twinkle-c"/>
     <circle cx="850" cy="198" r="0.9" fill="#F4F7FC" opacity="0.35" class="twinkle-a"/>
     <circle cx="618" cy="212" r="0.8" fill="#F4F7FC" opacity="0.35" class="twinkle-b"/>
-  </g>
+    </g>
+    <g class="comet-stack">
+      <g transform="rotate(13.2)">
+        <line x1="-65" y1="0" x2="0" y2="0" stroke="url(#stackCometTail)" stroke-width="1.6" stroke-linecap="round"/>
+        <circle r="3.6" fill="#38BDF8" opacity=".24"/>
+        <circle r="1.6" fill="#F4F7FC"/>
+      </g>
+    </g>
 
-  <g transform="translate(28 29)">
-    <circle cx="5" cy="5" r="4" fill="#FFB020" class="pulse"/>
-    <text x="18" y="9" font-family="ui-monospace, 'Cascadia Mono', 'SFMono-Regular', Consolas, monospace" font-size="10" font-weight="700" fill="#FFB020" letter-spacing="1.2">THE PLANETS // LANGUAGES &amp; ORBITS</text>
-  </g>
-  <line x1="28" y1="44" x2="852" y2="44" stroke="#1B2A44"/>
+    <g transform="translate(28 29)">
+      <circle cx="5" cy="5" r="4" fill="#FFB020" class="pulse"/>
+      <text x="18" y="9" font-family="ui-monospace, 'Cascadia Mono', 'SFMono-Regular', Consolas, monospace" font-size="10" font-weight="700" fill="#FFB020" letter-spacing="1.2">THE PLANETS // LANGUAGES &amp; ORBITS</text>
+    </g>
+    <line x1="28" y1="44" x2="852" y2="44" stroke="#1B2A44"/>
 
   <g>
     <g transform="translate(34 58)">
@@ -142,6 +164,8 @@
     <text x="654" y="186" font-family="ui-monospace, 'Cascadia Mono', 'SFMono-Regular', Consolas, monospace" font-size="9.5" font-weight="400" fill="#F472B6">HackMe 2024</text>
   </g>
 
-  <text x="28" y="214" font-family="ui-monospace, 'Cascadia Mono', 'SFMono-Regular', Consolas, monospace" font-size="9" font-weight="400" fill="#5E6E85">Orbit order is a reading order, not a ranking.</text>
+    <text x="28" y="214" font-family="ui-monospace, 'Cascadia Mono', 'SFMono-Regular', Consolas, monospace" font-size="9" font-weight="400" fill="#5E6E85">Orbit order is a reading order, not a ranking.</text>
+  </g>
+  <rect x=".5" y=".5" width="879" height="225" rx="13.5" stroke="#1B2A44"/>
 
 </svg>

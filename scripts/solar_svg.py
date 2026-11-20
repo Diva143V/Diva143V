@@ -549,7 +549,13 @@ def build_about() -> str:
       <stop offset="55%" stop-color="#000000" stop-opacity="0"/>
       <stop offset="100%" stop-color="#000000" stop-opacity=".5"/>
     </radialGradient>
+    <linearGradient id="aboutCometTail" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="{GOLD}" stop-opacity="0"/>
+      <stop offset="65%" stop-color="{GOLD}" stop-opacity=".32"/>
+      <stop offset="100%" stop-color="{GOLD}" stop-opacity=".95"/>
+    </linearGradient>
     <clipPath id="aboutClip"><circle r="46"/></clipPath>
+    <clipPath id="aboutBounds"><rect width="880" height="214" rx="14"/></clipPath>
     <style>
       .breathe {{ animation: breathe 5.5s ease-in-out infinite; }}
       .ring-spin {{ transform-origin: 0px 0px; animation: spin 26s linear infinite; }}
@@ -562,50 +568,68 @@ def build_about() -> str:
       .pill-1 {{ animation: pillPulse 6s ease-in-out 1.5s infinite; }}
       .pill-2 {{ animation: pillPulse 6s ease-in-out 3.0s infinite; }}
       .pill-3 {{ animation: pillPulse 6s ease-in-out 4.5s infinite; }}
+      .comet-about {{ animation: cometAbout 16s linear 3s infinite both; }}
       @keyframes breathe {{ 0%, 100% {{ opacity: .62; }} 50% {{ opacity: .96; }} }}
       @keyframes spin {{ from {{ transform: rotate(0deg); }} to {{ transform: rotate(360deg); }} }}
       @keyframes beacon {{ 0%, 100% {{ opacity: .45; }} 50% {{ opacity: 1; }} }}
       @keyframes twinkle {{ 0%, 100% {{ opacity: .15; }} 50% {{ opacity: .85; }} }}
       @keyframes pillPulse {{ 0%, 100% {{ opacity: .86; }} 50% {{ opacity: 1; }} }}
+      @keyframes cometAbout {{
+        0% {{ opacity: 0; transform: translate(-80px, 95px); }}
+        6% {{ opacity: .85; }}
+        34% {{ opacity: .80; }}
+        42% {{ opacity: 0; transform: translate(940px, 30px); }}
+        100% {{ opacity: 0; transform: translate(940px, 30px); }}
+      }}
       @media (prefers-reduced-motion: reduce) {{
         .breathe, .ring-spin, .sat-orbit, .beacon, .twinkle-a, .twinkle-b, .twinkle-c,
-        .pill-0, .pill-1, .pill-2, .pill-3 {{ animation: none !important; }}
+        .pill-0, .pill-1, .pill-2, .pill-3, .comet-about {{ animation: none !important; }}
+        .comet-about {{ display: none; }}
       }}
     </style>
   </defs>
 
-  <rect width="880" height="214" rx="14" fill="{PANEL}"/>
-  <rect x=".5" y=".5" width="879" height="213" rx="13.5" stroke="{BORDER}"/>
-  <g>
+  <g clip-path="url(#aboutBounds)">
+    <rect width="880" height="214" rx="14" fill="{PANEL}"/>
+    <g>
 {about_stars}
-  </g>
-
-  <g transform="translate(88 105)">
-    <circle r="64" fill="url(#aboutGlow)" class="breathe"/>
-    <circle r="55" fill="none" stroke="{GOLD}" stroke-opacity=".3" stroke-width="1" stroke-dasharray="3 6" class="ring-spin"/>
-    <g class="sat-orbit">
-      <circle cx="55" cy="0" r="2.4" fill="{GOLD}"/>
-      <circle cx="55" cy="0" r="5" fill="{GOLD}" opacity=".25"/>
     </g>
-    <circle r="48" fill="#050810"/>
-    <g clip-path="url(#aboutClip)">
-      <image href="{avatar}" x="-46" y="-46" width="92" height="92" preserveAspectRatio="xMidYMid slice"/>
-      <circle r="46" fill="url(#aboutShade)"/>
+    <g class="comet-about">
+      <g transform="rotate(-11.5)">
+        <line x1="-68" y1="0" x2="0" y2="0" stroke="url(#aboutCometTail)" stroke-width="1.8" stroke-linecap="round"/>
+        <circle r="4" fill="{GOLD}" opacity=".26"/>
+        <circle r="1.8" fill="{INK}"/>
+      </g>
     </g>
-    <circle r="48" fill="none" stroke="{GOLD}" stroke-width="2"/>
-  </g>
 
-  <g>
-    <circle cx="172" cy="38" r="3" fill="{GOLD}" class="beacon"/>
-    {text(182, 42, "THE SUN // ABOUT", size=10, fill=GOLD, family=MONO, weight=700, spacing=1.4)}
-    {text(170, 84, content.NAME, size=28, weight=800, spacing=-.4)}
-    {text(170, 108, "Software engineer / AI developer / CS '28 Andhra University", size=12, fill=MUTED, family=MONO)}
-    {text(170, 134, content.ABOUT_QUOTE[0], size=12.5, fill=MUTED)}
-    {text(170, 152, content.ABOUT_QUOTE[1], size=12.5, fill=MUTED)}
-  </g>
-  <g>
+    <g transform="translate(88 105)">
+      <circle r="64" fill="url(#aboutGlow)" class="breathe"/>
+      <circle r="55" fill="none" stroke="{GOLD}" stroke-opacity=".3" stroke-width="1" stroke-dasharray="3 6" class="ring-spin"/>
+      <g class="sat-orbit">
+        <circle cx="55" cy="0" r="2.4" fill="{GOLD}"/>
+        <circle cx="55" cy="0" r="5" fill="{GOLD}" opacity=".25"/>
+      </g>
+      <circle r="48" fill="#050810"/>
+      <g clip-path="url(#aboutClip)">
+        <image href="{avatar}" x="-46" y="-46" width="92" height="92" preserveAspectRatio="xMidYMid slice"/>
+        <circle r="46" fill="url(#aboutShade)"/>
+      </g>
+      <circle r="48" fill="none" stroke="{GOLD}" stroke-width="2"/>
+    </g>
+
+    <g>
+      <circle cx="172" cy="38" r="3" fill="{GOLD}" class="beacon"/>
+      {text(182, 42, "THE SUN // ABOUT", size=10, fill=GOLD, family=MONO, weight=700, spacing=1.4)}
+      {text(170, 84, content.NAME, size=28, weight=800, spacing=-.4)}
+      {text(170, 108, "Software engineer / AI developer / CS '28 Andhra University", size=12, fill=MUTED, family=MONO)}
+      {text(170, 134, content.ABOUT_QUOTE[0], size=12.5, fill=MUTED)}
+      {text(170, 152, content.ABOUT_QUOTE[1], size=12.5, fill=MUTED)}
+    </g>
+    <g>
 {chr(10).join(pills)}
+    </g>
   </g>
+  <rect x=".5" y=".5" width="879" height="213" rx="13.5" stroke="{BORDER}"/>
 """
     return svg(
         880,
@@ -773,12 +797,19 @@ def build_stack() -> str:
         ]
     )
     body = f"""  <defs>
+    <linearGradient id="stackCometTail" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="{CYAN}" stop-opacity="0"/>
+      <stop offset="65%" stop-color="{CYAN}" stop-opacity=".30"/>
+      <stop offset="100%" stop-color="{CYAN}" stop-opacity=".92"/>
+    </linearGradient>
+    <clipPath id="stackBounds"><rect width="880" height="226" rx="14"/></clipPath>
     <style>
       .pulse {{ animation: pulse 3s ease-in-out infinite; }}
       .halo {{ animation: haloSoft 3.4s ease-in-out infinite; }}
       .twinkle-a {{ animation: twinkle 3.8s ease-in-out infinite; }}
       .twinkle-b {{ animation: twinkle 5.0s ease-in-out 1.1s infinite; }}
       .twinkle-c {{ animation: twinkle 6.2s ease-in-out 2.0s infinite; }}
+      .comet-stack {{ animation: cometStack 21s linear 8s infinite both; }}
 {chr(10).join(row_css)}
       @keyframes spin {{ from {{ transform: rotate(0deg); }} to {{ transform: rotate(360deg); }} }}
       @keyframes pulse {{ 0%, 100% {{ opacity: .45; }} 50% {{ opacity: 1; }} }}
@@ -791,27 +822,44 @@ def build_stack() -> str:
         85% {{ opacity: 1; }}
         100% {{ transform: translateX(30px); opacity: 0; }}
       }}
+      @keyframes cometStack {{
+        0% {{ opacity: 0; transform: translate(-80px, 35px); }}
+        6% {{ opacity: .82; }}
+        35% {{ opacity: .78; }}
+        43% {{ opacity: 0; transform: translate(940px, 195px); }}
+        100% {{ opacity: 0; transform: translate(940px, 195px); }}
+      }}
       @media (prefers-reduced-motion: reduce) {{
-        {reduced_rows} {{ animation: none !important; }}
+        {reduced_rows}, .comet-stack {{ animation: none !important; }}
+        .comet-stack {{ display: none; }}
       }}
     </style>
   </defs>
 
-  <rect width="880" height="226" rx="14" fill="{PANEL}"/>
-  <rect x=".5" y=".5" width="879" height="225" rx="13.5" stroke="{BORDER}"/>
-  <g>
+  <g clip-path="url(#stackBounds)">
+    <rect width="880" height="226" rx="14" fill="{PANEL}"/>
+    <g>
 {stack_stars}
-  </g>
+    </g>
+    <g class="comet-stack">
+      <g transform="rotate(13.2)">
+        <line x1="-65" y1="0" x2="0" y2="0" stroke="url(#stackCometTail)" stroke-width="1.6" stroke-linecap="round"/>
+        <circle r="3.6" fill="{CYAN}" opacity=".24"/>
+        <circle r="1.6" fill="{INK}"/>
+      </g>
+    </g>
 
-  <g transform="translate(28 29)">
-    <circle cx="5" cy="5" r="4" fill="{GOLD}" class="pulse"/>
-    {text(18, 9, "THE PLANETS // LANGUAGES & ORBITS", size=10, fill=GOLD, family=MONO, weight=700, spacing=1.2)}
-  </g>
-  <line x1="28" y1="44" x2="852" y2="44" stroke="{BORDER}"/>
+    <g transform="translate(28 29)">
+      <circle cx="5" cy="5" r="4" fill="{GOLD}" class="pulse"/>
+      {text(18, 9, "THE PLANETS // LANGUAGES & ORBITS", size=10, fill=GOLD, family=MONO, weight=700, spacing=1.2)}
+    </g>
+    <line x1="28" y1="44" x2="852" y2="44" stroke="{BORDER}"/>
 
 {chr(10).join(rows)}
 
-  {text(28, 214, "Orbit order is a reading order, not a ranking.", size=9, fill=FAINT, family=MONO)}
+    {text(28, 214, "Orbit order is a reading order, not a ranking.", size=9, fill=FAINT, family=MONO)}
+  </g>
+  <rect x=".5" y=".5" width="879" height="225" rx="13.5" stroke="{BORDER}"/>
 """
     return svg(
         880,
@@ -829,7 +877,7 @@ def _stat_box(
     small: str,
     color: str,
     index: int,
-    big_size: int = 25,
+    big_size: float = 21.5,
 ) -> str:
     return f"""  <g transform="translate({x} 48)">
     <rect width="195" height="80" rx="7" fill="{SURFACE}" stroke="{BORDER}"/>
@@ -837,8 +885,8 @@ def _stat_box(
     <circle cx="179" cy="18" r="2.6" fill="{color}" class="dot-{index}"/>
     <circle cx="179" cy="18" r="6" fill="none" stroke="{color}" stroke-opacity=".35" stroke-width=".8" class="ping-{index}"/>
     {text(16, 23, label, size=9, fill=MUTED, family=MONO, spacing=.7)}
-    {text(16, 57, big, size=big_size, fill=color, weight=800, spacing=-.4)}
-    {text(16, 73, small, size=9.5, fill=MUTED, family=MONO)}
+    {text(16, 56, big, size=big_size, fill=color, weight=800, spacing=-.4)}
+    {text(16, 72, small, size=9.5, fill=MUTED, family=MONO)}
   </g>"""
 
 
@@ -855,6 +903,11 @@ def build_log() -> str:
       <stop offset="0%" stop-color="{GOLD}" stop-opacity="0"/>
       <stop offset="50%" stop-color="{GOLD}" stop-opacity=".85"/>
       <stop offset="100%" stop-color="{GOLD}" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="logCometTail" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="{GOLD}" stop-opacity="0"/>
+      <stop offset="65%" stop-color="{GOLD}" stop-opacity=".30"/>
+      <stop offset="100%" stop-color="{GOLD}" stop-opacity=".90"/>
     </linearGradient>
     <clipPath id="logClip"><rect width="880" height="148" rx="14"/></clipPath>
     <style>
@@ -874,6 +927,7 @@ def build_log() -> str:
       .bar-1 {{ animation: barGlow 4.4s ease-in-out 1.1s infinite; }}
       .bar-2 {{ animation: barGlow 4.4s ease-in-out 2.2s infinite; }}
       .bar-3 {{ animation: barGlow 4.4s ease-in-out 3.3s infinite; }}
+      .comet-log {{ animation: cometLog 19s linear 13s infinite both; }}
       @keyframes pulse {{ 0%, 100% {{ opacity: .45; }} 50% {{ opacity: 1; }} }}
       @keyframes twinkle {{ 0%, 100% {{ opacity: .15; }} 50% {{ opacity: .8; }} }}
       @keyframes scan {{
@@ -887,12 +941,20 @@ def build_log() -> str:
         100% {{ transform: scale(1.9); opacity: 0; }}
       }}
       @keyframes barGlow {{ 0%, 100% {{ opacity: .25; }} 50% {{ opacity: .82; }} }}
+      @keyframes cometLog {{
+        0% {{ opacity: 0; transform: translate(-70px, 34px); }}
+        5% {{ opacity: .75; }}
+        30% {{ opacity: .70; }}
+        38% {{ opacity: 0; transform: translate(930px, 16px); }}
+        100% {{ opacity: 0; transform: translate(930px, 16px); }}
+      }}
       @media (prefers-reduced-motion: reduce) {{
         .beacon, .scan, .twinkle-a, .twinkle-b,
         .dot-0, .dot-1, .dot-2, .dot-3,
         .ping-0, .ping-1, .ping-2, .ping-3,
-        .bar-0, .bar-1, .bar-2, .bar-3 {{ animation: none !important; }}
+        .bar-0, .bar-1, .bar-2, .bar-3, .comet-log {{ animation: none !important; }}
         .scan {{ display: none; }}
+        .comet-log {{ display: none; }}
       }}
     </style>
   </defs>
@@ -901,6 +963,13 @@ def build_log() -> str:
     <rect width="880" height="148" rx="14" fill="{PANEL}"/>
     <g>
 {log_stars}
+    </g>
+    <g class="comet-log">
+      <g transform="rotate(-4.8)">
+        <line x1="-58" y1="0" x2="0" y2="0" stroke="url(#logCometTail)" stroke-width="1.4" stroke-linecap="round"/>
+        <circle r="3.2" fill="{GOLD}" opacity=".22"/>
+        <circle r="1.4" fill="{INK}"/>
+      </g>
     </g>
 
     <g transform="translate(28 29)">
@@ -911,9 +980,9 @@ def build_log() -> str:
     <rect x="0" y="41" width="140" height="2" fill="url(#scanGrad)" class="scan"/>
 
 {_stat_box(28, "CURRENT ORBIT", "AI INTERN", "Aegion Dynamic", "#4CC9F0", 0)}
-{_stat_box(238, "COMMUNITY", "185K+", "Mecha Break", "#C084FC", 1, 28)}
-{_stat_box(448, "PODIUM", "1ST PLACE", "HackMe 2024", "#F472B6", 2, 23)}
-{_stat_box(658, "BASED IN", "Visakhapatnam", "India / UTC+05:30", "#FB923C", 3, 18)}
+{_stat_box(238, "COMMUNITY", "185K+", "Mecha Break", "#C084FC", 1)}
+{_stat_box(448, "PODIUM", "1ST PLACE", "HackMe 2024", "#F472B6", 2)}
+{_stat_box(658, "BASED IN", "Visakhapatnam", "India / UTC+05:30", "#FB923C", 3)}
   </g>
   <rect x=".5" y=".5" width="879" height="147" rx="13.5" stroke="{BORDER}"/>
 """
