@@ -197,7 +197,7 @@
     <circle cx="566" cy="96" r="0.7" fill="#F4F7FC" opacity="0.3"/>
     <circle cx="612" cy="40" r="1" fill="#F4F7FC" opacity="0.45" class="twinkle-a"/>
     <circle cx="708" cy="34" r="0.8" fill="#F4F7FC" opacity="0.3" class="twinkle-d"/>
-    <circle cx="762" cy="104" r="1.1" fill="#C084FC" opacity="0.45" class="twinkle-c"/>
+    <circle cx="762" cy="104" r="1.1" fill="#818CF8" opacity="0.45" class="twinkle-c"/>
     <circle cx="856" cy="24" r="0.9" fill="#F4F7FC" opacity="0.4" class="twinkle-b"/>
     <circle cx="846" cy="154" r="0.7" fill="#F4F7FC" opacity="0.25"/>
     <circle cx="812" cy="214" r="1" fill="#F4F7FC" opacity="0.35" class="twinkle-a"/>
@@ -228,7 +228,7 @@
     <circle cx="688" cy="388" r="0.7" fill="#F4F7FC" opacity="0.25" class="twinkle-d"/>
     <circle cx="746" cy="320" r="0.6" fill="#F4F7FC" opacity="0.2"/>
     <g class="twinkle-b" opacity="0.65"><line x1="462" y1="58" x2="470" y2="58" stroke="#38BDF8" stroke-width="0.7" stroke-linecap="round"/><line x1="466" y1="54" x2="466" y2="62" stroke="#38BDF8" stroke-width="0.7" stroke-linecap="round"/></g>
-    <g class="twinkle-c" opacity="0.65"><line x1="758" y1="104" x2="766" y2="104" stroke="#C084FC" stroke-width="0.7" stroke-linecap="round"/><line x1="762" y1="100" x2="762" y2="108" stroke="#C084FC" stroke-width="0.7" stroke-linecap="round"/></g>
+    <g class="twinkle-c" opacity="0.65"><line x1="758" y1="104" x2="766" y2="104" stroke="#818CF8" stroke-width="0.7" stroke-linecap="round"/><line x1="762" y1="100" x2="762" y2="108" stroke="#818CF8" stroke-width="0.7" stroke-linecap="round"/></g>
     <g class="twinkle-a" opacity="0.65"><line x1="798" y1="420" x2="806" y2="420" stroke="#38BDF8" stroke-width="0.7" stroke-linecap="round"/><line x1="802" y1="416" x2="802" y2="424" stroke="#38BDF8" stroke-width="0.7" stroke-linecap="round"/></g>
     <g class="twinkle-d" opacity="0.65"><line x1="316" y1="500" x2="324" y2="500" stroke="#FFB020" stroke-width="0.7" stroke-linecap="round"/><line x1="320" y1="496" x2="320" y2="504" stroke="#FFB020" stroke-width="0.7" stroke-linecap="round"/></g>
     </g>
@@ -298,11 +298,11 @@
     <g transform="rotate(334)">
       <g class="planet-orbit-1">
         <g transform="translate(94 0)">
-          <circle r="17.8" fill="#C084FC" opacity=".14" class="planet-halo"/>
-          <circle r="7.0" fill="#C084FC"/>
+          <circle r="17.8" fill="#818CF8" opacity=".14" class="planet-halo"/>
+          <circle r="7.0" fill="#818CF8"/>
           <circle r="7.0" fill="url(#sphere)"/>
-          <circle r="7.0" fill="none" stroke="#C084FC" stroke-opacity=".75"/>
-          <circle r="15.5" fill="none" stroke="#C084FC" stroke-opacity=".28" stroke-width=".75" stroke-dasharray="1.5 3"/>
+          <circle r="7.0" fill="none" stroke="#818CF8" stroke-opacity=".75"/>
+          <circle r="15.5" fill="none" stroke="#818CF8" stroke-opacity=".28" stroke-width=".75" stroke-dasharray="1.5 3"/>
           <g class="moon-orbit-1">
             <circle cx="8.2" cy="-13.1" r="1.7" fill="#F4F7FC" opacity=".92"/>
           </g>
@@ -312,11 +312,11 @@
     <g transform="rotate(154)">
       <g class="planet-orbit-2">
         <g transform="translate(128 0)">
-          <circle r="22.0" fill="#FB923C" opacity=".14" class="planet-halo"/>
-          <circle r="8.5" fill="#FB923C"/>
+          <circle r="22.0" fill="#E28743" opacity=".14" class="planet-halo"/>
+          <circle r="8.5" fill="#E28743"/>
           <circle r="8.5" fill="url(#sphere)"/>
-          <circle r="8.5" fill="none" stroke="#FB923C" stroke-opacity=".75"/>
-          <circle r="17.0" fill="none" stroke="#FB923C" stroke-opacity=".28" stroke-width=".75" stroke-dasharray="1.5 3"/>
+          <circle r="8.5" fill="none" stroke="#E28743" stroke-opacity=".75"/>
+          <circle r="17.0" fill="none" stroke="#E28743" stroke-opacity=".28" stroke-width=".75" stroke-dasharray="1.5 3"/>
           <g class="moon-orbit-2">
             <circle cx="9.0" cy="-14.4" r="1.7" fill="#F4F7FC" opacity=".92"/>
           </g>
@@ -340,10 +340,10 @@
     <g transform="rotate(112)">
       <g class="planet-orbit-4">
         <g transform="translate(196 0)">
-          <circle r="30.5" fill="#F472B6" opacity=".14" class="planet-halo"/>
-          <circle r="13.1" fill="#F472B6"/>
+          <circle r="30.5" fill="#FFB020" opacity=".14" class="planet-halo"/>
+          <circle r="13.1" fill="#FFB020"/>
           <circle r="13.1" fill="url(#sphere)"/>
-          <circle r="13.1" fill="none" stroke="#F472B6" stroke-opacity=".75"/>
+          <circle r="13.1" fill="none" stroke="#FFB020" stroke-opacity=".75"/>
         </g>
       </g>
     </g>

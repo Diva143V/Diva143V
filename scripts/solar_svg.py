@@ -59,7 +59,7 @@ STARS: tuple[Star, ...] = (
     Star(566, 96, 0.7, 0.30, ""),
     Star(612, 40, 1.0, 0.45, "a"),
     Star(708, 34, 0.8, 0.30, "d"),
-    Star(762, 104, 1.1, 0.45, "c", "#C084FC"),
+    Star(762, 104, 1.1, 0.45, "c", "#818CF8"),
     Star(856, 24, 0.9, 0.40, "b"),
     Star(846, 154, 0.7, 0.25, ""),
     Star(812, 214, 1.0, 0.35, "a"),
@@ -112,7 +112,7 @@ DUST_STARS: tuple[tuple[int, int, float, float], ...] = (
 # Four-point sparkle glints on accent sky coordinates
 GLINT_STARS: tuple[tuple[int, int, str, str], ...] = (
     (466, 58, "#38BDF8", "twinkle-b"),
-    (762, 104, "#C084FC", "twinkle-c"),
+    (762, 104, "#818CF8", "twinkle-c"),
     (802, 420, "#38BDF8", "twinkle-a"),
     (320, 500, "#FFB020", "twinkle-d"),
 )
@@ -982,10 +982,10 @@ def build_log() -> str:
     <line x1="28" y1="42" x2="852" y2="42" stroke="{BORDER}"/>
     <rect x="0" y="41" width="140" height="2" fill="url(#scanGrad)" class="scan"/>
 
-{_stat_box(28, "CURRENT ORBIT", "AI INTERN", "Aegion Dynamic", "#4CC9F0", 0)}
-{_stat_box(238, "COMMUNITY", "185K+", "Mecha Break", "#C084FC", 1)}
-{_stat_box(448, "PODIUM", "1ST PLACE", "HackMe 2024", "#F472B6", 2)}
-{_stat_box(658, "BASED IN", "Visakhapatnam", "India / UTC+05:30", "#FB923C", 3)}
+{_stat_box(28, "CURRENT ORBIT", "AI INTERN", "Aegion Dynamic", "#38BDF8", 0)}
+{_stat_box(238, "COMMUNITY", "185K+", "Mecha Break", "#818CF8", 1)}
+{_stat_box(448, "PODIUM", "1ST PLACE", "HackMe 2024", "#FFB020", 2)}
+{_stat_box(658, "BASED IN", "Visakhapatnam", "India / UTC+05:30", "#E28743", 3)}
   </g>
   <rect x=".5" y=".5" width="879" height="147" rx="13.5" stroke="{BORDER}"/>
 """

@@ -150,23 +150,23 @@
     <g>
   <g class="pill-glow pill-0">
     <rect x="170" y="170" width="135.6" height="23" rx="4" fill="#0C1424" stroke="#1B2A44"/>
-    <circle cx="179" cy="181.5" r="2" fill="#4CC9F0" class="beacon"/>
-    <text x="240.8" y="185" font-family="'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'SFMono-Regular', Consolas, ui-monospace, monospace" font-size="9.5" font-weight="700" fill="#4CC9F0" letter-spacing="0.3" text-anchor="middle">AI intern @ Aegion</text>
+    <circle cx="179" cy="181.5" r="2" fill="#38BDF8" class="beacon"/>
+    <text x="240.8" y="185" font-family="'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'SFMono-Regular', Consolas, ui-monospace, monospace" font-size="9.5" font-weight="700" fill="#38BDF8" letter-spacing="0.3" text-anchor="middle">AI intern @ Aegion</text>
   </g>
   <g class="pill-glow pill-1">
     <rect x="315.6" y="170" width="110.8" height="23" rx="4" fill="#0C1424" stroke="#1B2A44"/>
-    <circle cx="324.6" cy="181.5" r="2" fill="#C084FC" class="beacon"/>
-    <text x="374" y="185" font-family="'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'SFMono-Regular', Consolas, ui-monospace, monospace" font-size="9.5" font-weight="700" fill="#C084FC" letter-spacing="0.3" text-anchor="middle">185K community</text>
+    <circle cx="324.6" cy="181.5" r="2" fill="#818CF8" class="beacon"/>
+    <text x="374" y="185" font-family="'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'SFMono-Regular', Consolas, ui-monospace, monospace" font-size="9.5" font-weight="700" fill="#818CF8" letter-spacing="0.3" text-anchor="middle">185K community</text>
   </g>
   <g class="pill-glow pill-2">
     <rect x="436.4" y="170" width="160.4" height="23" rx="4" fill="#0C1424" stroke="#1B2A44"/>
-    <circle cx="445.4" cy="181.5" r="2" fill="#F472B6" class="beacon"/>
-    <text x="519.6" y="185" font-family="'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'SFMono-Regular', Consolas, ui-monospace, monospace" font-size="9.5" font-weight="700" fill="#F472B6" letter-spacing="0.3" text-anchor="middle">1st place, HackMe 2024</text>
+    <circle cx="445.4" cy="181.5" r="2" fill="#FFB020" class="beacon"/>
+    <text x="519.6" y="185" font-family="'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'SFMono-Regular', Consolas, ui-monospace, monospace" font-size="9.5" font-weight="700" fill="#FFB020" letter-spacing="0.3" text-anchor="middle">1st place, HackMe 2024</text>
   </g>
   <g class="pill-glow pill-3">
     <rect x="606.8" y="170" width="148.0" height="23" rx="4" fill="#0C1424" stroke="#1B2A44"/>
-    <circle cx="615.8" cy="181.5" r="2" fill="#FB923C" class="beacon"/>
-    <text x="683.8" y="185" font-family="'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'SFMono-Regular', Consolas, ui-monospace, monospace" font-size="9.5" font-weight="700" fill="#FB923C" letter-spacing="0.3" text-anchor="middle">Visakhapatnam, India</text>
+    <circle cx="615.8" cy="181.5" r="2" fill="#E28743" class="beacon"/>
+    <text x="683.8" y="185" font-family="'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'SFMono-Regular', Consolas, ui-monospace, monospace" font-size="9.5" font-weight="700" fill="#E28743" letter-spacing="0.3" text-anchor="middle">Visakhapatnam, India</text>
   </g>
     </g>
   </g>

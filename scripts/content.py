@@ -34,10 +34,10 @@ ABOUT_QUOTE = (
     "evidence while papers disagree, memory while an agent works.",
 )
 FACTS = (
-    ("AI intern @ Aegion", "#4CC9F0"),
-    ("185K community", "#C084FC"),
-    ("1st place, HackMe 2024", "#F472B6"),
-    (LOCATION, "#FB923C"),
+    ("AI intern @ Aegion", "#38BDF8"),
+    ("185K community", "#818CF8"),
+    ("1st place, HackMe 2024", "#FFB020"),
+    (LOCATION, "#E28743"),
 )
 
 INTRO = """I'm Diwakar, Diva to most people. I'm studying computer science at Andhra University and working as an AI developer intern at Aegion Dynamic Solutions. I live in Visakhapatnam, on the east coast of India.
@@ -98,7 +98,7 @@ PROJECTS = (
             "lines above any app. C# and WPF on .NET 8, shipped as one executable.",
         ),
         tags=("C#", "WPF", ".NET 8", "Windows"),
-        accent="#4CC9F0",
+        accent="#38BDF8",
         alt=(
             "LiveSubs card: a Windows caption overlay that translates Windows "
             "Live Captions through Google, DeepL, OpenAI or Ollama."
@@ -132,7 +132,7 @@ PROJECTS = (
             "app is Tauri and React, with SQLite underneath.",
         ),
         tags=("Rust", "MCP", "Tauri", "SQLite"),
-        accent="#FF8A4C",
+        accent="#E28743",
         alt=(
             "Knox card: a Rust MCP server and Tauri desktop app that keeps "
             "context across coding sessions."
@@ -149,7 +149,7 @@ PROJECTS = (
             "binding scores you can inspect. A fork of Griffin.",
         ),
         tags=("Python", "R", "VCF", "Neoantigen"),
-        accent="#F472B6",
+        accent="#818CF8",
         alt=(
             "SyGriffin card: a neoantigen CLI that reads tumour VCF files and "
             "predicts vaccine-relevant targets. A fork of Griffin."
@@ -179,7 +179,7 @@ PLANETS = (
         orbit="Orbit 2",
         domain="Windows overlays, live captions, WPF",
         evidence="LiveSubs",
-        color="#C084FC",
+        color="#818CF8",
         angle=334,
         radius=94,
         moons=1,
@@ -189,7 +189,7 @@ PLANETS = (
         orbit="Orbit 3",
         domain="MCP server, graph core, Tauri",
         evidence="Knox",
-        color="#FB923C",
+        color="#E28743",
         angle=154,
         radius=128,
         moons=1,
@@ -209,7 +209,7 @@ PLANETS = (
         orbit="Orbit 5 / outer",
         domain="Algorithms and data structures",
         evidence="HackMe 2024",
-        color="#F472B6",
+        color="#FFB020",
         angle=112,
         radius=196,
     ),
