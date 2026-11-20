@@ -1,0 +1,93 @@
+<svg width="850" height="230" viewBox="0 0 850 230" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="tbg" x1="0" y1="0" x2="850" y2="230" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#050510"/>
+      <stop offset="100%" stop-color="#080C1A"/>
+    </linearGradient>
+    <style>
+      @keyframes fadeIn { 0%{opacity:0.5} 100%{opacity:1} }
+      .tech-tag { animation: fadeIn 0.3s ease-out forwards; }
+    </style>
+  </defs>
+
+  <rect width="850" height="230" rx="10" fill="url(#tbg)"/>
+  <rect x="0.5" y="0.5" width="849" height="229" rx="9.5" stroke="#1E293B" stroke-width="0.5"/>
+
+  <!-- Row 1: Systems -->
+  <g transform="translate(28, 20)">
+    <circle cx="6" cy="8" r="3.5" fill="#22D3EE"/>
+    <text x="16" y="12" font-family="ui-monospace, monospace" font-size="10" font-weight="600" fill="#22D3EE" letter-spacing="0.5">SYSTEMS &amp; REAL-TIME</text>
+    <g transform="translate(0, 22)">
+      <rect x="0" y="0" width="38" height="20" rx="4" fill="#0B1024" stroke="#1E293B" stroke-width="0.5"/>
+      <text x="19" y="14" text-anchor="middle" font-family="ui-monospace, monospace" font-size="10" fill="#F8FAFC">C#</text>
+      <rect x="44" y="0" width="42" height="20" rx="4" fill="#0B1024" stroke="#1E293B" stroke-width="0.5"/>
+      <text x="65" y="14" text-anchor="middle" font-family="ui-monospace, monospace" font-size="10" fill="#F8FAFC">C++</text>
+      <rect x="92" y="0" width="84" height="20" rx="4" fill="#0B1024" stroke="#1E293B" stroke-width="0.5"/>
+      <text x="134" y="14" text-anchor="middle" font-family="ui-monospace, monospace" font-size="9.5" fill="#F8FAFC">Windows APIs</text>
+      <rect x="182" y="0" width="82" height="20" rx="4" fill="#0B1024" stroke="#1E293B" stroke-width="0.5"/>
+      <text x="223" y="14" text-anchor="middle" font-family="ui-monospace, monospace" font-size="9.5" fill="#F8FAFC">Live Captions</text>
+      <rect x="270" y="0" width="80" height="20" rx="4" fill="#0B1024" stroke="#1E293B" stroke-width="0.5"/>
+      <text x="310" y="14" text-anchor="middle" font-family="ui-monospace, monospace" font-size="9.5" fill="#F8FAFC">Overlay GUIs</text>
+    </g>
+  </g>
+
+  <!-- Row 2: AI & Biomedical -->
+  <g transform="translate(28, 72)">
+    <circle cx="6" cy="8" r="3.5" fill="#EC4899"/>
+    <text x="16" y="12" font-family="ui-monospace, monospace" font-size="10" font-weight="600" fill="#EC4899" letter-spacing="0.5">BIOMEDICAL AI &amp; RESEARCH</text>
+    <g transform="translate(0, 22)">
+      <rect x="0" y="0" width="55" height="20" rx="4" fill="#0B1024" stroke="#1E293B" stroke-width="0.5"/>
+      <text x="27" y="14" text-anchor="middle" font-family="ui-monospace, monospace" font-size="10" fill="#F8FAFC">Python</text>
+      <rect x="61" y="0" width="58" height="20" rx="4" fill="#0B1024" stroke="#1E293B" stroke-width="0.5"/>
+      <text x="90" y="14" text-anchor="middle" font-family="ui-monospace, monospace" font-size="9.5" fill="#F8FAFC">RAG</text>
+      <rect x="125" y="0" width="80" height="20" rx="4" fill="#0B1024" stroke="#1E293B" stroke-width="0.5"/>
+      <text x="165" y="14" text-anchor="middle" font-family="ui-monospace, monospace" font-size="9.5" fill="#F8FAFC">ChromaDB</text>
+      <rect x="211" y="0" width="58" height="20" rx="4" fill="#0B1024" stroke="#1E293B" stroke-width="0.5"/>
+      <text x="240" y="14" text-anchor="middle" font-family="ui-monospace, monospace" font-size="9.5" fill="#F8FAFC">Ollama</text>
+      <rect x="275" y="0" width="55" height="20" rx="4" fill="#0B1024" stroke="#1E293B" stroke-width="0.5"/>
+      <text x="302" y="14" text-anchor="middle" font-family="ui-monospace, monospace" font-size="9.5" fill="#F8FAFC">Reflex</text>
+      <rect x="336" y="0" width="104" height="20" rx="4" fill="#0B1024" stroke="#1E293B" stroke-width="0.5"/>
+      <text x="388" y="14" text-anchor="middle" font-family="ui-monospace, monospace" font-size="9" fill="#F8FAFC">Mixture-of-LLMs</text>
+      <rect x="446" y="0" width="80" height="20" rx="4" fill="#0B1024" stroke="#1E293B" stroke-width="0.5"/>
+      <text x="486" y="14" text-anchor="middle" font-family="ui-monospace, monospace" font-size="9" fill="#F8FAFC">Neoantigen</text>
+    </g>
+  </g>
+
+  <!-- Row 3: Knowledge Graphs & Security -->
+  <g transform="translate(28, 124)">
+    <circle cx="6" cy="8" r="3.5" fill="#A855F7"/>
+    <text x="16" y="12" font-family="ui-monospace, monospace" font-size="10" font-weight="600" fill="#A855F7" letter-spacing="0.5">KNOWLEDGE GRAPHS &amp; SECURITY</text>
+    <g transform="translate(0, 22)">
+      <rect x="0" y="0" width="45" height="20" rx="4" fill="#0B1024" stroke="#1E293B" stroke-width="0.5"/>
+      <text x="22" y="14" text-anchor="middle" font-family="ui-monospace, monospace" font-size="10" fill="#F8FAFC">Rust</text>
+      <rect x="51" y="0" width="40" height="20" rx="4" fill="#0B1024" stroke="#1E293B" stroke-width="0.5"/>
+      <text x="71" y="14" text-anchor="middle" font-family="ui-monospace, monospace" font-size="10" fill="#F8FAFC">MCP</text>
+      <rect x="97" y="0" width="58" height="20" rx="4" fill="#0B1024" stroke="#1E293B" stroke-width="0.5"/>
+      <text x="126" y="14" text-anchor="middle" font-family="ui-monospace, monospace" font-size="9.5" fill="#F8FAFC">Docker</text>
+      <rect x="161" y="0" width="118" height="20" rx="4" fill="#0B1024" stroke="#1E293B" stroke-width="0.5"/>
+      <text x="220" y="14" text-anchor="middle" font-family="ui-monospace, monospace" font-size="9" fill="#F8FAFC">Think-on-Graph (ToG)</text>
+      <rect x="285" y="0" width="78" height="20" rx="4" fill="#0B1024" stroke="#1E293B" stroke-width="0.5"/>
+      <text x="324" y="14" text-anchor="middle" font-family="ui-monospace, monospace" font-size="9" fill="#F8FAFC">Crates.io CI</text>
+    </g>
+  </g>
+
+  <!-- Row 4: Web & Cloud -->
+  <g transform="translate(28, 176)">
+    <circle cx="6" cy="8" r="3.5" fill="#3B82F6"/>
+    <text x="16" y="12" font-family="ui-monospace, monospace" font-size="10" font-weight="600" fill="#3B82F6" letter-spacing="0.5">WEB &amp; CLOUD</text>
+    <g transform="translate(0, 22)">
+      <rect x="0" y="0" width="82" height="20" rx="4" fill="#0B1024" stroke="#1E293B" stroke-width="0.5"/>
+      <text x="41" y="14" text-anchor="middle" font-family="ui-monospace, monospace" font-size="9.5" fill="#F8FAFC">TypeScript</text>
+      <rect x="88" y="0" width="52" height="20" rx="4" fill="#0B1024" stroke="#1E293B" stroke-width="0.5"/>
+      <text x="114" y="14" text-anchor="middle" font-family="ui-monospace, monospace" font-size="10" fill="#F8FAFC">React</text>
+      <rect x="146" y="0" width="58" height="20" rx="4" fill="#0B1024" stroke="#1E293B" stroke-width="0.5"/>
+      <text x="175" y="14" text-anchor="middle" font-family="ui-monospace, monospace" font-size="9.5" fill="#F8FAFC">Node.js</text>
+      <rect x="210" y="0" width="58" height="20" rx="4" fill="#0B1024" stroke="#1E293B" stroke-width="0.5"/>
+      <text x="239" y="14" text-anchor="middle" font-family="ui-monospace, monospace" font-size="9.5" fill="#F8FAFC">Canvas</text>
+      <rect x="274" y="0" width="94" height="20" rx="4" fill="#0B1024" stroke="#1E293B" stroke-width="0.5"/>
+      <text x="321" y="14" text-anchor="middle" font-family="ui-monospace, monospace" font-size="9" fill="#F8FAFC">Google Cloud</text>
+      <rect x="374" y="0" width="80" height="20" rx="4" fill="#0B1024" stroke="#1E293B" stroke-width="0.5"/>
+      <text x="414" y="14" text-anchor="middle" font-family="ui-monospace, monospace" font-size="9" fill="#F8FAFC">GitHub CI</text>
+    </g>
+  </g>
+</svg>

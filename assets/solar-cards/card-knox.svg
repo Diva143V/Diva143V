@@ -1,0 +1,24 @@
+<svg width="430" height="168" viewBox="0 0 430 168" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Knox: MCP server</title>
+  <desc id="desc">Knox card: a Rust MCP server and Tauri desktop app that keeps context across coding sessions.</desc>
+  <rect width="430" height="168" rx="11" fill="#080D18"/>
+  <rect x=".5" y=".5" width="429" height="167" rx="10.5" stroke="#1B2A44"/>
+  <rect width="3.5" height="168" rx="1.75" fill="#FF8A4C"/>
+
+  <g transform="translate(20 27)">
+    <text x="0" y="0" font-family="ui-monospace, 'Cascadia Mono', 'SFMono-Regular', Consolas, monospace" font-size="8.5" font-weight="700" fill="#FF8A4C" letter-spacing="0.6">MOON 03 // AGENT MEMORY</text>
+    <text x="388" y="0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif" font-size="14" font-weight="400" fill="#5E6E85" text-anchor="end">↗</text>
+  </g>
+  <text x="20" y="56" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif" font-size="19" font-weight="800" fill="#F4F7FC">Knox</text>
+  <text x="20" y="77" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif" font-size="11.5" font-weight="600" fill="#F4F7FC">Keeps decisions and context across coding sessions.</text>
+  <text x="20" y="98" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif" font-size="9.5" font-weight="400" fill="#93A1B6">Eight tools over JSON-RPC, backed by a Rust graph core. The desktop</text>
+  <text x="20" y="113" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif" font-size="9.5" font-weight="400" fill="#93A1B6">app is Tauri and React, with SQLite underneath.</text>
+
+  <g transform="translate(0 133)">
+      <rect x="20.0" y="0" width="38.0" height="19" rx="3" fill="#0C1424" stroke="#1B2A44"/><text x="39" y="13" font-family="ui-monospace, 'Cascadia Mono', 'SFMono-Regular', Consolas, monospace" font-size="8.5" font-weight="400" fill="#F4F7FC" text-anchor="middle">Rust</text>
+      <rect x="64.0" y="0" width="38.0" height="19" rx="3" fill="#0C1424" stroke="#1B2A44"/><text x="83" y="13" font-family="ui-monospace, 'Cascadia Mono', 'SFMono-Regular', Consolas, monospace" font-size="8.5" font-weight="400" fill="#F4F7FC" text-anchor="middle">MCP</text>
+      <rect x="108.0" y="0" width="43.0" height="19" rx="3" fill="#0C1424" stroke="#1B2A44"/><text x="129.5" y="13" font-family="ui-monospace, 'Cascadia Mono', 'SFMono-Regular', Consolas, monospace" font-size="8.5" font-weight="400" fill="#F4F7FC" text-anchor="middle">Tauri</text>
+      <rect x="157.0" y="0" width="49.2" height="19" rx="3" fill="#0C1424" stroke="#1B2A44"/><text x="181.6" y="13" font-family="ui-monospace, 'Cascadia Mono', 'SFMono-Regular', Consolas, monospace" font-size="8.5" font-weight="400" fill="#F4F7FC" text-anchor="middle">SQLite</text>
+  </g>
+
+</svg>

@@ -7,7 +7,7 @@ on:
       - "README.md"
       - "assets/**"
       - "scripts/**"
-      - ".github/workflows/profile.yml"
+      - ".github/workflows/update-profile.yml"
   pull_request:
   workflow_dispatch:
 
@@ -27,7 +27,7 @@ jobs:
           python-version: "3.11"
 
       - name: Generated files are current
-        run: python scripts/build_profile.py --check
+        run: python scripts/generate_solar.py --check
 
       - name: Validate profile
         run: python scripts/validate_profile.py

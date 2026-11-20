@@ -1,0 +1,17 @@
+<svg width="880" height="86" viewBox="0 0 880 86" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Email Diwakar</title>
+  <desc id="desc">Write to diwa.p2007@gmail.com.</desc>
+  <rect width="880" height="86" rx="12" fill="#080D18"/>
+  <rect x=".5" y=".5" width="879" height="85" rx="11.5" stroke="#1B2A44"/>
+
+  <circle cx="44" cy="43" r="17" fill="#0C1424" stroke="#FFB020"/>
+  <circle cx="44" cy="43" r="6" fill="#FFB020"/>
+  <text x="76" y="38" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif" font-size="15.5" font-weight="800" fill="#F4F7FC">Let's build something that has to keep up.</text>
+  <text x="76" y="58" font-family="ui-monospace, 'Cascadia Mono', 'SFMono-Regular', Consolas, monospace" font-size="10" font-weight="400" fill="#93A1B6">diwa.p2007@gmail.com / Visakhapatnam, India / UTC+05:30</text>
+
+  <g transform="translate(715 28)">
+    <rect width="137" height="30" rx="4" fill="#0C1424" stroke="#FFB020"/>
+    <text x="68.5" y="19" font-family="ui-monospace, 'Cascadia Mono', 'SFMono-Regular', Consolas, monospace" font-size="9.5" font-weight="700" fill="#FFB020" letter-spacing="0.8" text-anchor="middle">EMAIL →</text>
+  </g>
+
+</svg>

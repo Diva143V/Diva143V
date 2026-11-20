@@ -1,0 +1,38 @@
+<svg width="880" height="148" viewBox="0 0 880 148" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Current orbit and record</title>
+  <desc id="desc">AI developer intern at Aegion Dynamic Solutions, 185,000-person community moderator, first place at HackMe 2024, based in Visakhapatnam.</desc>
+  <rect width="880" height="148" rx="14" fill="#080D18"/>
+  <rect x=".5" y=".5" width="879" height="147" rx="13.5" stroke="#1B2A44"/>
+
+  <g transform="translate(28 29)">
+    <circle cx="5" cy="5" r="4" fill="#FFB020"/>
+    <text x="18" y="9" font-family="ui-monospace, 'Cascadia Mono', 'SFMono-Regular', Consolas, monospace" font-size="10" font-weight="700" fill="#FFB020" letter-spacing="1.2">SOLAR LOG // CURRENT ORBIT</text>
+  </g>
+  <line x1="28" y1="42" x2="852" y2="42" stroke="#1B2A44"/>
+
+  <g transform="translate(28 48)">
+    <rect width="195" height="80" rx="7" fill="#0C1424" stroke="#1B2A44"/>
+    <text x="16" y="23" font-family="ui-monospace, 'Cascadia Mono', 'SFMono-Regular', Consolas, monospace" font-size="9" font-weight="400" fill="#93A1B6" letter-spacing="0.7">CURRENT ORBIT</text>
+    <text x="16" y="57" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif" font-size="25" font-weight="800" fill="#4CC9F0" letter-spacing="-0.4">AI INTERN</text>
+    <text x="16" y="73" font-family="ui-monospace, 'Cascadia Mono', 'SFMono-Regular', Consolas, monospace" font-size="9.5" font-weight="400" fill="#93A1B6">Aegion Dynamic</text>
+  </g>
+  <g transform="translate(238 48)">
+    <rect width="195" height="80" rx="7" fill="#0C1424" stroke="#1B2A44"/>
+    <text x="16" y="23" font-family="ui-monospace, 'Cascadia Mono', 'SFMono-Regular', Consolas, monospace" font-size="9" font-weight="400" fill="#93A1B6" letter-spacing="0.7">COMMUNITY</text>
+    <text x="16" y="57" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif" font-size="28" font-weight="800" fill="#C084FC" letter-spacing="-0.4">185K+</text>
+    <text x="16" y="73" font-family="ui-monospace, 'Cascadia Mono', 'SFMono-Regular', Consolas, monospace" font-size="9.5" font-weight="400" fill="#93A1B6">Mecha Break</text>
+  </g>
+  <g transform="translate(448 48)">
+    <rect width="195" height="80" rx="7" fill="#0C1424" stroke="#1B2A44"/>
+    <text x="16" y="23" font-family="ui-monospace, 'Cascadia Mono', 'SFMono-Regular', Consolas, monospace" font-size="9" font-weight="400" fill="#93A1B6" letter-spacing="0.7">PODIUM</text>
+    <text x="16" y="57" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif" font-size="23" font-weight="800" fill="#F472B6" letter-spacing="-0.4">1ST PLACE</text>
+    <text x="16" y="73" font-family="ui-monospace, 'Cascadia Mono', 'SFMono-Regular', Consolas, monospace" font-size="9.5" font-weight="400" fill="#93A1B6">HackMe 2024</text>
+  </g>
+  <g transform="translate(658 48)">
+    <rect width="195" height="80" rx="7" fill="#0C1424" stroke="#1B2A44"/>
+    <text x="16" y="23" font-family="ui-monospace, 'Cascadia Mono', 'SFMono-Regular', Consolas, monospace" font-size="9" font-weight="400" fill="#93A1B6" letter-spacing="0.7">BASED IN</text>
+    <text x="16" y="57" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif" font-size="18" font-weight="800" fill="#FB923C" letter-spacing="-0.4">Visakhapatnam</text>
+    <text x="16" y="73" font-family="ui-monospace, 'Cascadia Mono', 'SFMono-Regular', Consolas, monospace" font-size="9.5" font-weight="400" fill="#93A1B6">India / UTC+05:30</text>
+  </g>
+
+</svg>
