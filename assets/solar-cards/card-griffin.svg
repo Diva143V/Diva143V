@@ -1,34 +1,35 @@
 <svg width="430" height="150" viewBox="0 0 430 150" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="430" height="150" rx="10" fill="#080C1A"/>
-  <rect x="0.5" y="0.5" width="429" height="149" rx="9.5" stroke="#1E293B" stroke-width="1"/>
+  <rect width="430" height="150" rx="10" fill="#091024"/>
+  <rect x="0.5" y="0.5" width="429" height="149" rx="9.5" stroke="#1E2C4F" stroke-width="1"/>
   <rect width="3.5" height="150" fill="#38BDF8" rx="0"/>
 
   <g transform="translate(20, 24)">
-    <text x="0" y="0" font-family="ui-monospace, monospace" font-size="8.5" font-weight="700" fill="#38BDF8" letter-spacing="0.5">MOON 02 // PYTHON ORBIT</text>
-    <text x="390" y="0" text-anchor="end" font-family="ui-monospace, monospace" font-size="10.5" font-weight="700" fill="#38BDF8">2 &#9733;</text>
+    <text x="0" y="0" font-family="ui-monospace, monospace" font-size="8.5" font-weight="700" fill="#38BDF8" letter-spacing="0.5">MOON 02 // BIOMEDICAL AI</text>
+    <text x="390" y="0" text-anchor="end" font-family="ui-monospace, monospace" font-size="10.5" font-weight="700" fill="#38BDF8">3 &#9733;</text>
   </g>
 
-  <text x="20" y="52" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif" font-size="18" font-weight="800" fill="#F8FAFC">Griffin Bio</text>
+  <text x="20" y="50" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif" font-size="17" font-weight="800" fill="#F8FAFC">Griffin Bio</text>
 
-  <text x="20" y="74" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif" font-size="11.5" font-weight="600" fill="#F8FAFC">Scientific evidence synthesis &amp; contradiction workbench.</text>
-  <text x="20" y="92" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif" font-size="10.5" fill="#94A3B8">Ingests from 10 biomedical source collectors, embeds in ChromaDB, runs Mixture-of-LLMs claim extraction.</text>
+  <text x="20" y="69" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif" font-size="11" font-weight="600" fill="#F8FAFC">Agentic literature RAG with ChromaDB &amp; Ollama.</text>
+  <text x="20" y="86" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif" font-size="9.5" fill="#94A3B8">Retrieves and synthesizes thousands of bioRxiv/PubMed papers.</text>
+  <text x="20" y="99" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif" font-size="9.5" fill="#94A3B8">Extracts validated biomedical evidence graphs and target links.</text>
 
-  <g transform="translate(0, 114)">
+  <g transform="translate(0, 116)">
     
-      <rect x="20" y="0" width="53.0" height="18" rx="3" fill="#0B1024" stroke="#1E293B" stroke-width="0.8"/>
-      <text x="46.5" y="12.5" text-anchor="middle" font-family="ui-monospace, monospace" font-size="8.5" fill="#F8FAFC">Python</text>
-            
-      <rect x="79.0" y="0" width="92.0" height="18" rx="3" fill="#0B1024" stroke="#1E293B" stroke-width="0.8"/>
-      <text x="125.0" y="12.5" text-anchor="middle" font-family="ui-monospace, monospace" font-size="8.5" fill="#F8FAFC">ChromaDB RAG</text>
-            
-      <rect x="177.0" y="0" width="53.0" height="18" rx="3" fill="#0B1024" stroke="#1E293B" stroke-width="0.8"/>
-      <text x="203.5" y="12.5" text-anchor="middle" font-family="ui-monospace, monospace" font-size="8.5" fill="#F8FAFC">Ollama</text>
-            
-      <rect x="236.0" y="0" width="53.0" height="18" rx="3" fill="#0B1024" stroke="#1E293B" stroke-width="0.8"/>
-      <text x="262.5" y="12.5" text-anchor="middle" font-family="ui-monospace, monospace" font-size="8.5" fill="#F8FAFC">Reflex</text>
-            
-      <rect x="295.0" y="0" width="98.5" height="18" rx="3" fill="#0B1024" stroke="#1E293B" stroke-width="0.8"/>
-      <text x="344.25" y="12.5" text-anchor="middle" font-family="ui-monospace, monospace" font-size="8.5" fill="#F8FAFC">10 Collectors</text>
-            
+      <rect x="20" y="0" width="51.0" height="18" rx="3" fill="#0D1733" stroke="#1E2C4F" stroke-width="0.8"/>
+      <text x="45.5" y="12.5" text-anchor="middle" font-family="ui-monospace, monospace" font-size="8.5" fill="#F8FAFC">Python</text>
+        
+      <rect x="77.0" y="0" width="64.0" height="18" rx="3" fill="#0D1733" stroke="#1E2C4F" stroke-width="0.8"/>
+      <text x="109.0" y="12.5" text-anchor="middle" font-family="ui-monospace, monospace" font-size="8.5" fill="#F8FAFC">ChromaDB</text>
+        
+      <rect x="147.0" y="0" width="51.0" height="18" rx="3" fill="#0D1733" stroke="#1E2C4F" stroke-width="0.8"/>
+      <text x="172.5" y="12.5" text-anchor="middle" font-family="ui-monospace, monospace" font-size="8.5" fill="#F8FAFC">Ollama</text>
+        
+      <rect x="204.0" y="0" width="38" height="18" rx="3" fill="#0D1733" stroke="#1E2C4F" stroke-width="0.8"/>
+      <text x="223.0" y="12.5" text-anchor="middle" font-family="ui-monospace, monospace" font-size="8.5" fill="#F8FAFC">RAG</text>
+        
+      <rect x="248.0" y="0" width="51.0" height="18" rx="3" fill="#0D1733" stroke="#1E2C4F" stroke-width="0.8"/>
+      <text x="273.5" y="12.5" text-anchor="middle" font-family="ui-monospace, monospace" font-size="8.5" fill="#F8FAFC">Reflex</text>
+        
   </g>
 </svg>

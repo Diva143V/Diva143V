@@ -1,34 +1,35 @@
 <svg width="430" height="150" viewBox="0 0 430 150" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="430" height="150" rx="10" fill="#080C1A"/>
-  <rect x="0.5" y="0.5" width="429" height="149" rx="9.5" stroke="#1E293B" stroke-width="1"/>
+  <rect width="430" height="150" rx="10" fill="#091024"/>
+  <rect x="0.5" y="0.5" width="429" height="149" rx="9.5" stroke="#1E2C4F" stroke-width="1"/>
   <rect width="3.5" height="150" fill="#FB923C" rx="0"/>
 
   <g transform="translate(20, 24)">
-    <text x="0" y="0" font-family="ui-monospace, monospace" font-size="8.5" font-weight="700" fill="#FB923C" letter-spacing="0.5">MOON 03 // RUST ORBIT</text>
+    <text x="0" y="0" font-family="ui-monospace, monospace" font-size="8.5" font-weight="700" fill="#FB923C" letter-spacing="0.5">MOON 03 // SYSTEMS SECURITY</text>
     <text x="390" y="0" text-anchor="end" font-family="ui-monospace, monospace" font-size="10.5" font-weight="700" fill="#FB923C">2 &#9733;</text>
   </g>
 
-  <text x="20" y="52" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif" font-size="18" font-weight="800" fill="#F8FAFC">Knox</text>
+  <text x="20" y="50" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif" font-size="17" font-weight="800" fill="#F8FAFC">Knox</text>
 
-  <text x="20" y="74" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif" font-size="11.5" font-weight="600" fill="#F8FAFC">Rust Model Context Protocol (MCP) memory vault.</text>
-  <text x="20" y="92" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif" font-size="10.5" fill="#94A3B8">Session isolation, verified boundaries, secure persistence for AI agents. Crates.io releases with CI/CD.</text>
+  <text x="20" y="69" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif" font-size="11" font-weight="600" fill="#F8FAFC">Rust MCP memory server with session isolation.</text>
+  <text x="20" y="86" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif" font-size="9.5" fill="#94A3B8">High-assurance Model Context Protocol cryptographic vault.</text>
+  <text x="20" y="99" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif" font-size="9.5" fill="#94A3B8">Secures AI agent memory and publishes directly to Crates.io.</text>
 
-  <g transform="translate(0, 114)">
+  <g transform="translate(0, 116)">
     
-      <rect x="20" y="0" width="40.0" height="18" rx="3" fill="#0B1024" stroke="#1E293B" stroke-width="0.8"/>
-      <text x="40.0" y="12.5" text-anchor="middle" font-family="ui-monospace, monospace" font-size="8.5" fill="#F8FAFC">Rust</text>
-            
-      <rect x="66.0" y="0" width="79.0" height="18" rx="3" fill="#0B1024" stroke="#1E293B" stroke-width="0.8"/>
-      <text x="105.5" y="12.5" text-anchor="middle" font-family="ui-monospace, monospace" font-size="8.5" fill="#F8FAFC">TypeScript</text>
-            
-      <rect x="151.0" y="0" width="92.0" height="18" rx="3" fill="#0B1024" stroke="#1E293B" stroke-width="0.8"/>
-      <text x="197.0" y="12.5" text-anchor="middle" font-family="ui-monospace, monospace" font-size="8.5" fill="#F8FAFC">MCP Protocol</text>
-            
-      <rect x="249.0" y="0" width="72.5" height="18" rx="3" fill="#0B1024" stroke="#1E293B" stroke-width="0.8"/>
-      <text x="285.25" y="12.5" text-anchor="middle" font-family="ui-monospace, monospace" font-size="8.5" fill="#F8FAFC">Crates.io</text>
-            
-      <rect x="327.5" y="0" width="46.5" height="18" rx="3" fill="#0B1024" stroke="#1E293B" stroke-width="0.8"/>
-      <text x="350.75" y="12.5" text-anchor="middle" font-family="ui-monospace, monospace" font-size="8.5" fill="#F8FAFC">CI/CD</text>
-            
+      <rect x="20" y="0" width="38" height="18" rx="3" fill="#0D1733" stroke="#1E2C4F" stroke-width="0.8"/>
+      <text x="39.0" y="12.5" text-anchor="middle" font-family="ui-monospace, monospace" font-size="8.5" fill="#F8FAFC">Rust</text>
+        
+      <rect x="64" y="0" width="38" height="18" rx="3" fill="#0D1733" stroke="#1E2C4F" stroke-width="0.8"/>
+      <text x="83.0" y="12.5" text-anchor="middle" font-family="ui-monospace, monospace" font-size="8.5" fill="#F8FAFC">MCP</text>
+        
+      <rect x="108" y="0" width="64.0" height="18" rx="3" fill="#0D1733" stroke="#1E2C4F" stroke-width="0.8"/>
+      <text x="140.0" y="12.5" text-anchor="middle" font-family="ui-monospace, monospace" font-size="8.5" fill="#F8FAFC">Security</text>
+        
+      <rect x="178.0" y="0" width="70.5" height="18" rx="3" fill="#0D1733" stroke="#1E2C4F" stroke-width="0.8"/>
+      <text x="213.25" y="12.5" text-anchor="middle" font-family="ui-monospace, monospace" font-size="8.5" fill="#F8FAFC">Crates.io</text>
+        
+      <rect x="254.5" y="0" width="51.0" height="18" rx="3" fill="#0D1733" stroke="#1E2C4F" stroke-width="0.8"/>
+      <text x="280.0" y="12.5" text-anchor="middle" font-family="ui-monospace, monospace" font-size="8.5" fill="#F8FAFC">Docker</text>
+        
   </g>
 </svg>

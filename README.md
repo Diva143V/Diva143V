@@ -60,7 +60,7 @@
 | **Orbit 1** | **Python** (Inner) | Biomedical AI & Evidence RAG | [`Griffin`](https://github.com/Diva143V/Griffin), [`SyGriffin`](https://github.com/Diva143V/SyGriffin) |
 | **Orbit 2** | **C# / .NET** | Windows Subtitle & Overlay Systems | [`LiveSubs`](https://github.com/Diva143V/LiveSubs) |
 | **Orbit 3** | **Rust** | High-Assurance MCP Memory Vault | [`Knox`](https://github.com/Diva143V/Knox) |
-| **Orbit 4** | **TypeScript** | Real-Time Collaboration & Interfaces | [`chatstream`](https://github.com/Diva143V/chatstream), [`myselfdiva`](https://github.com/Diva143V/myselfdiva) |
+| **Orbit 4** | **TypeScript** | Web Architecture & Visual Systems | [`myselfdiva`](https://github.com/Diva143V/myselfdiva) |
 | **Orbit 5** | **C++** (Outer) | Algorithmic Optimization & Systems | `HackMe Solver` (1st Place Winner) |
 
 </details>
