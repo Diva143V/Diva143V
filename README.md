@@ -1,168 +1,119 @@
 <div align="center">
-
-<!-- HERO BANNER -->
-<img src="assets/hero.svg" alt="Diwakar Venkat Peddada — Nebula 01 Cosmic Hero Banner" width="100%">
-
-<br>
-
-<!-- QUICK NAVIGATION BADGES -->
-<p align="center">
-  <a href="#-about-the-builder"><img src="https://img.shields.io/badge/ORBIT-ABOUT%20BUILDER-0B1024?style=for-the-badge&logoColor=22D3EE&labelColor=050510" alt="About"></a>
-  <a href="#-featured-flagship-projects"><img src="https://img.shields.io/badge/CONSTELLATION-FEATURED%20PROJECTS-0B1024?style=for-the-badge&logoColor=A855F7&labelColor=050510" alt="Projects"></a>
-  <a href="#-technology-constellation"><img src="https://img.shields.io/badge/TELEMETRY-TECH%20STACK-0B1024?style=for-the-badge&logoColor=3B82F6&labelColor=050510" alt="Stack"></a>
-  <a href="#-experience--podium"><img src="https://img.shields.io/badge/LOGS-EXPERIENCE-0B1024?style=for-the-badge&logoColor=EC4899&labelColor=050510" alt="Experience"></a>
-  <a href="#-cosmic-connect"><img src="https://img.shields.io/badge/TRANSMIT-CONNECT-0B1024?style=for-the-badge&logoColor=22D3EE&labelColor=050510" alt="Connect"></a>
-</p>
-
+<img src="assets/hero.svg" alt="Diwakar Venkat Peddada — Software Engineer" width="100%">
 </div>
 
 ---
 
-## 🔭 About the Builder
+## About
 
-I am **Diwakar Venkat Peddada** (*Diva*), a software engineer and AI developer currently studying Computer Science at **Andhra University** ('28) and interning at **Aegion Dynamic Solutions**.
+I'm **Diwakar Venkat Peddada** — I go by Diva. I study CS at Andhra University and work as an AI developer intern at Aegion Dynamic Solutions.
 
-> *"I like problems where the answer has to arrive while you are still watching — captions that keep pace with a live speaker, a pipeline that digests thousands of biomedical papers and isolates exactly where they disagree, or interfaces that stay snappy under load."*
+I like problems where the answer has to arrive while you're still watching: captions that keep pace with a speaker, a pipeline that reads thousands of papers and tells you where they disagree, an overlay that sits on top of your video call and just works.
 
-My work spans from low-level systems and desktop overlays to large-scale biomedical research pipelines and knowledge graphs:
+I started on the front end — rebuilding React interfaces at Aegion, learning to measure something before claiming it got faster. Since then I've been working further down the stack: Windows overlays in C#, embeddings and retrieval for research data, MCP servers in Rust, and a bioinformatics platform that predicts neoantigen candidates from tumor VCF files.
 
-- **Real-Time Desktop & Systems Engineering**: Architected **LiveSubs**, an always-on-top Windows subtitle and translation overlay listening to Windows Live Captions and translating speech in real time with custom LLM/API pipelines.
-- **Biomedical AI & Evidence Synthesis**: Developed **Griffin Bio**, a multi-source research workbench that ingests from 10 modular collectors (PubMed, Europe PMC, ChEMBL, UniProt, OpenAlex), embeds scientific literature in ChromaDB, and runs a Mixture-of-LLMs pipeline to detect claim contradictions and synthesize consensus.
-- **Knowledge Graphs & Autonomous Agent Infrastructure**: Engineered **Knox** (a high-assurance Rust MCP memory vault) and **Polaris** (a modular Think-on-Graph API and hybrid reasoning worker).
-- **High-Concurrency Community Management**: Moderated a **185,000+ member community** for *Mecha Break* (Amazing Seasun Games), distilling real-time player telemetry and feedback into actionable developer reports.
+Outside of code, I moderated a 185,000-member community for Mecha Break, which taught me to write for people who haven't read the manual.
 
 ---
 
-## 📊 Cosmic Statistics
+## Stats
 
 <div align="center">
-  <img src="assets/statistics.svg" alt="Diva143V GitHub Telemetry and Audited Metrics" width="100%">
+<img src="assets/statistics.svg" alt="GitHub metrics" width="100%">
 </div>
 
 ---
 
-## 🪐 Technology Constellation
+## Stack
 
-Verified stack backed by repository source code inspection and production experience:
+Everything listed here is backed by repository source code, not résumé padding.
 
 <div align="center">
-  <img src="assets/tech-constellation.svg" alt="Diva143V Technology Constellation" width="100%">
+<img src="assets/tech-constellation.svg" alt="Technology stack" width="100%">
 </div>
 
 <details>
-<summary><b>Detailed Technical Breakdown</b></summary>
+<summary><b>Where each technology is used</b></summary>
 <br>
 
-| Domain | Verified Technologies | Selected Repositories |
+| Domain | Technologies | Evidence |
 |---|---|---|
-| **Systems & Overlays** | C#, .NET, C++, Windows Win32 APIs, Live Captions, Memory Optimization | [`LiveSubs`](https://github.com/Diva143V/LiveSubs), `HackMe Solver` |
-| **Biomedical & AI Engineering** | Python, Mixture of LLMs, ChromaDB, Ollama, RAG Pipelines, Reflex | [`Griffin`](https://github.com/Diva143V/Griffin), [`SyGriffin`](https://github.com/Diva143V/SyGriffin), [`vinu`](https://github.com/Diva143V/vinu) |
-| **Knowledge Graphs & Core** | Rust, Model Context Protocol (MCP), Think-on-Graph (ToG), Docker | [`Knox`](https://github.com/Diva143V/Knox), [`Kg-Library-API`](https://github.com/Diva143V/Kg-Library-API), [`Laya-KG`](https://github.com/Diva143V/Laya-KG) |
-| **Web & Interactive Interfaces** | TypeScript, React, HTML5/CSS3, Canvas Chroma-Key, WebSockets | [`chatstream`](https://github.com/Diva143V/chatstream), [`myselfdiva`](https://github.com/Diva143V/myselfdiva) |
-| **Cloud & DevOps** | Google Cloud Platform (Compute), Git, GitHub Actions CI/CD, Linux | [JPMorgan Chase Simulation](https://github.com/Diva143V/forage-midas), Google Cloud Compute |
+| **Systems & real-time** | C#, .NET, C++, Windows APIs, Live Captions | [LiveSubs](https://github.com/Diva143V/LiveSubs), HackMe solver |
+| **Biomedical AI** | Python, ChromaDB, Ollama, RAG, Mixture-of-LLMs, Reflex | [Griffin](https://github.com/Diva143V/Griffin), [SyGriffin](https://github.com/Diva143V/SyGriffin) |
+| **Knowledge graphs & security** | Rust, MCP, Think-on-Graph, Docker | [Knox](https://github.com/Diva143V/Knox), [Kg-Library-API](https://github.com/Diva143V/Kg-Library-API), [Laya-KG](https://github.com/Diva143V/Laya-KG) |
+| **Web & cloud** | TypeScript, React, Node.js, Canvas, Google Cloud, GitHub CI | [chatstream](https://github.com/Diva143V/chatstream), [myselfdiva](https://github.com/Diva143V/myselfdiva) |
 
 </details>
 
 ---
 
-## 🚀 Featured Flagship Projects
+## Projects
 
-### 01. LiveSubs — Real-Time Subtitle & Translation Windows Overlay
-<div align="center">
-  <a href="https://github.com/Diva143V/LiveSubs">
-    <img src="assets/projects/livesubs.svg" alt="LiveSubs Project Card" width="100%">
-  </a>
-</div>
+### LiveSubs
 
-- **Core Architecture**: Native Windows desktop application listening directly to Windows Live Captions audio stream.
-- **Features**: Translates captured text via modular LLM and classical translation APIs, rendering clean, customizable, always-on-top subtitles over conference calls, video streams, and presentations.
-- **Repository**: [`github.com/Diva143V/LiveSubs`](https://github.com/Diva143V/LiveSubs) · **Downloads**: [Releases Available](https://github.com/Diva143V/LiveSubs/releases)
+<a href="https://github.com/Diva143V/LiveSubs">
+<img src="assets/projects/livesubs.svg" alt="LiveSubs" width="100%">
+</a>
+
+Real-time subtitle and translation overlay for Windows. Hooks into Live Captions, translates through LLM or traditional APIs, renders always-on-top subtitles over any app — calls, streams, lectures. Ships with [downloadable releases](https://github.com/Diva143V/LiveSubs/releases).
 
 ---
 
-### 02. Griffin Bio — Scientific Evidence Synthesis & Contradiction Workbench
-<div align="center">
-  <a href="https://github.com/Diva143V/Griffin">
-    <img src="assets/projects/griffin.svg" alt="Griffin Bio Project Card" width="100%">
-  </a>
-</div>
+### Griffin Bio
 
-- **Core Architecture**: Life-sciences research companion turning unstructured biological queries into reproducible research workflows.
-- **Pipeline**: Ingests from 10 modular collectors (PubMed, Europe PMC, Semantic Scholar, OpenAlex, ClinicalTrials, bioRxiv, ChEMBL, UniProt, PubChem, dbSNP), embeds abstracts in ChromaDB, and executes Mixture-of-LLMs claim extraction to rank evidence and flag scientific contradictions.
-- **Repository**: [`github.com/Diva143V/Griffin`](https://github.com/Diva143V/Griffin)
+<a href="https://github.com/Diva143V/Griffin">
+<img src="assets/projects/griffin.svg" alt="Griffin Bio" width="100%">
+</a>
+
+Scientific evidence synthesis workbench. Collects from 10 biomedical sources (PubMed, Europe PMC, ChEMBL, UniProt, OpenAlex, and more), deduplicates, embeds in ChromaDB, then runs a Mixture-of-LLMs pipeline to extract claims, rank evidence, and flag contradictions. Live dashboard via Reflex.
 
 ---
 
-### 03. Knox — High-Assurance Rust MCP Memory & Security Vault
-<div align="center">
-  <a href="https://github.com/Diva143V/Knox">
-    <img src="assets/projects/knox.svg" alt="Knox Project Card" width="100%">
-  </a>
-</div>
+### Knox
 
-- **Core Architecture**: Cryptographically hardened Model Context Protocol (MCP) server written in Rust for context isolation and agent memory management.
-- **Features**: Verified session boundaries, secure persistence, automated multi-platform CI/CD and release workflow for Crates.io distribution.
-- **Repository**: [`github.com/Diva143V/Knox`](https://github.com/Diva143V/Knox)
+<a href="https://github.com/Diva143V/Knox">
+<img src="assets/projects/knox.svg" alt="Knox" width="100%">
+</a>
+
+Rust-based Model Context Protocol (MCP) memory server for AI agents. Provides session isolation, cryptographic boundaries, and secure persistence. Published to Crates.io with automated CI/CD releases.
 
 ---
 
-### 04. Polaris (Kg-Library-API) — Hybrid Think-on-Graph (ToG) Worker
-<div align="center">
-  <a href="https://github.com/Diva143V/Kg-Library-API">
-    <img src="assets/projects/polaris.svg" alt="Polaris Project Card" width="100%">
-  </a>
-</div>
+### SyGriffin
 
-- **Core Architecture**: Modular, high-performance, storage-agnostic Knowledge Graph API and annotation store.
-- **Features**: Enforces strict "Core + Packs" architecture, keeping base facts separated from domain extensions while powering hybrid Think-on-Graph reasoning workers.
-- **Repository**: [`github.com/Diva143V/Kg-Library-API`](https://github.com/Diva143V/Kg-Library-API)
+<a href="https://github.com/Diva143V/SyGriffin">
+<img src="assets/projects/sygriffin.svg" alt="SyGriffin" width="100%">
+</a>
+
+CLI-first AI bioinformatics platform for neoantigen discovery. Takes tumor VCF files, predicts vaccine-relevant peptide candidates, ranks them with transparent scoring, and generates reproducible LaTeX research reports. For research use only — not a diagnostic tool.
 
 ---
 
-### 05. ChatStream — Discord-Grade Real-Time Collaboration Engine
-<div align="center">
-  <a href="https://github.com/Diva143V/chatstream">
-    <img src="assets/projects/chatstream.svg" alt="ChatStream Project Card" width="100%">
-  </a>
-</div>
+## Experience
 
-- **Core Architecture**: Full-stack real-time collaboration application built with TypeScript, React, and WebSockets.
-- **Features**: Multi-channel workspaces, instant state synchronisation, resilient message queuing, and comprehensive architectural documentation.
-- **Repository**: [`github.com/Diva143V/chatstream`](https://github.com/Diva143V/chatstream)
+**AI Developer Intern** — Aegion Dynamic Solutions `Jul 2026 — Present`
+Building AI-powered features and LLM integrations that ship into production.
 
----
+**Front-End Developer Intern** — Aegion Dynamic Solutions `Aug — Oct 2025`
+Rebuilt React interfaces, cut unnecessary re-renders, tightened API integration.
 
-## 🏆 Experience & Podium
+**Community Moderator** — Mecha Break / Amazing Seasun Games `Mar 2024 — Jul 2025`
+Managed 185,000+ members. Compiled player feedback into actionable developer reports.
 
-### Professional Roles
-- **AI Developer Intern** — *Aegion Dynamic Solutions* `[Jul 2026 — Present]`
-  - Building AI-powered applications, intelligent automation, and production LLM integrations.
-- **Front-End Developer Intern** — *Aegion Dynamic Solutions* `[Aug — Oct 2025]`
-  - Reworked React interfaces, eliminated redundant re-renders, and tightened API handoff performance.
-- **Community Moderator** — *Mecha Break (Amazing Seasun Games)* `[Mar 2024 — Jul 2025]`
-  - Managed an active gaming community of 185,000+ members, compiling player issue digests for game developers.
-
-### Verified Credentials & Competitions
-- 🥇 **1st Place Winner** — *HackMe Problem Statement Solver (2024)* (Custom C++ data structures & search optimization)
-- 📜 **Software Engineering Simulation** — *JPMorgan Chase & Co.* `[Jan 2026]`
-- 📜 **Google Cloud Compute Fundamentals** — *Google* `[Oct 2025]`
-- 📜 **C & C++ Programming Certification** — *HackerRank*
+### Credentials
+- 🥇 **1st Place** — HackMe Problem Statement Solver (2024)
+- JPMorgan Chase & Co. Software Engineering Simulation
+- Google Cloud Compute Fundamentals
+- HackerRank C & C++ Certification
 
 ---
 
-## 📡 Cosmic Connect
+## Connect
 
 <div align="center">
-  <a href="mailto:diwa.p2007@gmail.com">
-    <img src="assets/footer.svg" alt="Cosmic Transmission Footer" width="100%">
-  </a>
-  <br><br>
-  <p align="center">
-    <a href="https://myselfdiva.netlify.app/"><img src="https://img.shields.io/badge/PORTFOLIO-myselfdiva.netlify.app-0B1024?style=for-the-badge&logo=netlify&logoColor=22D3EE&labelColor=050510" alt="Portfolio"></a>
-    <a href="https://linkedin.com/in/diwakar-venkat-peddada-66aa30229/"><img src="https://img.shields.io/badge/LINKEDIN-Diwakar%20Venkat%20Peddada-0B1024?style=for-the-badge&logo=linkedin&logoColor=3B82F6&labelColor=050510" alt="LinkedIn"></a>
-    <a href="https://x.com/Diva_2007_"><img src="https://img.shields.io/badge/X-@Diva__2007__-0B1024?style=for-the-badge&logo=x&logoColor=F8FAFC&labelColor=050510" alt="Twitter"></a>
-    <a href="mailto:diwa.p2007@gmail.com"><img src="https://img.shields.io/badge/EMAIL-diwa.p2007@gmail.com-0B1024?style=for-the-badge&logo=gmail&logoColor=EC4899&labelColor=050510" alt="Email"></a>
-  </p>
-  <br>
-  <sub>Architected with NEBULA / 01 Design System · Verified Audit by Diva143V</sub>
+<a href="mailto:diwa.p2007@gmail.com">
+<img src="assets/footer.svg" alt="Contact" width="100%">
+</a>
+<br><br>
+<a href="https://myselfdiva.netlify.app/">Portfolio</a> · <a href="https://linkedin.com/in/diwakar-venkat-peddada-66aa30229/">LinkedIn</a> · <a href="https://x.com/Diva_2007_">X</a> · <a href="mailto:diwa.p2007@gmail.com">diwa.p2007@gmail.com</a>
 </div>
