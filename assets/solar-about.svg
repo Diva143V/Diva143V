@@ -66,15 +66,15 @@
           transform: translateX(0) scaleX(0.35);
           opacity: 0;
         }
-        8% {
+        10% {
           opacity: 1;
-          transform: translateX(60px) scaleX(1);
+          transform: translateX(70px) scaleX(1);
         }
-        60% {
-          opacity: 1;
+        65% {
+          opacity: 0.95;
         }
         100% {
-          transform: translateX(820px) scaleX(0.45);
+          transform: translateX(540px) scaleX(0.5);
           opacity: 0;
         }
       }
@@ -102,24 +102,24 @@
     <circle cx="28" cy="30" r="0.7" fill="#F4F7FC" opacity="0.35" class="twinkle-c"/>
     <circle cx="36" cy="184" r="0.8" fill="#F4F7FC" opacity="0.35" class="twinkle-a"/>
     </g>
-    <g transform="translate(80, -20) rotate(16)">
+    <g transform="translate(760, -25) rotate(126)">
       <g class="meteor m1">
-        <polygon points="-265,0 0,-5.4 0,5.4" fill="url(#meteorTailGold)" opacity=".38" />
-        <polygon points="-250,0 0,-3.2 0,3.2" fill="url(#meteorTailGold)" />
-        <polygon points="-150,0 0,-1.6 0,1.6" fill="url(#meteorTailCore)" opacity=".8" />
-        <circle cx="0" cy="0" r="7.0" fill="#FFB020" opacity=".35" />
-        <circle cx="0" cy="0" r="4.2" fill="#FFB020" opacity=".7" />
-        <circle cx="0" cy="0" r="2.7" fill="#FFFFFF" filter="url(#glow)" />
+        <polygon points="-136,0 0,-3.8 0,3.8" fill="url(#meteorTailGold)" opacity=".38" />
+        <polygon points="-130,0 0,-2.4 0,2.4" fill="url(#meteorTailGold)" />
+        <polygon points="-72,0 0,-1.2 0,1.2" fill="url(#meteorTailCore)" opacity=".85" />
+        <circle cx="0" cy="0" r="4.8" fill="#FFB020" opacity=".35" />
+        <circle cx="0" cy="0" r="3.0" fill="#FFB020" opacity=".7" />
+        <circle cx="0" cy="0" r="2.2" fill="#FFFFFF" filter="url(#glow)" />
       </g>
     </g>
-    <g transform="translate(340, -30) rotate(18)">
+    <g transform="translate(490, -30) rotate(124)">
       <g class="meteor m2">
-        <polygon points="-244,0 0,-4.8 0,4.8" fill="url(#meteorTailCyan)" opacity=".38" />
-        <polygon points="-230,0 0,-2.8 0,2.8" fill="url(#meteorTailCyan)" />
-        <polygon points="-138,0 0,-1.4 0,1.4" fill="url(#meteorTailCore)" opacity=".8" />
-        <circle cx="0" cy="0" r="6.2" fill="#38BDF8" opacity=".35" />
-        <circle cx="0" cy="0" r="3.6" fill="#38BDF8" opacity=".7" />
-        <circle cx="0" cy="0" r="2.4" fill="#FFFFFF" filter="url(#glow)" />
+        <polygon points="-136,0 0,-3.5 0,3.5" fill="url(#meteorTailCyan)" opacity=".38" />
+        <polygon points="-130,0 0,-2.2 0,2.2" fill="url(#meteorTailCyan)" />
+        <polygon points="-72,0 0,-1.1 0,1.1" fill="url(#meteorTailCore)" opacity=".85" />
+        <circle cx="0" cy="0" r="4.4" fill="#38BDF8" opacity=".35" />
+        <circle cx="0" cy="0" r="2.8" fill="#38BDF8" opacity=".7" />
+        <circle cx="0" cy="0" r="2.0" fill="#FFFFFF" filter="url(#glow)" />
       </g>
     </g>
 

@@ -253,15 +253,15 @@ def _meteor_css() -> str:
           transform: translateX(0) scaleX(0.35);
           opacity: 0;
         }
-        8% {
+        10% {
           opacity: 1;
-          transform: translateX(60px) scaleX(1);
+          transform: translateX(70px) scaleX(1);
         }
-        60% {
-          opacity: 1;
+        65% {
+          opacity: 0.95;
         }
         100% {
-          transform: translateX(820px) scaleX(0.45);
+          transform: translateX(540px) scaleX(0.5);
           opacity: 0;
         }
       }"""
@@ -273,18 +273,18 @@ def _meteor(
     angle: float,
     tail_id: str,
     meteor_cls: str,
-    length: int = 240,
-    width: float = 3.2,
+    length: int = 130,
+    width: float = 2.4,
     color: str = GOLD,
 ) -> str:
     return f"""    <g transform="translate({x}, {y}) rotate({angle})">
       <g class="meteor {meteor_cls}">
-        <polygon points="-{length * 1.06:.0f},0 0,-{width * 1.7:.1f} 0,{width * 1.7:.1f}" fill="url(#{tail_id})" opacity=".38" />
+        <polygon points="-{length * 1.05:.0f},0 0,-{width * 1.6:.1f} 0,{width * 1.6:.1f}" fill="url(#{tail_id})" opacity=".38" />
         <polygon points="-{length},0 0,-{width:.1f} 0,{width:.1f}" fill="url(#{tail_id})" />
-        <polygon points="-{length * 0.6:.0f},0 0,-{width * 0.5:.1f} 0,{width * 0.5:.1f}" fill="url(#meteorTailCore)" opacity=".8" />
-        <circle cx="0" cy="0" r="{width * 2.2:.1f}" fill="{color}" opacity=".35" />
-        <circle cx="0" cy="0" r="{width * 1.3:.1f}" fill="{color}" opacity=".7" />
-        <circle cx="0" cy="0" r="{width * 0.85:.1f}" fill="#FFFFFF" filter="url(#glow)" />
+        <polygon points="-{length * 0.55:.0f},0 0,-{width * 0.5:.1f} 0,{width * 0.5:.1f}" fill="url(#meteorTailCore)" opacity=".85" />
+        <circle cx="0" cy="0" r="{width * 2.0:.1f}" fill="{color}" opacity=".35" />
+        <circle cx="0" cy="0" r="{width * 1.25:.1f}" fill="{color}" opacity=".7" />
+        <circle cx="0" cy="0" r="{width * 0.9:.1f}" fill="#FFFFFF" filter="url(#glow)" />
       </g>
     </g>"""
 
@@ -529,9 +529,9 @@ def build_hero() -> str:
 {planets}
     </g>
 
-{_meteor(100, -20, 24, "meteorTailGold", "m1", length=260, width=3.4, color=GOLD)}
-{_meteor(340, -30, 26, "meteorTailCyan", "m2", length=250, width=3.2, color=CYAN)}
-{_meteor(20, 260, 20, "meteorTailGold", "m3", length=230, width=2.8, color=GOLD)}
+{_meteor(780, -30, 126, "meteorTailGold", "m1", length=130, width=2.4, color=GOLD)}
+{_meteor(530, -35, 124, "meteorTailCyan", "m2", length=130, width=2.2, color=CYAN)}
+{_meteor(860, 60, 128, "meteorTailGold", "m3", length=130, width=2.2, color=GOLD)}
   </g>
   <rect x=".5" y=".5" width="879" height="519" rx="15.5" stroke="{BORDER}"/>
 """
@@ -626,8 +626,8 @@ def build_about() -> str:
     <g>
 {about_stars}
     </g>
-{_meteor(80, -20, 16, "meteorTailGold", "m1", length=250, width=3.2, color=GOLD)}
-{_meteor(340, -30, 18, "meteorTailCyan", "m2", length=230, width=2.8, color=CYAN)}
+{_meteor(760, -25, 126, "meteorTailGold", "m1", length=130, width=2.4, color=GOLD)}
+{_meteor(490, -30, 124, "meteorTailCyan", "m2", length=130, width=2.2, color=CYAN)}
 
     <g transform="translate(88 105)">
       <circle r="64" fill="url(#aboutGlow)" class="breathe"/>
@@ -857,8 +857,8 @@ def build_stack() -> str:
     <g>
 {stack_stars}
     </g>
-{_meteor(100, -25, 17, "meteorTailCyan", "m1", length=250, width=3.2, color=CYAN)}
-{_meteor(380, -30, 19, "meteorTailGold", "m2", length=230, width=2.8, color=GOLD)}
+{_meteor(780, -25, 126, "meteorTailCyan", "m1", length=130, width=2.4, color=CYAN)}
+{_meteor(470, -30, 124, "meteorTailGold", "m2", length=130, width=2.2, color=GOLD)}
 
     <g transform="translate(28 29)">
       <circle cx="5" cy="5" r="4" fill="{GOLD}" class="pulse"/>
@@ -964,8 +964,8 @@ def build_log() -> str:
     <g>
 {log_stars}
     </g>
-{_meteor(50, -20, 12, "meteorTailGold", "m1", length=240, width=3.0, color=GOLD)}
-{_meteor(400, -25, 14, "meteorTailCyan", "m2", length=220, width=2.6, color=CYAN)}
+{_meteor(790, -20, 126, "meteorTailGold", "m1", length=130, width=2.4, color=GOLD)}
+{_meteor(510, -25, 124, "meteorTailCyan", "m2", length=130, width=2.2, color=CYAN)}
 
     <g transform="translate(28 29)">
       <circle cx="5" cy="5" r="4" fill="{GOLD}" class="beacon"/>
