@@ -31,11 +31,11 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Run NEBULA Generator
+      - name: Run Solar System Generator
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          python scripts/generate_profile.py
+          python scripts/generate_solar.py
 
       - name: Validate Profile Integrity & SVGs
         run: |
