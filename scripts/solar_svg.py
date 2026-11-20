@@ -355,8 +355,8 @@ def build_hero() -> str:
       .beacon-pulse {{ animation: beacon 2.4s ease-in-out infinite; }}
       .planet-halo {{ animation: haloPulse 4.2s ease-in-out infinite; }}
       .star-drift {{ animation: starDrift 18s ease-in-out infinite; }}
-      .comet {{ animation: comet 18s linear 2s infinite both; }}
-      .comet-2 {{ animation: comet2 26s linear 11s infinite both; }}
+      .comet {{ animation: comet 12s linear 1.2s infinite both; }}
+      .comet-2 {{ animation: comet2 16s linear 6.0s infinite both; }}
       .twinkle-a {{ animation: twinkle 3.8s ease-in-out infinite; }}
       .twinkle-b {{ animation: twinkle 5.2s ease-in-out 1.1s infinite; }}
       .twinkle-c {{ animation: twinkle 6.4s ease-in-out 2.2s infinite; }}
@@ -551,8 +551,8 @@ def build_about() -> str:
     </radialGradient>
     <linearGradient id="aboutCometTail" x1="0" y1="0" x2="1" y2="0">
       <stop offset="0%" stop-color="{GOLD}" stop-opacity="0"/>
-      <stop offset="65%" stop-color="{GOLD}" stop-opacity=".32"/>
-      <stop offset="100%" stop-color="{GOLD}" stop-opacity=".95"/>
+      <stop offset="55%" stop-color="{GOLD}" stop-opacity=".45"/>
+      <stop offset="100%" stop-color="{GOLD}" stop-opacity="1"/>
     </linearGradient>
     <clipPath id="aboutClip"><circle r="46"/></clipPath>
     <clipPath id="aboutBounds"><rect width="880" height="214" rx="14"/></clipPath>
@@ -568,18 +568,18 @@ def build_about() -> str:
       .pill-1 {{ animation: pillPulse 6s ease-in-out 1.5s infinite; }}
       .pill-2 {{ animation: pillPulse 6s ease-in-out 3.0s infinite; }}
       .pill-3 {{ animation: pillPulse 6s ease-in-out 4.5s infinite; }}
-      .comet-about {{ animation: cometAbout 16s linear 3s infinite both; }}
+      .comet-about {{ animation: cometAbout 8.5s linear 0.6s infinite both; }}
       @keyframes breathe {{ 0%, 100% {{ opacity: .62; }} 50% {{ opacity: .96; }} }}
       @keyframes spin {{ from {{ transform: rotate(0deg); }} to {{ transform: rotate(360deg); }} }}
       @keyframes beacon {{ 0%, 100% {{ opacity: .45; }} 50% {{ opacity: 1; }} }}
       @keyframes twinkle {{ 0%, 100% {{ opacity: .15; }} 50% {{ opacity: .85; }} }}
       @keyframes pillPulse {{ 0%, 100% {{ opacity: .86; }} 50% {{ opacity: 1; }} }}
       @keyframes cometAbout {{
-        0% {{ opacity: 0; transform: translate(-80px, 95px); }}
-        6% {{ opacity: .85; }}
-        34% {{ opacity: .80; }}
-        42% {{ opacity: 0; transform: translate(940px, 30px); }}
-        100% {{ opacity: 0; transform: translate(940px, 30px); }}
+        0% {{ opacity: 0; transform: translate(-90px, 95px); }}
+        5% {{ opacity: 1; }}
+        46% {{ opacity: .95; }}
+        54% {{ opacity: 0; transform: translate(950px, 25px); }}
+        100% {{ opacity: 0; transform: translate(950px, 25px); }}
       }}
       @media (prefers-reduced-motion: reduce) {{
         .breathe, .ring-spin, .sat-orbit, .beacon, .twinkle-a, .twinkle-b, .twinkle-c,
@@ -595,10 +595,12 @@ def build_about() -> str:
 {about_stars}
     </g>
     <g class="comet-about">
-      <g transform="rotate(-11.5)">
-        <line x1="-68" y1="0" x2="0" y2="0" stroke="url(#aboutCometTail)" stroke-width="1.8" stroke-linecap="round"/>
-        <circle r="4" fill="{GOLD}" opacity=".26"/>
-        <circle r="1.8" fill="{INK}"/>
+      <g transform="rotate(-12)">
+        <line x1="-88" y1="0" x2="0" y2="0" stroke="url(#aboutCometTail)" stroke-width="4.5" stroke-linecap="round" opacity=".35"/>
+        <line x1="-84" y1="0" x2="0" y2="0" stroke="url(#aboutCometTail)" stroke-width="2.2" stroke-linecap="round"/>
+        <circle r="7" fill="{GOLD}" opacity=".35"/>
+        <circle r="4" fill="{GOLD}" opacity=".7"/>
+        <circle r="2.2" fill="#FFFFFF"/>
       </g>
     </g>
 
@@ -799,8 +801,8 @@ def build_stack() -> str:
     body = f"""  <defs>
     <linearGradient id="stackCometTail" x1="0" y1="0" x2="1" y2="0">
       <stop offset="0%" stop-color="{CYAN}" stop-opacity="0"/>
-      <stop offset="65%" stop-color="{CYAN}" stop-opacity=".30"/>
-      <stop offset="100%" stop-color="{CYAN}" stop-opacity=".92"/>
+      <stop offset="55%" stop-color="{CYAN}" stop-opacity=".45"/>
+      <stop offset="100%" stop-color="{CYAN}" stop-opacity="1"/>
     </linearGradient>
     <clipPath id="stackBounds"><rect width="880" height="226" rx="14"/></clipPath>
     <style>
@@ -809,7 +811,7 @@ def build_stack() -> str:
       .twinkle-a {{ animation: twinkle 3.8s ease-in-out infinite; }}
       .twinkle-b {{ animation: twinkle 5.0s ease-in-out 1.1s infinite; }}
       .twinkle-c {{ animation: twinkle 6.2s ease-in-out 2.0s infinite; }}
-      .comet-stack {{ animation: cometStack 21s linear 8s infinite both; }}
+      .comet-stack {{ animation: cometStack 9.2s linear 1.8s infinite both; }}
 {chr(10).join(row_css)}
       @keyframes spin {{ from {{ transform: rotate(0deg); }} to {{ transform: rotate(360deg); }} }}
       @keyframes pulse {{ 0%, 100% {{ opacity: .45; }} 50% {{ opacity: 1; }} }}
@@ -823,11 +825,11 @@ def build_stack() -> str:
         100% {{ transform: translateX(30px); opacity: 0; }}
       }}
       @keyframes cometStack {{
-        0% {{ opacity: 0; transform: translate(-80px, 35px); }}
-        6% {{ opacity: .82; }}
-        35% {{ opacity: .78; }}
-        43% {{ opacity: 0; transform: translate(940px, 195px); }}
-        100% {{ opacity: 0; transform: translate(940px, 195px); }}
+        0% {{ opacity: 0; transform: translate(-90px, 35px); }}
+        5% {{ opacity: 1; }}
+        46% {{ opacity: .95; }}
+        54% {{ opacity: 0; transform: translate(950px, 205px); }}
+        100% {{ opacity: 0; transform: translate(950px, 205px); }}
       }}
       @media (prefers-reduced-motion: reduce) {{
         {reduced_rows}, .comet-stack {{ animation: none !important; }}
@@ -842,10 +844,12 @@ def build_stack() -> str:
 {stack_stars}
     </g>
     <g class="comet-stack">
-      <g transform="rotate(13.2)">
-        <line x1="-65" y1="0" x2="0" y2="0" stroke="url(#stackCometTail)" stroke-width="1.6" stroke-linecap="round"/>
-        <circle r="3.6" fill="{CYAN}" opacity=".24"/>
-        <circle r="1.6" fill="{INK}"/>
+      <g transform="rotate(13.5)">
+        <line x1="-88" y1="0" x2="0" y2="0" stroke="url(#stackCometTail)" stroke-width="4.5" stroke-linecap="round" opacity=".35"/>
+        <line x1="-84" y1="0" x2="0" y2="0" stroke="url(#stackCometTail)" stroke-width="2.2" stroke-linecap="round"/>
+        <circle r="7" fill="{CYAN}" opacity=".35"/>
+        <circle r="4" fill="{CYAN}" opacity=".7"/>
+        <circle r="2.2" fill="#FFFFFF"/>
       </g>
     </g>
 
@@ -906,8 +910,8 @@ def build_log() -> str:
     </linearGradient>
     <linearGradient id="logCometTail" x1="0" y1="0" x2="1" y2="0">
       <stop offset="0%" stop-color="{GOLD}" stop-opacity="0"/>
-      <stop offset="65%" stop-color="{GOLD}" stop-opacity=".30"/>
-      <stop offset="100%" stop-color="{GOLD}" stop-opacity=".90"/>
+      <stop offset="55%" stop-color="{GOLD}" stop-opacity=".45"/>
+      <stop offset="100%" stop-color="{GOLD}" stop-opacity="1"/>
     </linearGradient>
     <clipPath id="logClip"><rect width="880" height="148" rx="14"/></clipPath>
     <style>
@@ -927,7 +931,7 @@ def build_log() -> str:
       .bar-1 {{ animation: barGlow 4.4s ease-in-out 1.1s infinite; }}
       .bar-2 {{ animation: barGlow 4.4s ease-in-out 2.2s infinite; }}
       .bar-3 {{ animation: barGlow 4.4s ease-in-out 3.3s infinite; }}
-      .comet-log {{ animation: cometLog 19s linear 13s infinite both; }}
+      .comet-log {{ animation: cometLog 7.8s linear 1.0s infinite both; }}
       @keyframes pulse {{ 0%, 100% {{ opacity: .45; }} 50% {{ opacity: 1; }} }}
       @keyframes twinkle {{ 0%, 100% {{ opacity: .15; }} 50% {{ opacity: .8; }} }}
       @keyframes scan {{
@@ -942,11 +946,11 @@ def build_log() -> str:
       }}
       @keyframes barGlow {{ 0%, 100% {{ opacity: .25; }} 50% {{ opacity: .82; }} }}
       @keyframes cometLog {{
-        0% {{ opacity: 0; transform: translate(-70px, 34px); }}
-        5% {{ opacity: .75; }}
-        30% {{ opacity: .70; }}
-        38% {{ opacity: 0; transform: translate(930px, 16px); }}
-        100% {{ opacity: 0; transform: translate(930px, 16px); }}
+        0% {{ opacity: 0; transform: translate(-80px, 38px); }}
+        5% {{ opacity: 1; }}
+        46% {{ opacity: .95; }}
+        54% {{ opacity: 0; transform: translate(940px, 18px); }}
+        100% {{ opacity: 0; transform: translate(940px, 18px); }}
       }}
       @media (prefers-reduced-motion: reduce) {{
         .beacon, .scan, .twinkle-a, .twinkle-b,
@@ -965,10 +969,12 @@ def build_log() -> str:
 {log_stars}
     </g>
     <g class="comet-log">
-      <g transform="rotate(-4.8)">
-        <line x1="-58" y1="0" x2="0" y2="0" stroke="url(#logCometTail)" stroke-width="1.4" stroke-linecap="round"/>
-        <circle r="3.2" fill="{GOLD}" opacity=".22"/>
-        <circle r="1.4" fill="{INK}"/>
+      <g transform="rotate(-6.5)">
+        <line x1="-80" y1="0" x2="0" y2="0" stroke="url(#logCometTail)" stroke-width="4" stroke-linecap="round" opacity=".35"/>
+        <line x1="-76" y1="0" x2="0" y2="0" stroke="url(#logCometTail)" stroke-width="2" stroke-linecap="round"/>
+        <circle r="6" fill="{GOLD}" opacity=".35"/>
+        <circle r="3.5" fill="{GOLD}" opacity=".7"/>
+        <circle r="2" fill="#FFFFFF"/>
       </g>
     </g>
 

@@ -14,8 +14,8 @@
     </radialGradient>
     <linearGradient id="aboutCometTail" x1="0" y1="0" x2="1" y2="0">
       <stop offset="0%" stop-color="#FFB020" stop-opacity="0"/>
-      <stop offset="65%" stop-color="#FFB020" stop-opacity=".32"/>
-      <stop offset="100%" stop-color="#FFB020" stop-opacity=".95"/>
+      <stop offset="55%" stop-color="#FFB020" stop-opacity=".45"/>
+      <stop offset="100%" stop-color="#FFB020" stop-opacity="1"/>
     </linearGradient>
     <clipPath id="aboutClip"><circle r="46"/></clipPath>
     <clipPath id="aboutBounds"><rect width="880" height="214" rx="14"/></clipPath>
@@ -31,18 +31,18 @@
       .pill-1 { animation: pillPulse 6s ease-in-out 1.5s infinite; }
       .pill-2 { animation: pillPulse 6s ease-in-out 3.0s infinite; }
       .pill-3 { animation: pillPulse 6s ease-in-out 4.5s infinite; }
-      .comet-about { animation: cometAbout 16s linear 3s infinite both; }
+      .comet-about { animation: cometAbout 8.5s linear 0.6s infinite both; }
       @keyframes breathe { 0%, 100% { opacity: .62; } 50% { opacity: .96; } }
       @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
       @keyframes beacon { 0%, 100% { opacity: .45; } 50% { opacity: 1; } }
       @keyframes twinkle { 0%, 100% { opacity: .15; } 50% { opacity: .85; } }
       @keyframes pillPulse { 0%, 100% { opacity: .86; } 50% { opacity: 1; } }
       @keyframes cometAbout {
-        0% { opacity: 0; transform: translate(-80px, 95px); }
-        6% { opacity: .85; }
-        34% { opacity: .80; }
-        42% { opacity: 0; transform: translate(940px, 30px); }
-        100% { opacity: 0; transform: translate(940px, 30px); }
+        0% { opacity: 0; transform: translate(-90px, 95px); }
+        5% { opacity: 1; }
+        46% { opacity: .95; }
+        54% { opacity: 0; transform: translate(950px, 25px); }
+        100% { opacity: 0; transform: translate(950px, 25px); }
       }
       @media (prefers-reduced-motion: reduce) {
         .breathe, .ring-spin, .sat-orbit, .beacon, .twinkle-a, .twinkle-b, .twinkle-c,
@@ -64,10 +64,12 @@
     <circle cx="36" cy="184" r="0.8" fill="#F4F7FC" opacity="0.35" class="twinkle-a"/>
     </g>
     <g class="comet-about">
-      <g transform="rotate(-11.5)">
-        <line x1="-68" y1="0" x2="0" y2="0" stroke="url(#aboutCometTail)" stroke-width="1.8" stroke-linecap="round"/>
-        <circle r="4" fill="#FFB020" opacity=".26"/>
-        <circle r="1.8" fill="#F4F7FC"/>
+      <g transform="rotate(-12)">
+        <line x1="-88" y1="0" x2="0" y2="0" stroke="url(#aboutCometTail)" stroke-width="4.5" stroke-linecap="round" opacity=".35"/>
+        <line x1="-84" y1="0" x2="0" y2="0" stroke="url(#aboutCometTail)" stroke-width="2.2" stroke-linecap="round"/>
+        <circle r="7" fill="#FFB020" opacity=".35"/>
+        <circle r="4" fill="#FFB020" opacity=".7"/>
+        <circle r="2.2" fill="#FFFFFF"/>
       </g>
     </g>
 

@@ -47,8 +47,8 @@
       .beacon-pulse { animation: beacon 2.4s ease-in-out infinite; }
       .planet-halo { animation: haloPulse 4.2s ease-in-out infinite; }
       .star-drift { animation: starDrift 18s ease-in-out infinite; }
-      .comet { animation: comet 18s linear 2s infinite both; }
-      .comet-2 { animation: comet2 26s linear 11s infinite both; }
+      .comet { animation: comet 12s linear 1.2s infinite both; }
+      .comet-2 { animation: comet2 16s linear 6.0s infinite both; }
       .twinkle-a { animation: twinkle 3.8s ease-in-out infinite; }
       .twinkle-b { animation: twinkle 5.2s ease-in-out 1.1s infinite; }
       .twinkle-c { animation: twinkle 6.4s ease-in-out 2.2s infinite; }
