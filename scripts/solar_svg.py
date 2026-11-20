@@ -308,14 +308,15 @@ def _hero_sun(avatar: str) -> str:
 
 
 def _asteroid_belt() -> str:
-    # Deterministic dual-layer counter-rotating asteroid belt between Rust (r=128) and TypeScript (r=162)
+    # Deterministic dual-layer counter-rotating asteroid belt between Rust and TypeScript
+    belt_r = (content.PLANETS[2].radius + content.PLANETS[3].radius) / 2.0
     cw_particles = []
     ccw_particles = []
 
     # Layer 1 (Clockwise, 16 particles)
     for i in range(16):
         angle = (i * 22.5 + (i * 7) % 11 - 5) * (math.pi / 180.0)
-        r_dist = 145.0 + ((i * 13) % 9 - 4) * 0.8
+        r_dist = belt_r + ((i * 13) % 9 - 4) * 0.8
         px = r_dist * math.cos(angle)
         py = r_dist * math.sin(angle)
         size = 0.7 + ((i * 5) % 4) * 0.22
@@ -328,7 +329,7 @@ def _asteroid_belt() -> str:
     # Layer 2 (Counter-Clockwise, 16 particles)
     for i in range(16):
         angle = (i * 22.5 + 11.25 + (i * 11) % 9 - 4) * (math.pi / 180.0)
-        r_dist = 145.0 + ((i * 17) % 11 - 5) * 0.7
+        r_dist = belt_r + ((i * 17) % 11 - 5) * 0.7
         px = r_dist * math.cos(angle)
         py = r_dist * math.sin(angle)
         size = 0.65 + ((i * 7) % 4) * 0.2
@@ -340,7 +341,8 @@ def _asteroid_belt() -> str:
 
     cw_block = "\n".join(cw_particles)
     ccw_block = "\n".join(ccw_particles)
-    return f"""    <circle r="145" fill="none" stroke="{TRACK}" stroke-opacity=".18" stroke-width=".6" stroke-dasharray="1.5 5"/>
+    r_val = int(belt_r) if belt_r.is_integer() else f"{belt_r:.1f}"
+    return f"""    <circle r="{r_val}" fill="none" stroke="{TRACK}" stroke-opacity=".18" stroke-width=".6" stroke-dasharray="1.5 5"/>
     <g class="belt-cw">
 {cw_block}
     </g>
@@ -372,7 +374,7 @@ def _orbiting_planet(index: int, p: content.Planet) -> str:
         )
 
     rings = ""
-    if p.name == "Rust":
+    if p.rings:
         ring_rx = body + 9.5
         ring_ry = (body + 9.5) * 0.36
         rings = (
@@ -598,7 +600,7 @@ def build_hero() -> str:
     </g>
     <line class="fade" x1="48" y1="394" x2="112" y2="394" stroke="{GOLD}" stroke-width="2"/>
     <g class="rise d3">
-      {text(48, 424, "AI developer / Visakhapatnam, India", size=11.5, fill=FAINT, family=MONO, spacing=.4)}
+      {text(48, 424, f"AI developer / {content.LOCATION}", size=11.5, fill=FAINT, family=MONO, spacing=.4)}
     </g>
 
     <g class="fade" transform="translate(662 258)">
@@ -728,7 +730,7 @@ def build_about() -> str:
       <circle cx="172" cy="38" r="3" fill="{GOLD}" class="beacon"/>
       {text(182, 42, "THE SUN // ABOUT", size=10, fill=GOLD, family=MONO, weight=700, spacing=1.4)}
       {text(170, 84, content.NAME, size=28, weight=800, spacing=-.4)}
-      {text(170, 108, "Software engineer / AI developer / CS '28 Andhra University", size=12, fill=MUTED, family=MONO)}
+      {text(170, 108, content.ABOUT_ROLE, size=12, fill=MUTED, family=MONO)}
       {text(170, 134, content.ABOUT_QUOTE[0], size=12.5, fill=MUTED)}
       {text(170, 152, content.ABOUT_QUOTE[1], size=12.5, fill=MUTED)}
     </g>
@@ -991,6 +993,10 @@ def build_log() -> str:
             (848, 20, 0.7, "a"),
         )
     )
+    stat_boxes = "\n".join(
+        _stat_box(28 + i * 210, s.label, s.value, s.detail, s.color, i)
+        for i, s in enumerate(content.STATS)
+    )
     body = f"""  <defs>
     <linearGradient id="scanGrad" x1="0" y1="0" x2="1" y2="0">
       <stop offset="0%" stop-color="{GOLD}" stop-opacity="0"/>
@@ -1057,10 +1063,7 @@ def build_log() -> str:
     <line x1="28" y1="42" x2="852" y2="42" stroke="{BORDER}"/>
     <rect x="0" y="41" width="140" height="2" fill="url(#scanGrad)" class="scan"/>
 
-{_stat_box(28, "CURRENT ORBIT", "AI INTERN", "Aegion Dynamic", "#38BDF8", 0)}
-{_stat_box(238, "COMMUNITY", "185K+", "Mecha Break", "#818CF8", 1)}
-{_stat_box(448, "PODIUM", "1ST PLACE", "HackMe 2024", "#FFB020", 2)}
-{_stat_box(658, "BASED IN", "Visakhapatnam", "India / UTC+05:30", "#E28743", 3)}
+{stat_boxes}
   </g>
   <rect x=".5" y=".5" width="879" height="147" rx="13.5" stroke="{BORDER}"/>
 """

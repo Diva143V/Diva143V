@@ -33,6 +33,7 @@ ABOUT_QUOTE = (
     "I build software that has to keep up: captions while someone is speaking,",
     "evidence while papers disagree, memory while an agent works.",
 )
+ABOUT_ROLE = "Software engineer / AI developer / CS '28 Andhra University"
 FACTS = (
     ("AI intern @ Aegion", "#38BDF8"),
     ("185K community", "#818CF8"),
@@ -76,6 +77,15 @@ class Planet:
     angle: int
     radius: int
     moons: int = 0
+    rings: bool = False
+
+
+@dataclass(frozen=True)
+class StatBox:
+    label: str
+    value: str
+    detail: str
+    color: str
 
 
 @dataclass(frozen=True)
@@ -193,6 +203,7 @@ PLANETS = (
         angle=154,
         radius=128,
         moons=1,
+        rings=True,
     ),
     Planet(
         name="TypeScript",
@@ -213,6 +224,13 @@ PLANETS = (
         angle=112,
         radius=196,
     ),
+)
+
+STATS = (
+    StatBox("CURRENT ORBIT", "AI INTERN", "Aegion Dynamic", "#38BDF8"),
+    StatBox("COMMUNITY", "185K+", "Mecha Break", "#818CF8"),
+    StatBox("PODIUM", "1ST PLACE", "HackMe 2024", "#FFB020"),
+    StatBox("BASED IN", "Visakhapatnam", "India / UTC+05:30", "#E28743"),
 )
 
 ROLES = (
