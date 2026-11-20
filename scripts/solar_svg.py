@@ -209,6 +209,86 @@ def _micro_stars(coords: tuple[tuple[int, int, float, str], ...]) -> str:
     )
 
 
+def _meteor_defs() -> str:
+    return f"""    <!-- Shooting star tail gradients (bright head, extra long tail) -->
+    <linearGradient id="meteorTailGold" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="{GOLD}" stop-opacity="0" />
+      <stop offset="25%" stop-color="{GOLD}" stop-opacity="0.30" />
+      <stop offset="65%" stop-color="#FFD166" stop-opacity="0.75" />
+      <stop offset="90%" stop-color="#FFF3D6" stop-opacity="0.95" />
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="1" />
+    </linearGradient>
+    <linearGradient id="meteorTailCyan" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="{CYAN}" stop-opacity="0" />
+      <stop offset="25%" stop-color="{CYAN}" stop-opacity="0.30" />
+      <stop offset="65%" stop-color="#7DD3FC" stop-opacity="0.75" />
+      <stop offset="90%" stop-color="#E0F2FE" stop-opacity="0.95" />
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="1" />
+    </linearGradient>
+    <linearGradient id="meteorTailCore" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0" />
+      <stop offset="60%" stop-color="#FFFFFF" stop-opacity="0.4" />
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="1" />
+    </linearGradient>
+    <filter id="glow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="2.5" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>"""
+
+
+def _meteor_css() -> str:
+    return """      .meteor {
+        opacity: 0;
+        animation: shoot 3.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
+      }
+      .m1 { animation-duration: 3.2s; animation-delay: 0.2s; }
+      .m2 { animation-duration: 4.0s; animation-delay: 1.4s; }
+      .m3 { animation-duration: 3.6s; animation-delay: 2.4s; }
+      .m4 { animation-duration: 4.4s; animation-delay: 0.8s; }
+      @keyframes shoot {
+        0% {
+          transform: translateX(0) scaleX(0.35);
+          opacity: 0;
+        }
+        8% {
+          opacity: 1;
+          transform: translateX(60px) scaleX(1);
+        }
+        60% {
+          opacity: 1;
+        }
+        100% {
+          transform: translateX(820px) scaleX(0.45);
+          opacity: 0;
+        }
+      }"""
+
+
+def _meteor(
+    x: int,
+    y: int,
+    angle: float,
+    tail_id: str,
+    meteor_cls: str,
+    length: int = 240,
+    width: float = 3.2,
+    color: str = GOLD,
+) -> str:
+    return f"""    <g transform="translate({x}, {y}) rotate({angle})">
+      <g class="meteor {meteor_cls}">
+        <polygon points="-{length * 1.06:.0f},0 0,-{width * 1.7:.1f} 0,{width * 1.7:.1f}" fill="url(#{tail_id})" opacity=".38" />
+        <polygon points="-{length},0 0,-{width:.1f} 0,{width:.1f}" fill="url(#{tail_id})" />
+        <polygon points="-{length * 0.6:.0f},0 0,-{width * 0.5:.1f} 0,{width * 0.5:.1f}" fill="url(#meteorTailCore)" opacity=".8" />
+        <circle cx="0" cy="0" r="{width * 2.2:.1f}" fill="{color}" opacity=".35" />
+        <circle cx="0" cy="0" r="{width * 1.3:.1f}" fill="{color}" opacity=".7" />
+        <circle cx="0" cy="0" r="{width * 0.85:.1f}" fill="#FFFFFF" filter="url(#glow)" />
+      </g>
+    </g>"""
+
+
 def _hero_sun(avatar: str) -> str:
     return f"""    <g>
       <circle r="88" fill="url(#sunGlow)" class="breathe"/>
@@ -297,8 +377,7 @@ def build_hero() -> str:
             ".beacon-pulse",
             ".planet-halo",
             ".star-drift",
-            ".comet",
-            ".comet-2",
+            ".meteor",
             ".twinkle-a",
             ".twinkle-b",
             ".twinkle-c",
@@ -330,16 +409,7 @@ def build_hero() -> str:
       <stop offset="42%" stop-color="#FFFFFF" stop-opacity="0"/>
       <stop offset="100%" stop-color="#000000" stop-opacity=".58"/>
     </radialGradient>
-    <linearGradient id="cometTail" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="{GOLD}" stop-opacity="0"/>
-      <stop offset="65%" stop-color="{GOLD}" stop-opacity=".35"/>
-      <stop offset="100%" stop-color="{GOLD}" stop-opacity=".95"/>
-    </linearGradient>
-    <linearGradient id="cometTailCyan" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="{CYAN}" stop-opacity="0"/>
-      <stop offset="65%" stop-color="{CYAN}" stop-opacity=".32"/>
-      <stop offset="100%" stop-color="{CYAN}" stop-opacity=".9"/>
-    </linearGradient>
+{_meteor_defs()}
     <clipPath id="sunClip"><circle r="44"/></clipPath>
     <clipPath id="heroBounds"><rect width="880" height="520" rx="16"/></clipPath>
     <style>
@@ -355,8 +425,7 @@ def build_hero() -> str:
       .beacon-pulse {{ animation: beacon 2.4s ease-in-out infinite; }}
       .planet-halo {{ animation: haloPulse 4.2s ease-in-out infinite; }}
       .star-drift {{ animation: starDrift 18s ease-in-out infinite; }}
-      .comet {{ animation: comet 12s linear 1.2s infinite both; }}
-      .comet-2 {{ animation: comet2 16s linear 6.0s infinite both; }}
+{_meteor_css()}
       .twinkle-a {{ animation: twinkle 3.8s ease-in-out infinite; }}
       .twinkle-b {{ animation: twinkle 5.2s ease-in-out 1.1s infinite; }}
       .twinkle-c {{ animation: twinkle 6.4s ease-in-out 2.2s infinite; }}
@@ -407,27 +476,12 @@ def build_hero() -> str:
         0%, 100% {{ opacity: .18; }}
         50% {{ opacity: .92; }}
       }}
-      @keyframes comet {{
-        0% {{ opacity: 0; transform: translate(-90px, 410px); }}
-        6% {{ opacity: .9; }}
-        36% {{ opacity: .85; }}
-        44% {{ opacity: 0; transform: translate(940px, 20px); }}
-        100% {{ opacity: 0; transform: translate(940px, 20px); }}
-      }}
-      @keyframes comet2 {{
-        0% {{ opacity: 0; transform: translate(-80px, 95px); }}
-        6% {{ opacity: .78; }}
-        32% {{ opacity: .72; }}
-        40% {{ opacity: 0; transform: translate(930px, 430px); }}
-        100% {{ opacity: 0; transform: translate(930px, 430px); }}
-      }}
       @media (prefers-reduced-motion: reduce) {{
         {reduced_selectors} {{
           animation: none !important;
         }}
         .rise, .fade {{ opacity: 1; transform: none; }}
-        .comet {{ display: none; }}
-        .comet-2 {{ display: none; }}
+        .meteor {{ display: none; }}
       }}
     </style>
   </defs>
@@ -475,20 +529,9 @@ def build_hero() -> str:
 {planets}
     </g>
 
-    <g class="comet">
-      <g transform="rotate(-20.7)">
-        <line x1="-76" y1="0" x2="0" y2="0" stroke="url(#cometTail)" stroke-width="2" stroke-linecap="round"/>
-        <circle r="4.5" fill="{GOLD}" opacity=".28"/>
-        <circle r="2.2" fill="{INK}"/>
-      </g>
-    </g>
-    <g class="comet-2">
-      <g transform="rotate(18.4)">
-        <line x1="-64" y1="0" x2="0" y2="0" stroke="url(#cometTailCyan)" stroke-width="1.6" stroke-linecap="round"/>
-        <circle r="3.8" fill="{CYAN}" opacity=".26"/>
-        <circle r="1.8" fill="{INK}"/>
-      </g>
-    </g>
+{_meteor(100, -20, 24, "meteorTailGold", "m1", length=260, width=3.4, color=GOLD)}
+{_meteor(340, -30, 26, "meteorTailCyan", "m2", length=250, width=3.2, color=CYAN)}
+{_meteor(20, 260, 20, "meteorTailGold", "m3", length=230, width=2.8, color=GOLD)}
   </g>
   <rect x=".5" y=".5" width="879" height="519" rx="15.5" stroke="{BORDER}"/>
 """
@@ -549,11 +592,7 @@ def build_about() -> str:
       <stop offset="55%" stop-color="#000000" stop-opacity="0"/>
       <stop offset="100%" stop-color="#000000" stop-opacity=".5"/>
     </radialGradient>
-    <linearGradient id="aboutCometTail" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="{GOLD}" stop-opacity="0"/>
-      <stop offset="55%" stop-color="{GOLD}" stop-opacity=".45"/>
-      <stop offset="100%" stop-color="{GOLD}" stop-opacity="1"/>
-    </linearGradient>
+{_meteor_defs()}
     <clipPath id="aboutClip"><circle r="46"/></clipPath>
     <clipPath id="aboutBounds"><rect width="880" height="214" rx="14"/></clipPath>
     <style>
@@ -568,23 +607,16 @@ def build_about() -> str:
       .pill-1 {{ animation: pillPulse 6s ease-in-out 1.5s infinite; }}
       .pill-2 {{ animation: pillPulse 6s ease-in-out 3.0s infinite; }}
       .pill-3 {{ animation: pillPulse 6s ease-in-out 4.5s infinite; }}
-      .comet-about {{ animation: cometAbout 8.5s linear 0.6s infinite both; }}
+{_meteor_css()}
       @keyframes breathe {{ 0%, 100% {{ opacity: .62; }} 50% {{ opacity: .96; }} }}
       @keyframes spin {{ from {{ transform: rotate(0deg); }} to {{ transform: rotate(360deg); }} }}
       @keyframes beacon {{ 0%, 100% {{ opacity: .45; }} 50% {{ opacity: 1; }} }}
       @keyframes twinkle {{ 0%, 100% {{ opacity: .15; }} 50% {{ opacity: .85; }} }}
       @keyframes pillPulse {{ 0%, 100% {{ opacity: .86; }} 50% {{ opacity: 1; }} }}
-      @keyframes cometAbout {{
-        0% {{ opacity: 0; transform: translate(-90px, 95px); }}
-        5% {{ opacity: 1; }}
-        46% {{ opacity: .95; }}
-        54% {{ opacity: 0; transform: translate(950px, 25px); }}
-        100% {{ opacity: 0; transform: translate(950px, 25px); }}
-      }}
       @media (prefers-reduced-motion: reduce) {{
         .breathe, .ring-spin, .sat-orbit, .beacon, .twinkle-a, .twinkle-b, .twinkle-c,
-        .pill-0, .pill-1, .pill-2, .pill-3, .comet-about {{ animation: none !important; }}
-        .comet-about {{ display: none; }}
+        .pill-0, .pill-1, .pill-2, .pill-3, .meteor {{ animation: none !important; }}
+        .meteor {{ display: none; }}
       }}
     </style>
   </defs>
@@ -594,15 +626,8 @@ def build_about() -> str:
     <g>
 {about_stars}
     </g>
-    <g class="comet-about">
-      <g transform="rotate(-12)">
-        <line x1="-88" y1="0" x2="0" y2="0" stroke="url(#aboutCometTail)" stroke-width="4.5" stroke-linecap="round" opacity=".35"/>
-        <line x1="-84" y1="0" x2="0" y2="0" stroke="url(#aboutCometTail)" stroke-width="2.2" stroke-linecap="round"/>
-        <circle r="7" fill="{GOLD}" opacity=".35"/>
-        <circle r="4" fill="{GOLD}" opacity=".7"/>
-        <circle r="2.2" fill="#FFFFFF"/>
-      </g>
-    </g>
+{_meteor(80, -20, 16, "meteorTailGold", "m1", length=250, width=3.2, color=GOLD)}
+{_meteor(340, -30, 18, "meteorTailCyan", "m2", length=230, width=2.8, color=CYAN)}
 
     <g transform="translate(88 105)">
       <circle r="64" fill="url(#aboutGlow)" class="breathe"/>
@@ -799,11 +824,7 @@ def build_stack() -> str:
         ]
     )
     body = f"""  <defs>
-    <linearGradient id="stackCometTail" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="{CYAN}" stop-opacity="0"/>
-      <stop offset="55%" stop-color="{CYAN}" stop-opacity=".45"/>
-      <stop offset="100%" stop-color="{CYAN}" stop-opacity="1"/>
-    </linearGradient>
+{_meteor_defs()}
     <clipPath id="stackBounds"><rect width="880" height="226" rx="14"/></clipPath>
     <style>
       .pulse {{ animation: pulse 3s ease-in-out infinite; }}
@@ -811,7 +832,7 @@ def build_stack() -> str:
       .twinkle-a {{ animation: twinkle 3.8s ease-in-out infinite; }}
       .twinkle-b {{ animation: twinkle 5.0s ease-in-out 1.1s infinite; }}
       .twinkle-c {{ animation: twinkle 6.2s ease-in-out 2.0s infinite; }}
-      .comet-stack {{ animation: cometStack 9.2s linear 1.8s infinite both; }}
+{_meteor_css()}
 {chr(10).join(row_css)}
       @keyframes spin {{ from {{ transform: rotate(0deg); }} to {{ transform: rotate(360deg); }} }}
       @keyframes pulse {{ 0%, 100% {{ opacity: .45; }} 50% {{ opacity: 1; }} }}
@@ -824,16 +845,9 @@ def build_stack() -> str:
         85% {{ opacity: 1; }}
         100% {{ transform: translateX(30px); opacity: 0; }}
       }}
-      @keyframes cometStack {{
-        0% {{ opacity: 0; transform: translate(-90px, 35px); }}
-        5% {{ opacity: 1; }}
-        46% {{ opacity: .95; }}
-        54% {{ opacity: 0; transform: translate(950px, 205px); }}
-        100% {{ opacity: 0; transform: translate(950px, 205px); }}
-      }}
       @media (prefers-reduced-motion: reduce) {{
-        {reduced_rows}, .comet-stack {{ animation: none !important; }}
-        .comet-stack {{ display: none; }}
+        {reduced_rows}, .meteor {{ animation: none !important; }}
+        .meteor {{ display: none; }}
       }}
     </style>
   </defs>
@@ -843,15 +857,8 @@ def build_stack() -> str:
     <g>
 {stack_stars}
     </g>
-    <g class="comet-stack">
-      <g transform="rotate(13.5)">
-        <line x1="-88" y1="0" x2="0" y2="0" stroke="url(#stackCometTail)" stroke-width="4.5" stroke-linecap="round" opacity=".35"/>
-        <line x1="-84" y1="0" x2="0" y2="0" stroke="url(#stackCometTail)" stroke-width="2.2" stroke-linecap="round"/>
-        <circle r="7" fill="{CYAN}" opacity=".35"/>
-        <circle r="4" fill="{CYAN}" opacity=".7"/>
-        <circle r="2.2" fill="#FFFFFF"/>
-      </g>
-    </g>
+{_meteor(100, -25, 17, "meteorTailCyan", "m1", length=250, width=3.2, color=CYAN)}
+{_meteor(380, -30, 19, "meteorTailGold", "m2", length=230, width=2.8, color=GOLD)}
 
     <g transform="translate(28 29)">
       <circle cx="5" cy="5" r="4" fill="{GOLD}" class="pulse"/>
@@ -908,11 +915,7 @@ def build_log() -> str:
       <stop offset="50%" stop-color="{GOLD}" stop-opacity=".85"/>
       <stop offset="100%" stop-color="{GOLD}" stop-opacity="0"/>
     </linearGradient>
-    <linearGradient id="logCometTail" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="{GOLD}" stop-opacity="0"/>
-      <stop offset="55%" stop-color="{GOLD}" stop-opacity=".45"/>
-      <stop offset="100%" stop-color="{GOLD}" stop-opacity="1"/>
-    </linearGradient>
+{_meteor_defs()}
     <clipPath id="logClip"><rect width="880" height="148" rx="14"/></clipPath>
     <style>
       .beacon {{ animation: pulse 2.4s ease-in-out infinite; }}
@@ -931,7 +934,7 @@ def build_log() -> str:
       .bar-1 {{ animation: barGlow 4.4s ease-in-out 1.1s infinite; }}
       .bar-2 {{ animation: barGlow 4.4s ease-in-out 2.2s infinite; }}
       .bar-3 {{ animation: barGlow 4.4s ease-in-out 3.3s infinite; }}
-      .comet-log {{ animation: cometLog 7.8s linear 1.0s infinite both; }}
+{_meteor_css()}
       @keyframes pulse {{ 0%, 100% {{ opacity: .45; }} 50% {{ opacity: 1; }} }}
       @keyframes twinkle {{ 0%, 100% {{ opacity: .15; }} 50% {{ opacity: .8; }} }}
       @keyframes scan {{
@@ -945,20 +948,13 @@ def build_log() -> str:
         100% {{ transform: scale(1.9); opacity: 0; }}
       }}
       @keyframes barGlow {{ 0%, 100% {{ opacity: .25; }} 50% {{ opacity: .82; }} }}
-      @keyframes cometLog {{
-        0% {{ opacity: 0; transform: translate(-80px, 38px); }}
-        5% {{ opacity: 1; }}
-        46% {{ opacity: .95; }}
-        54% {{ opacity: 0; transform: translate(940px, 18px); }}
-        100% {{ opacity: 0; transform: translate(940px, 18px); }}
-      }}
       @media (prefers-reduced-motion: reduce) {{
         .beacon, .scan, .twinkle-a, .twinkle-b,
         .dot-0, .dot-1, .dot-2, .dot-3,
         .ping-0, .ping-1, .ping-2, .ping-3,
-        .bar-0, .bar-1, .bar-2, .bar-3, .comet-log {{ animation: none !important; }}
+        .bar-0, .bar-1, .bar-2, .bar-3, .meteor {{ animation: none !important; }}
         .scan {{ display: none; }}
-        .comet-log {{ display: none; }}
+        .meteor {{ display: none; }}
       }}
     </style>
   </defs>
@@ -968,15 +964,8 @@ def build_log() -> str:
     <g>
 {log_stars}
     </g>
-    <g class="comet-log">
-      <g transform="rotate(-6.5)">
-        <line x1="-80" y1="0" x2="0" y2="0" stroke="url(#logCometTail)" stroke-width="4" stroke-linecap="round" opacity=".35"/>
-        <line x1="-76" y1="0" x2="0" y2="0" stroke="url(#logCometTail)" stroke-width="2" stroke-linecap="round"/>
-        <circle r="6" fill="{GOLD}" opacity=".35"/>
-        <circle r="3.5" fill="{GOLD}" opacity=".7"/>
-        <circle r="2" fill="#FFFFFF"/>
-      </g>
-    </g>
+{_meteor(50, -20, 12, "meteorTailGold", "m1", length=240, width=3.0, color=GOLD)}
+{_meteor(400, -25, 14, "meteorTailCyan", "m2", length=220, width=2.6, color=CYAN)}
 
     <g transform="translate(28 29)">
       <circle cx="5" cy="5" r="4" fill="{GOLD}" class="beacon"/>

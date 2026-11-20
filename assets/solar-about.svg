@@ -12,11 +12,33 @@
       <stop offset="55%" stop-color="#000000" stop-opacity="0"/>
       <stop offset="100%" stop-color="#000000" stop-opacity=".5"/>
     </radialGradient>
-    <linearGradient id="aboutCometTail" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#FFB020" stop-opacity="0"/>
-      <stop offset="55%" stop-color="#FFB020" stop-opacity=".45"/>
-      <stop offset="100%" stop-color="#FFB020" stop-opacity="1"/>
+    <!-- Shooting star tail gradients (bright head, extra long tail) -->
+    <linearGradient id="meteorTailGold" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FFB020" stop-opacity="0" />
+      <stop offset="25%" stop-color="#FFB020" stop-opacity="0.30" />
+      <stop offset="65%" stop-color="#FFD166" stop-opacity="0.75" />
+      <stop offset="90%" stop-color="#FFF3D6" stop-opacity="0.95" />
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="1" />
     </linearGradient>
+    <linearGradient id="meteorTailCyan" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0" />
+      <stop offset="25%" stop-color="#38BDF8" stop-opacity="0.30" />
+      <stop offset="65%" stop-color="#7DD3FC" stop-opacity="0.75" />
+      <stop offset="90%" stop-color="#E0F2FE" stop-opacity="0.95" />
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="1" />
+    </linearGradient>
+    <linearGradient id="meteorTailCore" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0" />
+      <stop offset="60%" stop-color="#FFFFFF" stop-opacity="0.4" />
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="1" />
+    </linearGradient>
+    <filter id="glow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="2.5" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
     <clipPath id="aboutClip"><circle r="46"/></clipPath>
     <clipPath id="aboutBounds"><rect width="880" height="214" rx="14"/></clipPath>
     <style>
@@ -31,23 +53,40 @@
       .pill-1 { animation: pillPulse 6s ease-in-out 1.5s infinite; }
       .pill-2 { animation: pillPulse 6s ease-in-out 3.0s infinite; }
       .pill-3 { animation: pillPulse 6s ease-in-out 4.5s infinite; }
-      .comet-about { animation: cometAbout 8.5s linear 0.6s infinite both; }
+      .meteor {
+        opacity: 0;
+        animation: shoot 3.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
+      }
+      .m1 { animation-duration: 3.2s; animation-delay: 0.2s; }
+      .m2 { animation-duration: 4.0s; animation-delay: 1.4s; }
+      .m3 { animation-duration: 3.6s; animation-delay: 2.4s; }
+      .m4 { animation-duration: 4.4s; animation-delay: 0.8s; }
+      @keyframes shoot {
+        0% {
+          transform: translateX(0) scaleX(0.35);
+          opacity: 0;
+        }
+        8% {
+          opacity: 1;
+          transform: translateX(60px) scaleX(1);
+        }
+        60% {
+          opacity: 1;
+        }
+        100% {
+          transform: translateX(820px) scaleX(0.45);
+          opacity: 0;
+        }
+      }
       @keyframes breathe { 0%, 100% { opacity: .62; } 50% { opacity: .96; } }
       @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
       @keyframes beacon { 0%, 100% { opacity: .45; } 50% { opacity: 1; } }
       @keyframes twinkle { 0%, 100% { opacity: .15; } 50% { opacity: .85; } }
       @keyframes pillPulse { 0%, 100% { opacity: .86; } 50% { opacity: 1; } }
-      @keyframes cometAbout {
-        0% { opacity: 0; transform: translate(-90px, 95px); }
-        5% { opacity: 1; }
-        46% { opacity: .95; }
-        54% { opacity: 0; transform: translate(950px, 25px); }
-        100% { opacity: 0; transform: translate(950px, 25px); }
-      }
       @media (prefers-reduced-motion: reduce) {
         .breathe, .ring-spin, .sat-orbit, .beacon, .twinkle-a, .twinkle-b, .twinkle-c,
-        .pill-0, .pill-1, .pill-2, .pill-3, .comet-about { animation: none !important; }
-        .comet-about { display: none; }
+        .pill-0, .pill-1, .pill-2, .pill-3, .meteor { animation: none !important; }
+        .meteor { display: none; }
       }
     </style>
   </defs>
@@ -63,13 +102,24 @@
     <circle cx="28" cy="30" r="0.7" fill="#F4F7FC" opacity="0.35" class="twinkle-c"/>
     <circle cx="36" cy="184" r="0.8" fill="#F4F7FC" opacity="0.35" class="twinkle-a"/>
     </g>
-    <g class="comet-about">
-      <g transform="rotate(-12)">
-        <line x1="-88" y1="0" x2="0" y2="0" stroke="url(#aboutCometTail)" stroke-width="4.5" stroke-linecap="round" opacity=".35"/>
-        <line x1="-84" y1="0" x2="0" y2="0" stroke="url(#aboutCometTail)" stroke-width="2.2" stroke-linecap="round"/>
-        <circle r="7" fill="#FFB020" opacity=".35"/>
-        <circle r="4" fill="#FFB020" opacity=".7"/>
-        <circle r="2.2" fill="#FFFFFF"/>
+    <g transform="translate(80, -20) rotate(16)">
+      <g class="meteor m1">
+        <polygon points="-265,0 0,-5.4 0,5.4" fill="url(#meteorTailGold)" opacity=".38" />
+        <polygon points="-250,0 0,-3.2 0,3.2" fill="url(#meteorTailGold)" />
+        <polygon points="-150,0 0,-1.6 0,1.6" fill="url(#meteorTailCore)" opacity=".8" />
+        <circle cx="0" cy="0" r="7.0" fill="#FFB020" opacity=".35" />
+        <circle cx="0" cy="0" r="4.2" fill="#FFB020" opacity=".7" />
+        <circle cx="0" cy="0" r="2.7" fill="#FFFFFF" filter="url(#glow)" />
+      </g>
+    </g>
+    <g transform="translate(340, -30) rotate(18)">
+      <g class="meteor m2">
+        <polygon points="-244,0 0,-4.8 0,4.8" fill="url(#meteorTailCyan)" opacity=".38" />
+        <polygon points="-230,0 0,-2.8 0,2.8" fill="url(#meteorTailCyan)" />
+        <polygon points="-138,0 0,-1.4 0,1.4" fill="url(#meteorTailCore)" opacity=".8" />
+        <circle cx="0" cy="0" r="6.2" fill="#38BDF8" opacity=".35" />
+        <circle cx="0" cy="0" r="3.6" fill="#38BDF8" opacity=".7" />
+        <circle cx="0" cy="0" r="2.4" fill="#FFFFFF" filter="url(#glow)" />
       </g>
     </g>
 
