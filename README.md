@@ -54,7 +54,7 @@ Smaller things: [Polaris](https://github.com/Diva143V/Kg-Library-API) (a Think-o
 ## The planets
 
 <div align="center">
-  <img src="assets/solar-stack.svg" alt="Five languages as orbits: Python, C#/.NET, Rust, TypeScript and C++" width="100%">
+  <img src="assets/solar-stack.svg" alt="Five languages as orbits: Python, C# / .NET, Rust, TypeScript and C++" width="100%">
 </div>
 
 | Orbit | Language | Work | Evidence |

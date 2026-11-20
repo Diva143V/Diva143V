@@ -4,6 +4,7 @@
 Usage:
     python scripts/generate_solar.py          # write README.md and assets
     python scripts/generate_solar.py --check  # fail when a generated file is stale
+    python scripts/generate_solar.py --diff   # show unified diffs when checking
 
 The build is deterministic. No GitHub API, no dates, no random values.
 """
@@ -11,39 +12,72 @@ The build is deterministic. No GitHub API, no dates, no random values.
 from __future__ import annotations
 
 import argparse
+import difflib
 import html
+import re
 import sys
 import xml.etree.ElementTree as ET
 from pathlib import Path
 
 import content
-from solar_svg import build_about, build_card, build_footer, build_hero, build_log, build_stack
+from solar_svg import (
+    ASSETS,
+    ROOT,
+    build_about,
+    build_card,
+    build_footer,
+    build_hero,
+    build_log,
+    build_stack,
+)
 
-ROOT = Path(__file__).resolve().parent.parent
 README_PATH = ROOT / "README.md"
-ASSETS = ROOT / "assets"
+CARDS_DIR = ASSETS / "solar-cards"
+
+
+_NUMBER_WORDS = ("Zero", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine")
+
+
+def _count_word(count: int) -> str:
+    return _NUMBER_WORDS[count] if 0 <= count < len(_NUMBER_WORDS) else str(count)
+
+
+def _slug(name: str) -> str:
+    return re.sub(r"[^a-z0-9]+", "-", name.lower()).strip("-")
+
+
+def _card_relpath(project: content.Project) -> str:
+    return f"assets/solar-cards/card-{_slug(project.name)}.svg"
+
+
+def _escape_md_cell(value: str) -> str:
+    return value.replace("|", "\\|").replace("\n", " ")
 
 
 def _projects_table() -> str:
     rows = []
     for index in range(0, len(content.PROJECTS), 2):
+        chunk = content.PROJECTS[index : index + 2]
         cells = []
-        for project in content.PROJECTS[index : index + 2]:
+        for project in chunk:
             cells.append(
                 '    <td width="50%" valign="top">\n'
                 f'      <a href="{html.escape(project.url, quote=True)}">\n'
-                f'        <img src="assets/solar-cards/card-{project.name.lower()}.svg" '
+                f'        <img src="{_card_relpath(project)}" '
                 f'alt="{html.escape(project.alt, quote=True)}" width="100%">\n'
                 "      </a>\n"
                 "    </td>"
             )
+        if len(chunk) == 1:
+            cells.append('    <td width="50%" valign="top"></td>')
         rows.append("  <tr>\n" + "\n".join(cells) + "\n  </tr>")
     return '<table border="0" width="100%">\n' + "\n".join(rows) + "\n</table>"
 
 
 def _planets_table() -> str:
     rows = [
-        f"| {planet.orbit} | **{planet.name}** | {planet.domain} | {planet.evidence} |"
+        f"| {_escape_md_cell(planet.orbit)} | **{_escape_md_cell(planet.name)}** "
+        f"| {_escape_md_cell(planet.domain)} | {_escape_md_cell(planet.evidence)} |"
         for planet in content.PLANETS
     ]
     return "\n".join(
@@ -66,7 +100,17 @@ def _links() -> str:
     return " · ".join(f"[{label}]({url})" for label, url in content.LINKS)
 
 
+def _stack_alt() -> str:
+    names = [planet.name for planet in content.PLANETS]
+    if len(names) > 1:
+        listed = ", ".join(names[:-1]) + f" and {names[-1]}"
+    else:
+        listed = "".join(names)
+    return f"{_count_word(len(names))} languages as orbits: {listed}"
+
+
 def build_readme() -> str:
+    email_attr = html.escape(content.EMAIL, quote=True)
     hero = (
         '<div align="center">\n'
         '  <img src="assets/solar-orbits.svg" '
@@ -84,7 +128,7 @@ def build_readme() -> str:
     stack = (
         '<div align="center">\n'
         '  <img src="assets/solar-stack.svg" '
-        'alt="Five languages as orbits: Python, C#/.NET, Rust, TypeScript and C++" width="100%">\n'
+        f'alt="{html.escape(_stack_alt(), quote=True)}" width="100%">\n'
         "</div>"
     )
     log = (
@@ -95,9 +139,9 @@ def build_readme() -> str:
     )
     footer = (
         '<div align="center">\n'
-        f'  <a href="mailto:{content.EMAIL}">\n'
+        f'  <a href="mailto:{email_attr}">\n'
         '    <img src="assets/solar-footer.svg" '
-        f'alt="Email {content.EMAIL}" width="100%">\n'
+        f'alt="Email {email_attr}" width="100%">\n'
         "  </a>\n"
         "</div>"
     )
@@ -109,7 +153,7 @@ def build_readme() -> str:
         content.SOLAR_NOTE,
         about,
         "## The moons",
-        "Four projects I keep coming back to.",
+        f"{_count_word(len(content.PROJECTS))} projects I keep coming back to.",
         _projects_table(),
         content.SMALLER,
         "## The planets",
@@ -136,22 +180,52 @@ def _assets() -> dict[Path, str]:
         ASSETS / "solar-footer.svg": build_footer(),
     }
     for project in content.PROJECTS:
-        files[ASSETS / "solar-cards" / f"card-{project.name.lower()}.svg"] = build_card(project)
+        files[ROOT / _card_relpath(project)] = build_card(project)
     return files
 
 
-def _compare_or_write(path: Path, value: str, check: bool) -> bool:
-    current = path.read_text(encoding="utf-8") if path.exists() else None
-    if current == value:
-        print(f"[solar] current  {path.relative_to(ROOT)}")
+def _compare_or_write(path: Path, value: str, *, check: bool, show_diff: bool) -> bool:
+    expected_bytes = value.encode("utf-8")
+    current_bytes = path.read_bytes() if path.exists() else None
+    rel = path.relative_to(ROOT)
+    if current_bytes == expected_bytes:
+        print(f"[solar] current  {rel}")
         return True
     if check:
-        print(f"[solar] stale    {path.relative_to(ROOT)}")
+        print(f"[solar] stale    {rel}")
+        if show_diff and current_bytes is not None:
+            current_lines = current_bytes.decode("utf-8", errors="replace").splitlines(keepends=True)
+            expected_lines = value.splitlines(keepends=True)
+            diff = difflib.unified_diff(
+                current_lines,
+                expected_lines,
+                fromfile=f"a/{rel}",
+                tofile=f"b/{rel}",
+                n=2,
+            )
+            sys.stdout.writelines(diff)
         return False
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(value, encoding="utf-8", newline="\n")
-    print(f"[solar] wrote    {path.relative_to(ROOT)}")
+    path.write_bytes(expected_bytes)
+    print(f"[solar] wrote    {rel}")
     return True
+
+
+def _reconcile_orphans(expected_paths: set[Path], *, check: bool) -> bool:
+    if not CARDS_DIR.is_dir():
+        return True
+    clean = True
+    for existing in sorted(CARDS_DIR.glob("card-*.svg")):
+        if existing in expected_paths:
+            continue
+        rel = existing.relative_to(ROOT)
+        if check:
+            print(f"[solar] orphan   {rel}")
+            clean = False
+        else:
+            existing.unlink()
+            print(f"[solar] removed  {rel}")
+    return clean
 
 
 def main() -> int:
@@ -161,20 +235,33 @@ def main() -> int:
         action="store_true",
         help="do not write; exit non-zero if generated files are stale",
     )
+    parser.add_argument(
+        "--diff",
+        action="store_true",
+        help="print unified diffs for stale files (implies --check)",
+    )
     args = parser.parse_args()
+    check = args.check or args.diff
 
     generated = {README_PATH: build_readme(), **_assets()}
     for path, value in generated.items():
         if path.suffix != ".svg":
             continue
         try:
-            ET.fromstring(value)
+            root = ET.fromstring(value)
         except ET.ParseError as exc:
             print(f"[solar] invalid SVG generated in {path.name}: {exc}", file=sys.stderr)
             return 1
+        if not root.tag.endswith("svg"):
+            print(f"[solar] root element is not <svg> in {path.name}", file=sys.stderr)
+            return 1
 
-    fresh = [_compare_or_write(path, value, args.check) for path, value in generated.items()]
-    if not all(fresh):
+    fresh = [
+        _compare_or_write(path, value, check=check, show_diff=args.diff)
+        for path, value in generated.items()
+    ]
+    orphans_ok = _reconcile_orphans(set(generated), check=check)
+    if not (all(fresh) and orphans_ok):
         print(
             "[solar] Generated files are out of date. "
             "Run `python scripts/generate_solar.py` and commit the result.",

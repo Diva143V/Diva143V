@@ -1,58 +1,144 @@
 <svg width="880" height="226" viewBox="0 0 880 226" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
   <title id="title">Languages and orbits</title>
   <desc id="desc">Five languages, the kind of work each one supports, and the projects that use them.</desc>
+  <defs>
+    <style>
+      .pulse { animation: pulse 3s ease-in-out infinite; }
+      .halo { animation: haloSoft 3.4s ease-in-out infinite; }
+      .twinkle-a { animation: twinkle 3.8s ease-in-out infinite; }
+      .twinkle-b { animation: twinkle 5.0s ease-in-out 1.1s infinite; }
+      .twinkle-c { animation: twinkle 6.2s ease-in-out 2.0s infinite; }
+      .mini-orbit-0 { transform-origin: 0px 0px; animation: spin 6.0s linear infinite; }
+      .sig-dot-0 { animation: slidePulse 2.60s ease-in-out 0.00s infinite; }
+      .conduit-0 { animation: dashCrawl 3.5s linear infinite; }
+      .mini-orbit-1 { transform-origin: 0px 0px; animation: spin 8.5s linear infinite; }
+      .sig-dot-1 { animation: slidePulse 3.05s ease-in-out 0.35s infinite; }
+      .conduit-1 { animation: dashCrawl 4.1s linear infinite; }
+      .mini-orbit-2 { transform-origin: 0px 0px; animation: spin 11.0s linear infinite; }
+      .sig-dot-2 { animation: slidePulse 3.50s ease-in-out 0.70s infinite; }
+      .conduit-2 { animation: dashCrawl 4.7s linear infinite; }
+      .mini-orbit-3 { transform-origin: 0px 0px; animation: spin 13.5s linear infinite; }
+      .sig-dot-3 { animation: slidePulse 3.95s ease-in-out 1.05s infinite; }
+      .conduit-3 { animation: dashCrawl 5.3s linear infinite; }
+      .mini-orbit-4 { transform-origin: 0px 0px; animation: spin 16.0s linear infinite; }
+      .sig-dot-4 { animation: slidePulse 4.40s ease-in-out 1.40s infinite; }
+      .conduit-4 { animation: dashCrawl 5.9s linear infinite; }
+      @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+      @keyframes pulse { 0%, 100% { opacity: .45; } 50% { opacity: 1; } }
+      @keyframes haloSoft { 0%, 100% { opacity: .10; } 50% { opacity: .30; } }
+      @keyframes twinkle { 0%, 100% { opacity: .15; } 50% { opacity: .82; } }
+      @keyframes dashCrawl { from { stroke-dashoffset: 0; } to { stroke-dashoffset: -16; } }
+      @keyframes slidePulse {
+        0% { transform: translateX(0px); opacity: 0; }
+        15% { opacity: 1; }
+        85% { opacity: 1; }
+        100% { transform: translateX(30px); opacity: 0; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .pulse, .halo, .twinkle-a, .twinkle-b, .twinkle-c, .mini-orbit-0, .mini-orbit-1, .mini-orbit-2, .mini-orbit-3, .mini-orbit-4, .sig-dot-0, .sig-dot-1, .sig-dot-2, .sig-dot-3, .sig-dot-4, .conduit-0, .conduit-1, .conduit-2, .conduit-3, .conduit-4 { animation: none !important; }
+      }
+    </style>
+  </defs>
+
   <rect width="880" height="226" rx="14" fill="#080D18"/>
   <rect x=".5" y=".5" width="879" height="225" rx="13.5" stroke="#1B2A44"/>
+  <g>
+    <circle cx="812" cy="26" r="0.8" fill="#F4F7FC" opacity="0.35" class="twinkle-a"/>
+    <circle cx="844" cy="72" r="1" fill="#F4F7FC" opacity="0.35" class="twinkle-b"/>
+    <circle cx="826" cy="134" r="0.7" fill="#F4F7FC" opacity="0.35" class="twinkle-c"/>
+    <circle cx="850" cy="198" r="0.9" fill="#F4F7FC" opacity="0.35" class="twinkle-a"/>
+    <circle cx="618" cy="212" r="0.8" fill="#F4F7FC" opacity="0.35" class="twinkle-b"/>
+  </g>
 
   <g transform="translate(28 29)">
-    <circle cx="5" cy="5" r="4" fill="#FFB020"/>
+    <circle cx="5" cy="5" r="4" fill="#FFB020" class="pulse"/>
     <text x="18" y="9" font-family="ui-monospace, 'Cascadia Mono', 'SFMono-Regular', Consolas, monospace" font-size="10" font-weight="700" fill="#FFB020" letter-spacing="1.2">THE PLANETS // LANGUAGES &amp; ORBITS</text>
   </g>
   <line x1="28" y1="44" x2="852" y2="44" stroke="#1B2A44"/>
 
   <g>
-    <circle cx="34" cy="58" r="4.5" fill="#38BDF8"/>
-    <text x="48" y="62" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif" font-size="12.5" font-weight="700" fill="#F4F7FC">Python</text>
+    <g transform="translate(34 58)">
+      <circle r="8.5" fill="none" stroke="#38BDF8" stroke-opacity=".28" stroke-width=".8" stroke-dasharray="2 3"/>
+      <g class="mini-orbit-0">
+        <circle cx="8.5" cy="0" r="1.4" fill="#F4F7FC" opacity=".9"/>
+      </g>
+      <circle r="4.5" fill="#38BDF8"/>
+      <circle r="6.5" fill="#38BDF8" opacity=".16" class="halo"/>
+    </g>
+    <text x="50" y="62" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif" font-size="12.5" font-weight="700" fill="#F4F7FC">Python</text>
     <text x="168" y="62" font-family="ui-monospace, 'Cascadia Mono', 'SFMono-Regular', Consolas, monospace" font-size="9.5" font-weight="400" fill="#38BDF8">Orbit 1 / inner</text>
-    <line x1="260" y1="58" x2="292" y2="58" stroke="#38BDF8" stroke-opacity=".7" stroke-width="1.5"/>
-    <circle cx="292" cy="58" r="2" fill="#38BDF8"/>
-    <text x="306" y="62" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif" font-size="10" font-weight="400" fill="#93A1B6">Biomedical RAG, local models, data pipelines</text>
+    <line x1="268" y1="58" x2="298" y2="58" stroke="#38BDF8" stroke-opacity=".45" stroke-width="1.5" stroke-dasharray="4 4" class="conduit-0"/>
+    <circle cx="268" cy="58" r="2.2" fill="#38BDF8" class="sig-dot-0"/>
+    <circle cx="298" cy="58" r="2" fill="#38BDF8"/>
+    <text x="308" y="62" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif" font-size="10" font-weight="400" fill="#93A1B6">Biomedical RAG, local models, data pipelines</text>
     <text x="654" y="62" font-family="ui-monospace, 'Cascadia Mono', 'SFMono-Regular', Consolas, monospace" font-size="9.5" font-weight="400" fill="#38BDF8">Griffin / SyGriffin</text>
   </g>
   <g>
-    <circle cx="34" cy="89" r="4.5" fill="#C084FC"/>
-    <text x="48" y="93" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif" font-size="12.5" font-weight="700" fill="#F4F7FC">C# / .NET</text>
+    <g transform="translate(34 89)">
+      <circle r="8.5" fill="none" stroke="#C084FC" stroke-opacity=".28" stroke-width=".8" stroke-dasharray="2 3"/>
+      <g class="mini-orbit-1">
+        <circle cx="8.5" cy="0" r="1.4" fill="#F4F7FC" opacity=".9"/>
+      </g>
+      <circle r="4.5" fill="#C084FC"/>
+      <circle r="6.5" fill="#C084FC" opacity=".16" class="halo"/>
+    </g>
+    <text x="50" y="93" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif" font-size="12.5" font-weight="700" fill="#F4F7FC">C# / .NET</text>
     <text x="168" y="93" font-family="ui-monospace, 'Cascadia Mono', 'SFMono-Regular', Consolas, monospace" font-size="9.5" font-weight="400" fill="#C084FC">Orbit 2</text>
-    <line x1="260" y1="89" x2="292" y2="89" stroke="#C084FC" stroke-opacity=".7" stroke-width="1.5"/>
-    <circle cx="292" cy="89" r="2" fill="#C084FC"/>
-    <text x="306" y="93" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif" font-size="10" font-weight="400" fill="#93A1B6">Windows overlays, live captions, WPF</text>
+    <line x1="268" y1="89" x2="298" y2="89" stroke="#C084FC" stroke-opacity=".45" stroke-width="1.5" stroke-dasharray="4 4" class="conduit-1"/>
+    <circle cx="268" cy="89" r="2.2" fill="#C084FC" class="sig-dot-1"/>
+    <circle cx="298" cy="89" r="2" fill="#C084FC"/>
+    <text x="308" y="93" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif" font-size="10" font-weight="400" fill="#93A1B6">Windows overlays, live captions, WPF</text>
     <text x="654" y="93" font-family="ui-monospace, 'Cascadia Mono', 'SFMono-Regular', Consolas, monospace" font-size="9.5" font-weight="400" fill="#C084FC">LiveSubs</text>
   </g>
   <g>
-    <circle cx="34" cy="120" r="4.5" fill="#FB923C"/>
-    <text x="48" y="124" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif" font-size="12.5" font-weight="700" fill="#F4F7FC">Rust</text>
+    <g transform="translate(34 120)">
+      <circle r="8.5" fill="none" stroke="#FB923C" stroke-opacity=".28" stroke-width=".8" stroke-dasharray="2 3"/>
+      <g class="mini-orbit-2">
+        <circle cx="8.5" cy="0" r="1.4" fill="#F4F7FC" opacity=".9"/>
+      </g>
+      <circle r="4.5" fill="#FB923C"/>
+      <circle r="6.5" fill="#FB923C" opacity=".16" class="halo"/>
+    </g>
+    <text x="50" y="124" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif" font-size="12.5" font-weight="700" fill="#F4F7FC">Rust</text>
     <text x="168" y="124" font-family="ui-monospace, 'Cascadia Mono', 'SFMono-Regular', Consolas, monospace" font-size="9.5" font-weight="400" fill="#FB923C">Orbit 3</text>
-    <line x1="260" y1="120" x2="292" y2="120" stroke="#FB923C" stroke-opacity=".7" stroke-width="1.5"/>
-    <circle cx="292" cy="120" r="2" fill="#FB923C"/>
-    <text x="306" y="124" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif" font-size="10" font-weight="400" fill="#93A1B6">MCP server, graph core, Tauri</text>
+    <line x1="268" y1="120" x2="298" y2="120" stroke="#FB923C" stroke-opacity=".45" stroke-width="1.5" stroke-dasharray="4 4" class="conduit-2"/>
+    <circle cx="268" cy="120" r="2.2" fill="#FB923C" class="sig-dot-2"/>
+    <circle cx="298" cy="120" r="2" fill="#FB923C"/>
+    <text x="308" y="124" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif" font-size="10" font-weight="400" fill="#93A1B6">MCP server, graph core, Tauri</text>
     <text x="654" y="124" font-family="ui-monospace, 'Cascadia Mono', 'SFMono-Regular', Consolas, monospace" font-size="9.5" font-weight="400" fill="#FB923C">Knox</text>
   </g>
   <g>
-    <circle cx="34" cy="151" r="4.5" fill="#60A5FA"/>
-    <text x="48" y="155" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif" font-size="12.5" font-weight="700" fill="#F4F7FC">TypeScript</text>
+    <g transform="translate(34 151)">
+      <circle r="8.5" fill="none" stroke="#60A5FA" stroke-opacity=".28" stroke-width=".8" stroke-dasharray="2 3"/>
+      <g class="mini-orbit-3">
+        <circle cx="8.5" cy="0" r="1.4" fill="#F4F7FC" opacity=".9"/>
+      </g>
+      <circle r="4.5" fill="#60A5FA"/>
+      <circle r="6.5" fill="#60A5FA" opacity=".16" class="halo"/>
+    </g>
+    <text x="50" y="155" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif" font-size="12.5" font-weight="700" fill="#F4F7FC">TypeScript</text>
     <text x="168" y="155" font-family="ui-monospace, 'Cascadia Mono', 'SFMono-Regular', Consolas, monospace" font-size="9.5" font-weight="400" fill="#60A5FA">Orbit 4</text>
-    <line x1="260" y1="151" x2="292" y2="151" stroke="#60A5FA" stroke-opacity=".7" stroke-width="1.5"/>
-    <circle cx="292" cy="151" r="2" fill="#60A5FA"/>
-    <text x="306" y="155" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif" font-size="10" font-weight="400" fill="#93A1B6">React, Vite, interface work</text>
+    <line x1="268" y1="151" x2="298" y2="151" stroke="#60A5FA" stroke-opacity=".45" stroke-width="1.5" stroke-dasharray="4 4" class="conduit-3"/>
+    <circle cx="268" cy="151" r="2.2" fill="#60A5FA" class="sig-dot-3"/>
+    <circle cx="298" cy="151" r="2" fill="#60A5FA"/>
+    <text x="308" y="155" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif" font-size="10" font-weight="400" fill="#93A1B6">React, Vite, interface work</text>
     <text x="654" y="155" font-family="ui-monospace, 'Cascadia Mono', 'SFMono-Regular', Consolas, monospace" font-size="9.5" font-weight="400" fill="#60A5FA">myselfdiva</text>
   </g>
   <g>
-    <circle cx="34" cy="182" r="4.5" fill="#F472B6"/>
-    <text x="48" y="186" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif" font-size="12.5" font-weight="700" fill="#F4F7FC">C++</text>
+    <g transform="translate(34 182)">
+      <circle r="8.5" fill="none" stroke="#F472B6" stroke-opacity=".28" stroke-width=".8" stroke-dasharray="2 3"/>
+      <g class="mini-orbit-4">
+        <circle cx="8.5" cy="0" r="1.4" fill="#F4F7FC" opacity=".9"/>
+      </g>
+      <circle r="4.5" fill="#F472B6"/>
+      <circle r="6.5" fill="#F472B6" opacity=".16" class="halo"/>
+    </g>
+    <text x="50" y="186" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif" font-size="12.5" font-weight="700" fill="#F4F7FC">C++</text>
     <text x="168" y="186" font-family="ui-monospace, 'Cascadia Mono', 'SFMono-Regular', Consolas, monospace" font-size="9.5" font-weight="400" fill="#F472B6">Orbit 5 / outer</text>
-    <line x1="260" y1="182" x2="292" y2="182" stroke="#F472B6" stroke-opacity=".7" stroke-width="1.5"/>
-    <circle cx="292" cy="182" r="2" fill="#F472B6"/>
-    <text x="306" y="186" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif" font-size="10" font-weight="400" fill="#93A1B6">Algorithms and data structures</text>
+    <line x1="268" y1="182" x2="298" y2="182" stroke="#F472B6" stroke-opacity=".45" stroke-width="1.5" stroke-dasharray="4 4" class="conduit-4"/>
+    <circle cx="268" cy="182" r="2.2" fill="#F472B6" class="sig-dot-4"/>
+    <circle cx="298" cy="182" r="2" fill="#F472B6"/>
+    <text x="308" y="186" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif" font-size="10" font-weight="400" fill="#93A1B6">Algorithms and data structures</text>
     <text x="654" y="186" font-family="ui-monospace, 'Cascadia Mono', 'SFMono-Regular', Consolas, monospace" font-size="9.5" font-weight="400" fill="#F472B6">HackMe 2024</text>
   </g>
 

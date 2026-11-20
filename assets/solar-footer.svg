@@ -1,16 +1,50 @@
 <svg width="880" height="86" viewBox="0 0 880 86" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
   <title id="title">Email Diwakar</title>
   <desc id="desc">Write to diwa.p2007@gmail.com.</desc>
+  <defs>
+    <style>
+      .beacon-core { animation: corePulse 2.4s ease-in-out infinite; }
+      .ripple-1 { transform-origin: 44px 43px; animation: ripple 3.2s ease-out infinite; }
+      .ripple-2 { transform-origin: 44px 43px; animation: ripple 3.2s ease-out 1.6s infinite; }
+      .wave-line { animation: waveFlow 3s linear infinite; }
+      .cta-pulse { animation: ctaGlow 3.2s ease-in-out infinite; }
+      .twinkle-a { animation: twinkle 4.2s ease-in-out infinite; }
+      .twinkle-b { animation: twinkle 5.4s ease-in-out 1.5s infinite; }
+      @keyframes corePulse { 0%, 100% { opacity: .65; } 50% { opacity: 1; } }
+      @keyframes ripple {
+        0% { transform: scale(0.55); opacity: .75; }
+        100% { transform: scale(1.75); opacity: 0; }
+      }
+      @keyframes waveFlow { from { stroke-dashoffset: 0; } to { stroke-dashoffset: -24; } }
+      @keyframes ctaGlow { 0%, 100% { stroke-opacity: .65; } 50% { stroke-opacity: 1; } }
+      @keyframes twinkle { 0%, 100% { opacity: .15; } 50% { opacity: .75; } }
+      @media (prefers-reduced-motion: reduce) {
+        .beacon-core, .ripple-1, .ripple-2, .wave-line, .cta-pulse, .twinkle-a, .twinkle-b {
+          animation: none !important;
+        }
+      }
+    </style>
+  </defs>
+
   <rect width="880" height="86" rx="12" fill="#080D18"/>
   <rect x=".5" y=".5" width="879" height="85" rx="11.5" stroke="#1B2A44"/>
 
-  <circle cx="44" cy="43" r="17" fill="#0C1424" stroke="#FFB020"/>
-  <circle cx="44" cy="43" r="6" fill="#FFB020"/>
+  <circle cx="596" cy="22" r="0.9" fill="#F4F7FC" opacity=".35" class="twinkle-a"/>
+  <circle cx="642" cy="64" r="1.0" fill="#FFB020" opacity=".4" class="twinkle-b"/>
+  <circle cx="684" cy="26" r="0.8" fill="#F4F7FC" opacity=".3" class="twinkle-a"/>
+
+  <circle cx="44" cy="43" r="17" fill="#0C1424" stroke="#FFB020" stroke-opacity=".6"/>
+  <circle cx="44" cy="43" r="17" fill="none" stroke="#FFB020" stroke-width="1.2" class="ripple-1"/>
+  <circle cx="44" cy="43" r="17" fill="none" stroke="#FFB020" stroke-width="1.2" class="ripple-2"/>
+  <circle cx="44" cy="43" r="6" fill="#FFB020" class="beacon-core"/>
+
   <text x="76" y="38" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif" font-size="15.5" font-weight="800" fill="#F4F7FC">Let's build something that has to keep up.</text>
   <text x="76" y="58" font-family="ui-monospace, 'Cascadia Mono', 'SFMono-Regular', Consolas, monospace" font-size="10" font-weight="400" fill="#93A1B6">diwa.p2007@gmail.com / Visakhapatnam, India / UTC+05:30</text>
 
+  <line x1="556" y1="43" x2="704" y2="43" stroke="#FFB020" stroke-opacity=".35" stroke-width="1.2" stroke-dasharray="4 8" class="wave-line"/>
+
   <g transform="translate(715 28)">
-    <rect width="137" height="30" rx="4" fill="#0C1424" stroke="#FFB020"/>
+    <rect width="137" height="30" rx="4" fill="#0C1424" stroke="#FFB020" stroke-width="1.2" class="cta-pulse"/>
     <text x="68.5" y="19" font-family="ui-monospace, 'Cascadia Mono', 'SFMono-Regular', Consolas, monospace" font-size="9.5" font-weight="700" fill="#FFB020" letter-spacing="0.8" text-anchor="middle">EMAIL →</text>
   </g>
 

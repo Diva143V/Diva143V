@@ -1,13 +1,57 @@
 <svg width="430" height="168" viewBox="0 0 430 168" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
   <title id="title">LiveSubs: Windows captions</title>
   <desc id="desc">LiveSubs card: a Windows caption overlay that translates Windows Live Captions through Google, DeepL, OpenAI or Ollama.</desc>
+  <defs>
+    <linearGradient id="accentBar" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#4CC9F0" stop-opacity=".95"/>
+      <stop offset="50%" stop-color="#F4F7FC" stop-opacity=".85"/>
+      <stop offset="100%" stop-color="#4CC9F0" stop-opacity=".95"/>
+    </linearGradient>
+    <style>
+      .moon-spin { transform-origin: 0px 0px; animation: spin 11.7s linear infinite; }
+      .ring-spin { transform-origin: 0px 0px; animation: spinRev 22s linear infinite; }
+      .pulse { animation: pulse 3.2s ease-in-out infinite; }
+      .halo { animation: haloSoft 3.2s ease-in-out infinite; }
+      .arrow-nudge { animation: nudge 2.8s ease-in-out infinite; }
+      .twinkle-a { animation: twinkle 4.2s ease-in-out infinite; }
+      .twinkle-b { animation: twinkle 5.6s ease-in-out 1.4s infinite; }
+      @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+      @keyframes spinRev { from { transform: rotate(360deg); } to { transform: rotate(0deg); } }
+      @keyframes pulse { 0%, 100% { opacity: .55; } 50% { opacity: 1; } }
+      @keyframes haloSoft { 0%, 100% { opacity: .12; } 50% { opacity: .32; } }
+      @keyframes nudge { 0%, 100% { transform: translate(0px, 0px); opacity: .65; } 50% { transform: translate(2px, -2px); opacity: 1; } }
+      @keyframes twinkle { 0%, 100% { opacity: .15; } 50% { opacity: .75; } }
+      @media (prefers-reduced-motion: reduce) {
+        .moon-spin, .ring-spin, .pulse, .halo, .arrow-nudge, .twinkle-a, .twinkle-b { animation: none !important; }
+      }
+    </style>
+  </defs>
+
   <rect width="430" height="168" rx="11" fill="#080D18"/>
   <rect x=".5" y=".5" width="429" height="167" rx="10.5" stroke="#1B2A44"/>
-  <rect width="3.5" height="168" rx="1.75" fill="#4CC9F0"/>
+  <rect width="3.5" height="168" rx="1.75" fill="#4CC9F0" class="pulse"/>
+
+  <circle cx="332" cy="144" r="0.9" fill="#F4F7FC" opacity=".35" class="twinkle-a"/>
+  <circle cx="398" cy="128" r="1.0" fill="#4CC9F0" opacity=".45" class="twinkle-b"/>
+  <circle cx="408" cy="84" r="0.7" fill="#F4F7FC" opacity=".3" class="twinkle-a"/>
+
+  <g transform="translate(366 42)">
+    <circle r="15" fill="none" stroke="#4CC9F0" stroke-opacity=".26" stroke-width=".9" stroke-dasharray="2.5 4" class="ring-spin"/>
+    <circle r="5" fill="#4CC9F0" opacity=".18" class="halo"/>
+    <circle r="3.2" fill="#4CC9F0"/>
+    <g class="moon-spin">
+      <circle cx="15" cy="0" r="2" fill="#F4F7FC"/>
+      <circle cx="15" cy="0" r="4" fill="#4CC9F0" opacity=".28"/>
+    </g>
+  </g>
 
   <g transform="translate(20 27)">
     <text x="0" y="0" font-family="ui-monospace, 'Cascadia Mono', 'SFMono-Regular', Consolas, monospace" font-size="8.5" font-weight="700" fill="#4CC9F0" letter-spacing="0.6">MOON 01 // CAPTION OVERLAY</text>
-    <text x="388" y="0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif" font-size="14" font-weight="400" fill="#5E6E85" text-anchor="end">↗</text>
+    <g transform="translate(388 0)">
+      <g class="arrow-nudge">
+        <text x="0" y="0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif" font-size="14" font-weight="400" fill="#5E6E85" text-anchor="end">↗</text>
+      </g>
+    </g>
   </g>
   <text x="20" y="56" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif" font-size="19" font-weight="800" fill="#F4F7FC">LiveSubs</text>
   <text x="20" y="77" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif" font-size="11.5" font-weight="600" fill="#F4F7FC">Reads Windows Live Captions and translates them in place.</text>
