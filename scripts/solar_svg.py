@@ -292,10 +292,10 @@ def _meteor(
 
 
 def _hero_sun(avatar: str) -> str:
-    return f"""    <g>
+    return f"""    <g class="sun-core">
       <circle r="88" fill="url(#sunGlow)" class="breathe"/>
-      <circle r="60" fill="none" stroke="{GOLD}" stroke-opacity=".22" stroke-width="1" class="solar-wave"/>
-      <circle r="60" fill="none" stroke="{GOLD}" stroke-opacity=".22" stroke-width="1" class="solar-wave solar-wave-2"/>
+      <circle r="110" fill="url(#sunGlow)" opacity="0" class="sun-flare"/>
+      <circle r="{SUN_R}" fill="none" stroke="{GOLD}" stroke-opacity=".7" stroke-width="1.2" opacity="0" vector-effect="non-scaling-stroke" class="sun-pulse"/>
       <circle r="54" fill="url(#sunGlow)" opacity=".82"/>
       <circle r="47" fill="#050810"/>
       <g clip-path="url(#sunClip)">
@@ -388,8 +388,8 @@ def _orbiting_planet(index: int, p: content.Planet) -> str:
 
     return f"""    <g transform="rotate({p.angle})">
       <g class="planet-orbit-{index}">
-        <g transform="translate({p.radius} 0)">
-          <circle r="{halo:.1f}" fill="{p.color}" opacity=".16" class="planet-halo"/>
+        <g class="pl pl-{index}" transform="translate({p.radius} 0)">
+          <circle r="{halo:.1f}" fill="{p.color}" opacity=".16" class="planet-halo ph-{index}"/>
           <circle r="{halo * 0.65:.1f}" fill="{p.color}" opacity=".08"/>
           <circle r="{body:.1f}" fill="{p.color}"/>
           <circle r="{body:.1f}" fill="url(#sphere)"/>
@@ -398,6 +398,18 @@ def _orbiting_planet(index: int, p: content.Planet) -> str:
         </g>
       </g>
     </g>"""
+
+
+# Motion timeline for the hero (seconds). Everything is derived from these.
+SUN_R = 52          # radius where the pulse ring starts
+WAVE_REACH = 198    # just past the outer orbit
+WAVE_START = 3.4    # first pulse, after the intro finishes
+WAVE_TIME = 2.8     # time for the ring to cross the system
+WAVE_CYCLE = 12     # seconds between pulses
+
+
+def p_radius(i: int) -> float:
+    return float(content.PLANETS[i].radius)
 
 
 def build_hero() -> str:
@@ -424,8 +436,20 @@ def build_hero() -> str:
         orbit_css.append(
             f"      .moon-orbit-{i} {{ transform-origin: 0px 0px; animation: {moon_dir} {moon_period:g}s linear infinite; }}"
         )
+        # Intro: track draws in inner to outer, then the planet fades up on it.
+        # Flash: the sun's pulse (WAVE_SPEED) reaches each planet at a known time,
+        # so its halo lights up exactly when the ring passes.
+        track_in = 1.3 + i * 0.14
+        planet_in = 1.95 + i * 0.16
+        hit = WAVE_START + (p_radius(i) - SUN_R) / (WAVE_REACH - SUN_R) * WAVE_TIME
         orbit_css.append(
-            f"      .orbit-track-{i} {{ animation: {dash_dir} {18 + i * 6}s linear infinite; }}"
+            f"      .orbit-track-{i} {{ transform-origin: 0px 0px; animation: trackIn 1200ms cubic-bezier(.16,1,.3,1) {track_in:.2f}s both, {dash_dir} {48 + i * 8}s linear infinite; }}"
+        )
+        orbit_css.append(
+            f"      .pl-{i} {{ animation: planetIn 900ms cubic-bezier(.22,1,.36,1) {planet_in:.2f}s both; }}"
+        )
+        orbit_css.append(
+            f"      .ph-{i} {{ transform-origin: 0px 0px; animation: haloFlash {WAVE_CYCLE:g}s ease-out {hit - 0.05:.2f}s infinite; }}"
         )
     orbit_css_block = "\n".join(orbit_css)
     reduced_selectors = ", ".join(
@@ -433,11 +457,13 @@ def build_hero() -> str:
             ".rise",
             ".fade",
             ".breathe",
-            ".solar-wave",
-            ".solar-wave-2",
             ".sun-ring",
             ".beacon-pulse",
             ".planet-halo",
+            ".sun-core",
+            ".sun-pulse",
+            ".sun-flare",
+            ".draw",
             ".star-drift",
             ".meteor",
             ".belt-cw",
@@ -447,6 +473,8 @@ def build_hero() -> str:
             ".twinkle-c",
             ".twinkle-d",
             *(f".planet-orbit-{i}" for i in range(len(content.PLANETS))),
+            *(f".pl-{i}" for i in range(len(content.PLANETS))),
+            *(f".ph-{i}" for i in range(len(content.PLANETS))),
             *(f".moon-orbit-{i}" for i in range(len(content.PLANETS))),
             *(f".orbit-track-{i}" for i in range(len(content.PLANETS))),
         ]
@@ -488,25 +516,30 @@ def build_hero() -> str:
     <clipPath id="heroBounds"><rect width="880" height="520" rx="16"/></clipPath>
     <style>
       {FONT_IMPORT}
-      .rise {{ animation: rise 900ms cubic-bezier(.2,.7,.2,1) both; }}
-      .d1 {{ animation-delay: 80ms; }}
-      .d2 {{ animation-delay: 170ms; }}
-      .d3 {{ animation-delay: 260ms; }}
+      .rise {{ animation: rise 800ms cubic-bezier(.16,1,.3,1) both; }}
+      .d1 {{ animation-delay: 100ms; }}
+      .d2 {{ animation-delay: 250ms; }}
+      .d3 {{ animation-delay: 400ms; }}
+      .d4 {{ animation-delay: 750ms; }}
+      .d5 {{ animation-delay: 1050ms; }}
       .fade {{ animation: fade 1100ms ease-out 350ms both; }}
-      .breathe {{ animation: breathe 5.5s ease-in-out infinite; }}
-      .solar-wave {{ transform-origin: 0px 0px; animation: solarWave 4.8s ease-out infinite; }}
-      .solar-wave-2 {{ animation-delay: 2.4s; }}
-      .sun-ring {{ transform-origin: 0px 0px; animation: orbit-cw 44s linear infinite; }}
+      .draw {{ transform-origin: 48px 394px; animation: drawX 700ms cubic-bezier(.65,0,.35,1) 950ms both; }}
+      .sun-core {{ transform-origin: 0px 0px; animation: sunIn 1200ms cubic-bezier(.34,1.35,.64,1) 1s both; }}
+      .breathe {{ transform-origin: 0px 0px; animation: breathe 7s ease-in-out infinite; }}
+      .sun-pulse {{ transform-origin: 0px 0px; animation: sunPulse {WAVE_CYCLE}s linear {WAVE_START}s infinite; }}
+      .sun-flare {{ transform-origin: 0px 0px; animation: sunFlare {WAVE_CYCLE}s ease-out {WAVE_START}s infinite; }}
+      .sun-ring {{ transform-origin: 0px 0px; animation: orbit-cw 60s linear infinite; }}
       .beacon-pulse {{ animation: beacon 2.4s ease-in-out infinite; }}
-      .planet-halo {{ animation: haloPulse 4.2s ease-in-out infinite; }}
       .star-drift {{ animation: starDrift 18s ease-in-out infinite; }}
 {_meteor_css()}
+      .m1 {{ animation: heroShoot 14s cubic-bezier(.1,.6,.3,1) 7.5s infinite; }}
+      .m2 {{ animation: heroShoot 19s cubic-bezier(.1,.6,.3,1) 14s infinite; }}
       .twinkle-a {{ animation: twinkle 3.8s ease-in-out infinite; }}
       .twinkle-b {{ animation: twinkle 5.2s ease-in-out 1.1s infinite; }}
       .twinkle-c {{ animation: twinkle 6.4s ease-in-out 2.2s infinite; }}
       .twinkle-d {{ animation: twinkle 4.6s ease-in-out 0.6s infinite; }}
-      .belt-cw {{ transform-origin: 0px 0px; animation: orbit-cw 90s linear infinite; }}
-      .belt-ccw {{ transform-origin: 0px 0px; animation: orbit-ccw 120s linear infinite; }}
+      .belt-cw {{ transform-origin: 0px 0px; animation: orbit-cw 90s linear infinite, fade 1600ms ease-out 2.6s both; }}
+      .belt-ccw {{ transform-origin: 0px 0px; animation: orbit-ccw 120s linear infinite, fade 1600ms ease-out 2.8s both; }}
 {orbit_css_block}
       @keyframes rise {{
         from {{ opacity: 0; transform: translateY(12px); }}
@@ -514,20 +547,46 @@ def build_hero() -> str:
       }}
       @keyframes fade {{ from {{ opacity: 0; }} to {{ opacity: 1; }} }}
       @keyframes breathe {{
-        0%, 100% {{ opacity: .60; }}
-        50% {{ opacity: .96; }}
+        0%, 100% {{ opacity: .62; transform: scale(1); }}
+        50% {{ opacity: .92; transform: scale(1.05); }}
       }}
-      @keyframes solarWave {{
-        0% {{ transform: scale(0.84); opacity: .45; }}
-        100% {{ transform: scale(1.42); opacity: 0; }}
+      @keyframes sunIn {{
+        from {{ opacity: 0; transform: scale(.55); }}
+        to {{ opacity: 1; transform: scale(1); }}
+      }}
+      @keyframes drawX {{ from {{ transform: scaleX(0); }} to {{ transform: scaleX(1); }} }}
+      @keyframes trackIn {{
+        from {{ opacity: 0; transform: scale(.72); }}
+        to {{ opacity: 1; transform: scale(1); }}
+      }}
+      @keyframes planetIn {{ from {{ opacity: 0; }} to {{ opacity: 1; }} }}
+      /* The pulse: one ring leaves the sun and crosses all five orbits. */
+      @keyframes sunPulse {{
+        0% {{ transform: scale(1); opacity: .75; }}
+        {WAVE_TIME / WAVE_CYCLE * 100:.2f}% {{ transform: scale({WAVE_REACH / SUN_R:.3f}); opacity: 0; }}
+        100% {{ transform: scale({WAVE_REACH / SUN_R:.3f}); opacity: 0; }}
+      }}
+      @keyframes sunFlare {{
+        0% {{ transform: scale(.9); opacity: 0; }}
+        3% {{ transform: scale(1); opacity: .85; }}
+        18% {{ transform: scale(1.18); opacity: 0; }}
+        100% {{ transform: scale(1.18); opacity: 0; }}
+      }}
+      @keyframes haloFlash {{
+        0% {{ transform: scale(1); opacity: .16; }}
+        3% {{ transform: scale(1.5); opacity: .6; }}
+        14% {{ transform: scale(1); opacity: .16; }}
+        100% {{ transform: scale(1); opacity: .16; }}
+      }}
+      @keyframes heroShoot {{
+        0% {{ transform: translateX(0) scaleX(.4); opacity: 0; }}
+        2.5% {{ opacity: 1; }}
+        14% {{ transform: translateX(560px) scaleX(.7); opacity: 0; }}
+        100% {{ transform: translateX(560px) scaleX(.7); opacity: 0; }}
       }}
       @keyframes beacon {{
         0%, 100% {{ opacity: .55; }}
         50% {{ opacity: 1; }}
-      }}
-      @keyframes haloPulse {{
-        0%, 100% {{ opacity: .10; }}
-        50% {{ opacity: .24; }}
       }}
       @keyframes orbit-cw {{
         from {{ transform: rotate(0deg); }}
@@ -594,16 +653,16 @@ def build_hero() -> str:
       {text(48, 280, "PEDDADA", size=64, weight=800, spacing=-2, fill=GOLD, element_id="name-3")}
     </g>
 
-    <g class="rise d2">
+    <g class="rise d4">
       {text(48, 342, content.HERO_TAGLINE[0], size=17, fill=MUTED, element_id="tagline-1")}
       {text(48, 366, content.HERO_TAGLINE[1], size=17, fill=MUTED, element_id="tagline-2")}
     </g>
-    <line class="fade" x1="48" y1="394" x2="112" y2="394" stroke="{GOLD}" stroke-width="2"/>
-    <g class="rise d3">
+    <line class="draw" x1="48" y1="394" x2="112" y2="394" stroke="{GOLD}" stroke-width="2"/>
+    <g class="rise d5">
       {text(48, 424, f"AI developer / {content.LOCATION}", size=11.5, fill=FAINT, family=MONO, spacing=.4)}
     </g>
 
-    <g class="fade" transform="translate(662 258)">
+    <g transform="translate(662 258)">
 {orbits}
 {_asteroid_belt()}
 {_hero_sun(avatar)}
@@ -612,7 +671,6 @@ def build_hero() -> str:
 
 {_meteor(780, -30, 126, "meteorTailGold", "m1", length=130, width=2.4, color=GOLD)}
 {_meteor(530, -35, 124, "meteorTailCyan", "m2", length=130, width=2.2, color=CYAN)}
-{_meteor(860, 60, 128, "meteorTailGold", "m3", length=130, width=2.2, color=GOLD)}
   </g>
   <rect x=".5" y=".5" width="879" height="519" rx="15.5" stroke="{BORDER}"/>
 """

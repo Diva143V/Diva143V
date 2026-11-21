@@ -63,17 +63,20 @@
     <clipPath id="heroBounds"><rect width="880" height="520" rx="16"/></clipPath>
     <style>
       @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&amp;family=Space+Grotesk:wght@500;600;700;800&amp;display=swap');
-      .rise { animation: rise 900ms cubic-bezier(.2,.7,.2,1) both; }
-      .d1 { animation-delay: 80ms; }
-      .d2 { animation-delay: 170ms; }
-      .d3 { animation-delay: 260ms; }
+      .rise { animation: rise 800ms cubic-bezier(.16,1,.3,1) both; }
+      .d1 { animation-delay: 100ms; }
+      .d2 { animation-delay: 250ms; }
+      .d3 { animation-delay: 400ms; }
+      .d4 { animation-delay: 750ms; }
+      .d5 { animation-delay: 1050ms; }
       .fade { animation: fade 1100ms ease-out 350ms both; }
-      .breathe { animation: breathe 5.5s ease-in-out infinite; }
-      .solar-wave { transform-origin: 0px 0px; animation: solarWave 4.8s ease-out infinite; }
-      .solar-wave-2 { animation-delay: 2.4s; }
-      .sun-ring { transform-origin: 0px 0px; animation: orbit-cw 44s linear infinite; }
+      .draw { transform-origin: 48px 394px; animation: drawX 700ms cubic-bezier(.65,0,.35,1) 950ms both; }
+      .sun-core { transform-origin: 0px 0px; animation: sunIn 1200ms cubic-bezier(.34,1.35,.64,1) 1s both; }
+      .breathe { transform-origin: 0px 0px; animation: breathe 7s ease-in-out infinite; }
+      .sun-pulse { transform-origin: 0px 0px; animation: sunPulse 12s linear 3.4s infinite; }
+      .sun-flare { transform-origin: 0px 0px; animation: sunFlare 12s ease-out 3.4s infinite; }
+      .sun-ring { transform-origin: 0px 0px; animation: orbit-cw 60s linear infinite; }
       .beacon-pulse { animation: beacon 2.4s ease-in-out infinite; }
-      .planet-halo { animation: haloPulse 4.2s ease-in-out infinite; }
       .star-drift { animation: starDrift 18s ease-in-out infinite; }
       .meteor {
         opacity: 0;
@@ -100,47 +103,85 @@
           opacity: 0;
         }
       }
+      .m1 { animation: heroShoot 14s cubic-bezier(.1,.6,.3,1) 7.5s infinite; }
+      .m2 { animation: heroShoot 19s cubic-bezier(.1,.6,.3,1) 14s infinite; }
       .twinkle-a { animation: twinkle 3.8s ease-in-out infinite; }
       .twinkle-b { animation: twinkle 5.2s ease-in-out 1.1s infinite; }
       .twinkle-c { animation: twinkle 6.4s ease-in-out 2.2s infinite; }
       .twinkle-d { animation: twinkle 4.6s ease-in-out 0.6s infinite; }
-      .belt-cw { transform-origin: 0px 0px; animation: orbit-cw 90s linear infinite; }
-      .belt-ccw { transform-origin: 0px 0px; animation: orbit-ccw 120s linear infinite; }
+      .belt-cw { transform-origin: 0px 0px; animation: orbit-cw 90s linear infinite, fade 1600ms ease-out 2.6s both; }
+      .belt-ccw { transform-origin: 0px 0px; animation: orbit-ccw 120s linear infinite, fade 1600ms ease-out 2.8s both; }
       .planet-orbit-0 { transform-origin: 0px 0px; animation: orbit-cw 18s linear infinite; }
       .moon-orbit-0 { transform-origin: 0px 0px; animation: orbit-ccw 5.5s linear infinite; }
-      .orbit-track-0 { animation: dash-flow 18s linear infinite; }
+      .orbit-track-0 { transform-origin: 0px 0px; animation: trackIn 1200ms cubic-bezier(.16,1,.3,1) 1.30s both, dash-flow 48s linear infinite; }
+      .pl-0 { animation: planetIn 900ms cubic-bezier(.22,1,.36,1) 1.95s both; }
+      .ph-0 { transform-origin: 0px 0px; animation: haloFlash 12s ease-out 3.50s infinite; }
       .planet-orbit-1 { transform-origin: 0px 0px; animation: orbit-ccw 28s linear infinite; }
       .moon-orbit-1 { transform-origin: 0px 0px; animation: orbit-cw 7.5s linear infinite; }
-      .orbit-track-1 { animation: dash-flow-rev 24s linear infinite; }
+      .orbit-track-1 { transform-origin: 0px 0px; animation: trackIn 1200ms cubic-bezier(.16,1,.3,1) 1.44s both, dash-flow-rev 56s linear infinite; }
+      .pl-1 { animation: planetIn 900ms cubic-bezier(.22,1,.36,1) 2.11s both; }
+      .ph-1 { transform-origin: 0px 0px; animation: haloFlash 12s ease-out 4.16s infinite; }
       .planet-orbit-2 { transform-origin: 0px 0px; animation: orbit-cw 40s linear infinite; }
       .moon-orbit-2 { transform-origin: 0px 0px; animation: orbit-ccw 9s linear infinite; }
-      .orbit-track-2 { animation: dash-flow 30s linear infinite; }
+      .orbit-track-2 { transform-origin: 0px 0px; animation: trackIn 1200ms cubic-bezier(.16,1,.3,1) 1.58s both, dash-flow 64s linear infinite; }
+      .pl-2 { animation: planetIn 900ms cubic-bezier(.22,1,.36,1) 2.27s both; }
+      .ph-2 { transform-origin: 0px 0px; animation: haloFlash 12s ease-out 4.81s infinite; }
       .planet-orbit-3 { transform-origin: 0px 0px; animation: orbit-ccw 54s linear infinite; }
       .moon-orbit-3 { transform-origin: 0px 0px; animation: orbit-cw 11s linear infinite; }
-      .orbit-track-3 { animation: dash-flow-rev 36s linear infinite; }
+      .orbit-track-3 { transform-origin: 0px 0px; animation: trackIn 1200ms cubic-bezier(.16,1,.3,1) 1.72s both, dash-flow-rev 72s linear infinite; }
+      .pl-3 { animation: planetIn 900ms cubic-bezier(.22,1,.36,1) 2.43s both; }
+      .ph-3 { transform-origin: 0px 0px; animation: haloFlash 12s ease-out 5.46s infinite; }
       .planet-orbit-4 { transform-origin: 0px 0px; animation: orbit-cw 72s linear infinite; }
       .moon-orbit-4 { transform-origin: 0px 0px; animation: orbit-ccw 13s linear infinite; }
-      .orbit-track-4 { animation: dash-flow 42s linear infinite; }
+      .orbit-track-4 { transform-origin: 0px 0px; animation: trackIn 1200ms cubic-bezier(.16,1,.3,1) 1.86s both, dash-flow 80s linear infinite; }
+      .pl-4 { animation: planetIn 900ms cubic-bezier(.22,1,.36,1) 2.59s both; }
+      .ph-4 { transform-origin: 0px 0px; animation: haloFlash 12s ease-out 6.11s infinite; }
       @keyframes rise {
         from { opacity: 0; transform: translateY(12px); }
         to { opacity: 1; transform: translateY(0); }
       }
       @keyframes fade { from { opacity: 0; } to { opacity: 1; } }
       @keyframes breathe {
-        0%, 100% { opacity: .60; }
-        50% { opacity: .96; }
+        0%, 100% { opacity: .62; transform: scale(1); }
+        50% { opacity: .92; transform: scale(1.05); }
       }
-      @keyframes solarWave {
-        0% { transform: scale(0.84); opacity: .45; }
-        100% { transform: scale(1.42); opacity: 0; }
+      @keyframes sunIn {
+        from { opacity: 0; transform: scale(.55); }
+        to { opacity: 1; transform: scale(1); }
+      }
+      @keyframes drawX { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+      @keyframes trackIn {
+        from { opacity: 0; transform: scale(.72); }
+        to { opacity: 1; transform: scale(1); }
+      }
+      @keyframes planetIn { from { opacity: 0; } to { opacity: 1; } }
+      /* The pulse: one ring leaves the sun and crosses all five orbits. */
+      @keyframes sunPulse {
+        0% { transform: scale(1); opacity: .75; }
+        23.33% { transform: scale(3.808); opacity: 0; }
+        100% { transform: scale(3.808); opacity: 0; }
+      }
+      @keyframes sunFlare {
+        0% { transform: scale(.9); opacity: 0; }
+        3% { transform: scale(1); opacity: .85; }
+        18% { transform: scale(1.18); opacity: 0; }
+        100% { transform: scale(1.18); opacity: 0; }
+      }
+      @keyframes haloFlash {
+        0% { transform: scale(1); opacity: .16; }
+        3% { transform: scale(1.5); opacity: .6; }
+        14% { transform: scale(1); opacity: .16; }
+        100% { transform: scale(1); opacity: .16; }
+      }
+      @keyframes heroShoot {
+        0% { transform: translateX(0) scaleX(.4); opacity: 0; }
+        2.5% { opacity: 1; }
+        14% { transform: translateX(560px) scaleX(.7); opacity: 0; }
+        100% { transform: translateX(560px) scaleX(.7); opacity: 0; }
       }
       @keyframes beacon {
         0%, 100% { opacity: .55; }
         50% { opacity: 1; }
-      }
-      @keyframes haloPulse {
-        0%, 100% { opacity: .10; }
-        50% { opacity: .24; }
       }
       @keyframes orbit-cw {
         from { transform: rotate(0deg); }
@@ -167,7 +208,7 @@
         50% { opacity: .92; }
       }
       @media (prefers-reduced-motion: reduce) {
-        .rise, .fade, .breathe, .solar-wave, .solar-wave-2, .sun-ring, .beacon-pulse, .planet-halo, .star-drift, .meteor, .belt-cw, .belt-ccw, .twinkle-a, .twinkle-b, .twinkle-c, .twinkle-d, .planet-orbit-0, .planet-orbit-1, .planet-orbit-2, .planet-orbit-3, .planet-orbit-4, .moon-orbit-0, .moon-orbit-1, .moon-orbit-2, .moon-orbit-3, .moon-orbit-4, .orbit-track-0, .orbit-track-1, .orbit-track-2, .orbit-track-3, .orbit-track-4 {
+        .rise, .fade, .breathe, .sun-ring, .beacon-pulse, .planet-halo, .sun-core, .sun-pulse, .sun-flare, .draw, .star-drift, .meteor, .belt-cw, .belt-ccw, .twinkle-a, .twinkle-b, .twinkle-c, .twinkle-d, .planet-orbit-0, .planet-orbit-1, .planet-orbit-2, .planet-orbit-3, .planet-orbit-4, .pl-0, .pl-1, .pl-2, .pl-3, .pl-4, .ph-0, .ph-1, .ph-2, .ph-3, .ph-4, .moon-orbit-0, .moon-orbit-1, .moon-orbit-2, .moon-orbit-3, .moon-orbit-4, .orbit-track-0, .orbit-track-1, .orbit-track-2, .orbit-track-3, .orbit-track-4 {
           animation: none !important;
         }
         .rise, .fade { opacity: 1; transform: none; }
@@ -266,16 +307,16 @@
       <text x="48" y="280" font-family="'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI Variable Text', 'Segoe UI', system-ui, sans-serif" font-size="64" font-weight="800" fill="#FFB020" id="name-3" letter-spacing="-2">PEDDADA</text>
     </g>
 
-    <g class="rise d2">
+    <g class="rise d4">
       <text x="48" y="342" font-family="'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI Variable Text', 'Segoe UI', system-ui, sans-serif" font-size="17" font-weight="400" fill="#93A1B6" id="tagline-1">I build the layer between a live signal</text>
       <text x="48" y="366" font-family="'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI Variable Text', 'Segoe UI', system-ui, sans-serif" font-size="17" font-weight="400" fill="#93A1B6" id="tagline-2">and the person waiting for it.</text>
     </g>
-    <line class="fade" x1="48" y1="394" x2="112" y2="394" stroke="#FFB020" stroke-width="2"/>
-    <g class="rise d3">
+    <line class="draw" x1="48" y1="394" x2="112" y2="394" stroke="#FFB020" stroke-width="2"/>
+    <g class="rise d5">
       <text x="48" y="424" font-family="'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'SFMono-Regular', Consolas, ui-monospace, monospace" font-size="11.5" font-weight="400" fill="#5E6E85" letter-spacing="0.4">AI developer / Visakhapatnam, India</text>
     </g>
 
-    <g class="fade" transform="translate(662 258)">
+    <g transform="translate(662 258)">
     <circle class="orbit orbit-track-0" r="60" stroke="#2A3F66" stroke-width="1" stroke-dasharray="2 7"/>
     <circle class="orbit orbit-track-1" r="94" stroke="#2A3F66" stroke-width="1" stroke-dasharray="2 7"/>
     <circle class="orbit orbit-track-2" r="128" stroke="#2A3F66" stroke-width="1" stroke-dasharray="2 7"/>
@@ -318,10 +359,10 @@
       <circle cx="117.3" cy="-87.6" r="1.1" fill="#F4F7FC" opacity="0.36"/>
       <circle cx="139.6" cy="-30.3" r="0.9" fill="#F4F7FC" opacity="0.20"/>
     </g>
-    <g>
+    <g class="sun-core">
       <circle r="88" fill="url(#sunGlow)" class="breathe"/>
-      <circle r="60" fill="none" stroke="#FFB020" stroke-opacity=".22" stroke-width="1" class="solar-wave"/>
-      <circle r="60" fill="none" stroke="#FFB020" stroke-opacity=".22" stroke-width="1" class="solar-wave solar-wave-2"/>
+      <circle r="110" fill="url(#sunGlow)" opacity="0" class="sun-flare"/>
+      <circle r="52" fill="none" stroke="#FFB020" stroke-opacity=".7" stroke-width="1.2" opacity="0" vector-effect="non-scaling-stroke" class="sun-pulse"/>
       <circle r="54" fill="url(#sunGlow)" opacity=".82"/>
       <circle r="47" fill="#050810"/>
       <g clip-path="url(#sunClip)">
@@ -333,8 +374,8 @@
     </g>
     <g transform="rotate(208)">
       <g class="planet-orbit-0">
-        <g transform="translate(60 0)">
-          <circle r="13.5" fill="#38BDF8" opacity=".16" class="planet-halo"/>
+        <g class="pl pl-0" transform="translate(60 0)">
+          <circle r="13.5" fill="#38BDF8" opacity=".16" class="planet-halo ph-0"/>
           <circle r="8.8" fill="#38BDF8" opacity=".08"/>
           <circle r="7.0" fill="#38BDF8"/>
           <circle r="7.0" fill="url(#sphere)"/>
@@ -350,8 +391,8 @@
     </g>
     <g transform="rotate(334)">
       <g class="planet-orbit-1">
-        <g transform="translate(94 0)">
-          <circle r="17.8" fill="#818CF8" opacity=".16" class="planet-halo"/>
+        <g class="pl pl-1" transform="translate(94 0)">
+          <circle r="17.8" fill="#818CF8" opacity=".16" class="planet-halo ph-1"/>
           <circle r="11.5" fill="#818CF8" opacity=".08"/>
           <circle r="7.0" fill="#818CF8"/>
           <circle r="7.0" fill="url(#sphere)"/>
@@ -366,8 +407,8 @@
     </g>
     <g transform="rotate(154)">
       <g class="planet-orbit-2">
-        <g transform="translate(128 0)">
-          <circle r="22.0" fill="#E28743" opacity=".16" class="planet-halo"/>
+        <g class="pl pl-2" transform="translate(128 0)">
+          <circle r="22.0" fill="#E28743" opacity=".16" class="planet-halo ph-2"/>
           <circle r="14.3" fill="#E28743" opacity=".08"/>
           <circle r="8.5" fill="#E28743"/>
           <circle r="8.5" fill="url(#sphere)"/>
@@ -384,8 +425,8 @@
     </g>
     <g transform="rotate(22)">
       <g class="planet-orbit-3">
-        <g transform="translate(162 0)">
-          <circle r="26.2" fill="#60A5FA" opacity=".16" class="planet-halo"/>
+        <g class="pl pl-3" transform="translate(162 0)">
+          <circle r="26.2" fill="#60A5FA" opacity=".16" class="planet-halo ph-3"/>
           <circle r="17.1" fill="#60A5FA" opacity=".08"/>
           <circle r="10.8" fill="#60A5FA"/>
           <circle r="10.8" fill="url(#sphere)"/>
@@ -400,8 +441,8 @@
     </g>
     <g transform="rotate(112)">
       <g class="planet-orbit-4">
-        <g transform="translate(196 0)">
-          <circle r="30.5" fill="#FFB020" opacity=".16" class="planet-halo"/>
+        <g class="pl pl-4" transform="translate(196 0)">
+          <circle r="30.5" fill="#FFB020" opacity=".16" class="planet-halo ph-4"/>
           <circle r="19.8" fill="#FFB020" opacity=".08"/>
           <circle r="13.1" fill="#FFB020"/>
           <circle r="13.1" fill="url(#sphere)"/>
@@ -429,16 +470,6 @@
         <polygon points="-72,0 0,-1.1 0,1.1" fill="url(#meteorTailCore)" opacity=".85" />
         <circle cx="0" cy="0" r="4.4" fill="#38BDF8" opacity=".35" />
         <circle cx="0" cy="0" r="2.8" fill="#38BDF8" opacity=".7" />
-        <circle cx="0" cy="0" r="2.0" fill="#FFFFFF" filter="url(#glow)" />
-      </g>
-    </g>
-    <g transform="translate(860, 60) rotate(128)">
-      <g class="meteor m3">
-        <polygon points="-136,0 0,-3.5 0,3.5" fill="url(#meteorTailGold)" opacity=".38" />
-        <polygon points="-130,0 0,-2.2 0,2.2" fill="url(#meteorTailGold)" />
-        <polygon points="-72,0 0,-1.1 0,1.1" fill="url(#meteorTailCore)" opacity=".85" />
-        <circle cx="0" cy="0" r="4.4" fill="#FFB020" opacity=".35" />
-        <circle cx="0" cy="0" r="2.8" fill="#FFB020" opacity=".7" />
         <circle cx="0" cy="0" r="2.0" fill="#FFFFFF" filter="url(#glow)" />
       </g>
     </g>
