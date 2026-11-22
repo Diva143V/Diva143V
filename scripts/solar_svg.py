@@ -436,18 +436,10 @@ def build_hero() -> str:
         orbit_css.append(
             f"      .moon-orbit-{i} {{ transform-origin: 0px 0px; animation: {moon_dir} {moon_period:g}s linear infinite; }}"
         )
-        # Intro: track draws in inner to outer, then the planet fades up on it.
-        # Flash: the sun's pulse (WAVE_SPEED) reaches each planet at a known time,
-        # so its halo lights up exactly when the ring passes.
-        track_in = 1.3 + i * 0.14
-        planet_in = 1.95 + i * 0.16
+        orbit_css.append(
+            f"      .orbit-track-{i} {{ animation: {dash_dir} {48 + i * 8}s linear infinite; }}"
+        )
         hit = WAVE_START + (p_radius(i) - SUN_R) / (WAVE_REACH - SUN_R) * WAVE_TIME
-        orbit_css.append(
-            f"      .orbit-track-{i} {{ transform-origin: 0px 0px; animation: trackIn 1200ms cubic-bezier(.16,1,.3,1) {track_in:.2f}s both, {dash_dir} {48 + i * 8}s linear infinite; }}"
-        )
-        orbit_css.append(
-            f"      .pl-{i} {{ animation: planetIn 900ms cubic-bezier(.22,1,.36,1) {planet_in:.2f}s both; }}"
-        )
         orbit_css.append(
             f"      .ph-{i} {{ transform-origin: 0px 0px; animation: haloFlash {WAVE_CYCLE:g}s ease-out {hit - 0.05:.2f}s infinite; }}"
         )
@@ -463,7 +455,6 @@ def build_hero() -> str:
             ".sun-core",
             ".sun-pulse",
             ".sun-flare",
-            ".draw",
             ".star-drift",
             ".meteor",
             ".belt-cw",
@@ -516,15 +507,8 @@ def build_hero() -> str:
     <clipPath id="heroBounds"><rect width="880" height="520" rx="16"/></clipPath>
     <style>
       {FONT_IMPORT}
-      .rise {{ animation: rise 800ms cubic-bezier(.16,1,.3,1) both; }}
-      .d1 {{ animation-delay: 100ms; }}
-      .d2 {{ animation-delay: 250ms; }}
-      .d3 {{ animation-delay: 400ms; }}
-      .d4 {{ animation-delay: 750ms; }}
-      .d5 {{ animation-delay: 1050ms; }}
-      .fade {{ animation: fade 1100ms ease-out 350ms both; }}
-      .draw {{ transform-origin: 48px 394px; animation: drawX 700ms cubic-bezier(.65,0,.35,1) 950ms both; }}
-      .sun-core {{ transform-origin: 0px 0px; animation: sunIn 1200ms cubic-bezier(.34,1.35,.64,1) 1s both; }}
+      .rise {{ animation: rise 700ms cubic-bezier(.16,1,.3,1); }}
+      .fade {{ animation: fade 900ms ease-out; }}
       .breathe {{ transform-origin: 0px 0px; animation: breathe 7s ease-in-out infinite; }}
       .sun-pulse {{ transform-origin: 0px 0px; animation: sunPulse {WAVE_CYCLE}s linear {WAVE_START}s infinite; }}
       .sun-flare {{ transform-origin: 0px 0px; animation: sunFlare {WAVE_CYCLE}s ease-out {WAVE_START}s infinite; }}
@@ -538,8 +522,8 @@ def build_hero() -> str:
       .twinkle-b {{ animation: twinkle 5.2s ease-in-out 1.1s infinite; }}
       .twinkle-c {{ animation: twinkle 6.4s ease-in-out 2.2s infinite; }}
       .twinkle-d {{ animation: twinkle 4.6s ease-in-out 0.6s infinite; }}
-      .belt-cw {{ transform-origin: 0px 0px; animation: orbit-cw 90s linear infinite, fade 1600ms ease-out 2.6s both; }}
-      .belt-ccw {{ transform-origin: 0px 0px; animation: orbit-ccw 120s linear infinite, fade 1600ms ease-out 2.8s both; }}
+      .belt-cw {{ transform-origin: 0px 0px; animation: orbit-cw 90s linear infinite; }}
+      .belt-ccw {{ transform-origin: 0px 0px; animation: orbit-ccw 120s linear infinite; }}
 {orbit_css_block}
       @keyframes rise {{
         from {{ opacity: 0; transform: translateY(12px); }}
@@ -550,16 +534,6 @@ def build_hero() -> str:
         0%, 100% {{ opacity: .62; transform: scale(1); }}
         50% {{ opacity: .92; transform: scale(1.05); }}
       }}
-      @keyframes sunIn {{
-        from {{ opacity: 0; transform: scale(.55); }}
-        to {{ opacity: 1; transform: scale(1); }}
-      }}
-      @keyframes drawX {{ from {{ transform: scaleX(0); }} to {{ transform: scaleX(1); }} }}
-      @keyframes trackIn {{
-        from {{ opacity: 0; transform: scale(.72); }}
-        to {{ opacity: 1; transform: scale(1); }}
-      }}
-      @keyframes planetIn {{ from {{ opacity: 0; }} to {{ opacity: 1; }} }}
       /* The pulse: one ring leaves the sun and crosses all five orbits. */
       @keyframes sunPulse {{
         0% {{ transform: scale(1); opacity: .75; }}
@@ -616,8 +590,8 @@ def build_hero() -> str:
         {reduced_selectors} {{
           animation: none !important;
         }}
-        .rise, .fade {{ opacity: 1; transform: none; }}
-        .meteor, .comet {{ display: none; }}
+        .rise, .fade, .sun-core, .planet-halo, .pl-0, .pl-1, .pl-2, .pl-3, .pl-4 {{ opacity: 1 !important; transform: none !important; }}
+        .sun-pulse, .sun-flare, .meteor, .comet {{ display: none; }}
         .comet {{ display: none; }}
       }}
     </style>
@@ -657,7 +631,7 @@ def build_hero() -> str:
       {text(48, 342, content.HERO_TAGLINE[0], size=17, fill=MUTED, element_id="tagline-1")}
       {text(48, 366, content.HERO_TAGLINE[1], size=17, fill=MUTED, element_id="tagline-2")}
     </g>
-    <line class="draw" x1="48" y1="394" x2="112" y2="394" stroke="{GOLD}" stroke-width="2"/>
+    <line class="fade" x1="48" y1="394" x2="112" y2="394" stroke="{GOLD}" stroke-width="2"/>
     <g class="rise d5">
       {text(48, 424, f"AI developer / {content.LOCATION}", size=11.5, fill=FAINT, family=MONO, spacing=.4)}
     </g>
