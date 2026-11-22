@@ -363,11 +363,14 @@ def _orbiting_planet(index: int, p: content.Planet) -> str:
             mx = moon_orbit * math.cos(moon_angle)
             my = moon_orbit * math.sin(moon_angle)
             moon_dots.append(
-                f'            <circle cx="{mx:.1f}" cy="{my:.1f}" r="1.7" fill="{INK}" opacity=".92"/>'
+                f'            <g class="moon-beacon">\n'
+                f'              <circle cx="{mx:.1f}" cy="{my:.1f}" r="3.2" fill="{p.color}" opacity=".42"/>\n'
+                f'              <circle cx="{mx:.1f}" cy="{my:.1f}" r="1.8" fill="#FFFFFF"/>\n'
+                f'            </g>'
             )
         moons = (
             f'\n          <circle r="{moon_orbit:.1f}" fill="none" stroke="{p.color}" '
-            f'stroke-opacity=".28" stroke-width=".75" stroke-dasharray="1.5 3"/>'
+            f'stroke-opacity=".35" stroke-width=".8" stroke-dasharray="2 3"/>'
             f'\n          <g class="moon-orbit-{index}">\n'
             + "\n".join(moon_dots)
             + "\n          </g>"
@@ -380,21 +383,21 @@ def _orbiting_planet(index: int, p: content.Planet) -> str:
         rings = (
             f'\n          <ellipse rx="{ring_rx:.1f}" ry="{ring_ry:.1f}" '
             f'transform="rotate(-24)" fill="none" stroke="{p.color}" '
-            f'stroke-opacity=".42" stroke-width="1.2" stroke-dasharray="2 3"/>'
+            f'stroke-opacity=".58" stroke-width="1.2" stroke-dasharray="2 3"/>'
             f'\n          <ellipse rx="{ring_rx + 2.4:.1f}" ry="{(ring_ry + 0.9):.1f}" '
             f'transform="rotate(-24)" fill="none" stroke="{p.color}" '
-            f'stroke-opacity=".18" stroke-width=".7"/>'
+            f'stroke-opacity=".26" stroke-width=".7"/>'
         )
 
     return f"""    <g transform="rotate({p.angle})">
       <g class="planet-orbit-{index}">
         <g class="pl pl-{index}" transform="translate({p.radius} 0)">
-          <circle r="{halo:.1f}" fill="{p.color}" opacity=".16" class="planet-halo ph-{index}"/>
-          <circle r="{halo * 0.65:.1f}" fill="{p.color}" opacity=".08"/>
-          <circle r="{body:.1f}" fill="{p.color}"/>
-          <circle r="{body:.1f}" fill="url(#sphere)"/>
-          <circle r="{body:.1f}" fill="none" stroke="#FFFFFF" stroke-opacity=".24" stroke-width=".75"/>
-          <circle r="{body:.1f}" fill="none" stroke="{p.color}" stroke-opacity=".75"/>{rings}{moons}
+          <circle r="{halo * 1.3:.1f}" fill="url(#atmo-glow-{index})" class="atmo-outer"/>
+          <circle r="{halo:.1f}" fill="{p.color}" opacity=".28" class="planet-halo ph-{index}"/>
+          <circle r="{halo * 0.68:.1f}" fill="{p.color}" opacity=".16"/>
+          <circle r="{body:.1f}" fill="url(#planet-grad-{index})"/>
+          <circle r="{body:.1f}" fill="none" stroke="#FFFFFF" stroke-opacity=".38" stroke-width=".8"/>
+          <circle r="{body:.1f}" fill="none" stroke="{p.color}" stroke-opacity=".85" stroke-width=".8"/>{rings}{moons}
         </g>
       </g>
     </g>"""
@@ -423,6 +426,21 @@ def build_hero() -> str:
         _orbiting_planet(i, p) for i, p in enumerate(content.PLANETS)
     )
 
+    planet_defs = "\n".join(
+        f"""    <radialGradient id="planet-grad-{i}" cx="35%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity=".72"/>
+      <stop offset="28%" stop-color="{p.color}" stop-opacity="1"/>
+      <stop offset="78%" stop-color="{p.color}" stop-opacity=".80"/>
+      <stop offset="100%" stop-color="#02050D" stop-opacity=".65"/>
+    </radialGradient>
+    <radialGradient id="atmo-glow-{i}" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="{p.color}" stop-opacity=".45"/>
+      <stop offset="55%" stop-color="{p.color}" stop-opacity=".18"/>
+      <stop offset="100%" stop-color="{p.color}" stop-opacity="0"/>
+    </radialGradient>"""
+        for i, p in enumerate(content.PLANETS)
+    )
+
     orbit_css = []
     for i in range(len(content.PLANETS)):
         period = PLANET_PERIODS[i % len(PLANET_PERIODS)]
@@ -441,7 +459,7 @@ def build_hero() -> str:
         )
         hit = WAVE_START + (p_radius(i) - SUN_R) / (WAVE_REACH - SUN_R) * WAVE_TIME
         orbit_css.append(
-            f"      .ph-{i} {{ transform-origin: 0px 0px; animation: haloFlash {WAVE_CYCLE:g}s ease-out {hit - 0.05:.2f}s infinite; }}"
+            f"      .ph-{i} {{ transform-origin: 0px 0px; animation: haloBreathe 5.5s ease-in-out infinite, haloSurge {WAVE_CYCLE:g}s ease-out {hit - 0.05:.2f}s infinite; }}"
         )
     orbit_css_block = "\n".join(orbit_css)
     reduced_selectors = ", ".join(
@@ -452,6 +470,7 @@ def build_hero() -> str:
             ".sun-ring",
             ".beacon-pulse",
             ".planet-halo",
+            ".atmo-outer",
             ".sun-core",
             ".sun-pulse",
             ".sun-flare",
@@ -472,6 +491,7 @@ def build_hero() -> str:
     )
 
     body = f"""  <defs>
+{planet_defs}
     <radialGradient id="space" cx="50%" cy="42%" r="78%">
       <stop offset="0%" stop-color="#0B1830"/>
       <stop offset="48%" stop-color="#060C18"/>
@@ -524,6 +544,10 @@ def build_hero() -> str:
       .twinkle-d {{ animation: twinkle 4.6s ease-in-out 0.6s infinite; }}
       .belt-cw {{ transform-origin: 0px 0px; animation: orbit-cw 90s linear infinite; }}
       .belt-ccw {{ transform-origin: 0px 0px; animation: orbit-ccw 120s linear infinite; }}
+      .pl {{ cursor: pointer; }}
+      .planet-halo, .atmo-outer {{ transform-origin: 0px 0px; }}
+      .pl:hover .planet-halo {{ opacity: .95 !important; transform: scale(1.4) !important; transition: transform 250ms cubic-bezier(.16,1,.3,1), opacity 250ms ease-out; }}
+      .pl:hover .atmo-outer {{ opacity: .85 !important; transform: scale(1.25) !important; transition: transform 250ms cubic-bezier(.16,1,.3,1), opacity 250ms ease-out; }}
 {orbit_css_block}
       @keyframes rise {{
         from {{ opacity: 0; transform: translateY(12px); }}
@@ -546,11 +570,15 @@ def build_hero() -> str:
         18% {{ transform: scale(1.18); opacity: 0; }}
         100% {{ transform: scale(1.18); opacity: 0; }}
       }}
-      @keyframes haloFlash {{
-        0% {{ transform: scale(1); opacity: .16; }}
-        3% {{ transform: scale(1.5); opacity: .6; }}
-        14% {{ transform: scale(1); opacity: .16; }}
-        100% {{ transform: scale(1); opacity: .16; }}
+      @keyframes haloBreathe {{
+        0%, 100% {{ transform: scale(1); opacity: .24; }}
+        50% {{ transform: scale(1.14); opacity: .46; }}
+      }}
+      @keyframes haloSurge {{
+        0% {{ transform: scale(1); opacity: .24; }}
+        3% {{ transform: scale(1.65); opacity: .95; }}
+        15% {{ transform: scale(1); opacity: .24; }}
+        100% {{ transform: scale(1); opacity: .24; }}
       }}
       @keyframes heroShoot {{
         0% {{ transform: translateX(0) scaleX(.4); opacity: 0; }}
@@ -590,7 +618,7 @@ def build_hero() -> str:
         {reduced_selectors} {{
           animation: none !important;
         }}
-        .rise, .fade, .sun-core, .planet-halo, .pl-0, .pl-1, .pl-2, .pl-3, .pl-4 {{ opacity: 1 !important; transform: none !important; }}
+        .rise, .fade, .sun-core, .planet-halo, .atmo-outer, .pl-0, .pl-1, .pl-2, .pl-3, .pl-4 {{ opacity: 1 !important; transform: none !important; }}
         .sun-pulse, .sun-flare, .meteor, .comet {{ display: none; }}
         .comet {{ display: none; }}
       }}

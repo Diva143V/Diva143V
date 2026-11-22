@@ -133,88 +133,88 @@
 
   <g>
     <g transform="translate(34 58)">
-      <circle r="8.5" fill="none" stroke="#38BDF8" stroke-opacity=".28" stroke-width=".8" stroke-dasharray="2 3"/>
+      <circle r="8.5" fill="none" stroke="#00E599" stroke-opacity=".28" stroke-width=".8" stroke-dasharray="2 3"/>
       <g class="mini-orbit-0">
         <circle cx="8.5" cy="0" r="1.4" fill="#F4F7FC" opacity=".9"/>
       </g>
-      <circle r="4.5" fill="#38BDF8"/>
-      <circle r="6.5" fill="#38BDF8" opacity=".16" class="halo"/>
+      <circle r="4.5" fill="#00E599"/>
+      <circle r="6.5" fill="#00E599" opacity=".16" class="halo"/>
     </g>
     <text x="50" y="62" font-family="'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI Variable Text', 'Segoe UI', system-ui, sans-serif" font-size="12.5" font-weight="700" fill="#F4F7FC">Python</text>
-    <text x="168" y="62" font-family="'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'SFMono-Regular', Consolas, ui-monospace, monospace" font-size="9.5" font-weight="400" fill="#38BDF8">Orbit 1 / inner</text>
-    <line x1="268" y1="58" x2="298" y2="58" stroke="#38BDF8" stroke-opacity=".45" stroke-width="1.5" stroke-dasharray="4 4" class="conduit-0"/>
-    <circle cx="268" cy="58" r="2.2" fill="#38BDF8" class="sig-dot-0"/>
-    <circle cx="298" cy="58" r="2" fill="#38BDF8"/>
+    <text x="168" y="62" font-family="'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'SFMono-Regular', Consolas, ui-monospace, monospace" font-size="9.5" font-weight="400" fill="#00E599">Orbit 1 / inner</text>
+    <line x1="268" y1="58" x2="298" y2="58" stroke="#00E599" stroke-opacity=".45" stroke-width="1.5" stroke-dasharray="4 4" class="conduit-0"/>
+    <circle cx="268" cy="58" r="2.2" fill="#00E599" class="sig-dot-0"/>
+    <circle cx="298" cy="58" r="2" fill="#00E599"/>
     <text x="308" y="62" font-family="'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI Variable Text', 'Segoe UI', system-ui, sans-serif" font-size="10" font-weight="400" fill="#93A1B6">Biomedical RAG, local models, data pipelines</text>
-    <text x="654" y="62" font-family="'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'SFMono-Regular', Consolas, ui-monospace, monospace" font-size="9.5" font-weight="400" fill="#38BDF8">Griffin / SyGriffin</text>
+    <text x="654" y="62" font-family="'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'SFMono-Regular', Consolas, ui-monospace, monospace" font-size="9.5" font-weight="400" fill="#00E599">Griffin / SyGriffin</text>
   </g>
   <g>
     <g transform="translate(34 89)">
-      <circle r="8.5" fill="none" stroke="#818CF8" stroke-opacity=".28" stroke-width=".8" stroke-dasharray="2 3"/>
+      <circle r="8.5" fill="none" stroke="#A855F7" stroke-opacity=".28" stroke-width=".8" stroke-dasharray="2 3"/>
       <g class="mini-orbit-1">
         <circle cx="8.5" cy="0" r="1.4" fill="#F4F7FC" opacity=".9"/>
       </g>
-      <circle r="4.5" fill="#818CF8"/>
-      <circle r="6.5" fill="#818CF8" opacity=".16" class="halo"/>
+      <circle r="4.5" fill="#A855F7"/>
+      <circle r="6.5" fill="#A855F7" opacity=".16" class="halo"/>
     </g>
     <text x="50" y="93" font-family="'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI Variable Text', 'Segoe UI', system-ui, sans-serif" font-size="12.5" font-weight="700" fill="#F4F7FC">C# / .NET</text>
-    <text x="168" y="93" font-family="'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'SFMono-Regular', Consolas, ui-monospace, monospace" font-size="9.5" font-weight="400" fill="#818CF8">Orbit 2</text>
-    <line x1="268" y1="89" x2="298" y2="89" stroke="#818CF8" stroke-opacity=".45" stroke-width="1.5" stroke-dasharray="4 4" class="conduit-1"/>
-    <circle cx="268" cy="89" r="2.2" fill="#818CF8" class="sig-dot-1"/>
-    <circle cx="298" cy="89" r="2" fill="#818CF8"/>
+    <text x="168" y="93" font-family="'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'SFMono-Regular', Consolas, ui-monospace, monospace" font-size="9.5" font-weight="400" fill="#A855F7">Orbit 2</text>
+    <line x1="268" y1="89" x2="298" y2="89" stroke="#A855F7" stroke-opacity=".45" stroke-width="1.5" stroke-dasharray="4 4" class="conduit-1"/>
+    <circle cx="268" cy="89" r="2.2" fill="#A855F7" class="sig-dot-1"/>
+    <circle cx="298" cy="89" r="2" fill="#A855F7"/>
     <text x="308" y="93" font-family="'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI Variable Text', 'Segoe UI', system-ui, sans-serif" font-size="10" font-weight="400" fill="#93A1B6">Windows overlays, live captions, WPF</text>
-    <text x="654" y="93" font-family="'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'SFMono-Regular', Consolas, ui-monospace, monospace" font-size="9.5" font-weight="400" fill="#818CF8">LiveSubs</text>
+    <text x="654" y="93" font-family="'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'SFMono-Regular', Consolas, ui-monospace, monospace" font-size="9.5" font-weight="400" fill="#A855F7">LiveSubs</text>
   </g>
   <g>
     <g transform="translate(34 120)">
-      <circle r="8.5" fill="none" stroke="#E28743" stroke-opacity=".28" stroke-width=".8" stroke-dasharray="2 3"/>
+      <circle r="8.5" fill="none" stroke="#F97316" stroke-opacity=".28" stroke-width=".8" stroke-dasharray="2 3"/>
       <g class="mini-orbit-2">
         <circle cx="8.5" cy="0" r="1.4" fill="#F4F7FC" opacity=".9"/>
       </g>
-      <circle r="4.5" fill="#E28743"/>
-      <circle r="6.5" fill="#E28743" opacity=".16" class="halo"/>
+      <circle r="4.5" fill="#F97316"/>
+      <circle r="6.5" fill="#F97316" opacity=".16" class="halo"/>
     </g>
     <text x="50" y="124" font-family="'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI Variable Text', 'Segoe UI', system-ui, sans-serif" font-size="12.5" font-weight="700" fill="#F4F7FC">Rust</text>
-    <text x="168" y="124" font-family="'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'SFMono-Regular', Consolas, ui-monospace, monospace" font-size="9.5" font-weight="400" fill="#E28743">Orbit 3</text>
-    <line x1="268" y1="120" x2="298" y2="120" stroke="#E28743" stroke-opacity=".45" stroke-width="1.5" stroke-dasharray="4 4" class="conduit-2"/>
-    <circle cx="268" cy="120" r="2.2" fill="#E28743" class="sig-dot-2"/>
-    <circle cx="298" cy="120" r="2" fill="#E28743"/>
+    <text x="168" y="124" font-family="'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'SFMono-Regular', Consolas, ui-monospace, monospace" font-size="9.5" font-weight="400" fill="#F97316">Orbit 3</text>
+    <line x1="268" y1="120" x2="298" y2="120" stroke="#F97316" stroke-opacity=".45" stroke-width="1.5" stroke-dasharray="4 4" class="conduit-2"/>
+    <circle cx="268" cy="120" r="2.2" fill="#F97316" class="sig-dot-2"/>
+    <circle cx="298" cy="120" r="2" fill="#F97316"/>
     <text x="308" y="124" font-family="'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI Variable Text', 'Segoe UI', system-ui, sans-serif" font-size="10" font-weight="400" fill="#93A1B6">MCP server, graph core, Tauri</text>
-    <text x="654" y="124" font-family="'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'SFMono-Regular', Consolas, ui-monospace, monospace" font-size="9.5" font-weight="400" fill="#E28743">Knox</text>
+    <text x="654" y="124" font-family="'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'SFMono-Regular', Consolas, ui-monospace, monospace" font-size="9.5" font-weight="400" fill="#F97316">Knox</text>
   </g>
   <g>
     <g transform="translate(34 151)">
-      <circle r="8.5" fill="none" stroke="#60A5FA" stroke-opacity=".28" stroke-width=".8" stroke-dasharray="2 3"/>
+      <circle r="8.5" fill="none" stroke="#00F0FF" stroke-opacity=".28" stroke-width=".8" stroke-dasharray="2 3"/>
       <g class="mini-orbit-3">
         <circle cx="8.5" cy="0" r="1.4" fill="#F4F7FC" opacity=".9"/>
       </g>
-      <circle r="4.5" fill="#60A5FA"/>
-      <circle r="6.5" fill="#60A5FA" opacity=".16" class="halo"/>
+      <circle r="4.5" fill="#00F0FF"/>
+      <circle r="6.5" fill="#00F0FF" opacity=".16" class="halo"/>
     </g>
     <text x="50" y="155" font-family="'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI Variable Text', 'Segoe UI', system-ui, sans-serif" font-size="12.5" font-weight="700" fill="#F4F7FC">TypeScript</text>
-    <text x="168" y="155" font-family="'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'SFMono-Regular', Consolas, ui-monospace, monospace" font-size="9.5" font-weight="400" fill="#60A5FA">Orbit 4</text>
-    <line x1="268" y1="151" x2="298" y2="151" stroke="#60A5FA" stroke-opacity=".45" stroke-width="1.5" stroke-dasharray="4 4" class="conduit-3"/>
-    <circle cx="268" cy="151" r="2.2" fill="#60A5FA" class="sig-dot-3"/>
-    <circle cx="298" cy="151" r="2" fill="#60A5FA"/>
+    <text x="168" y="155" font-family="'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'SFMono-Regular', Consolas, ui-monospace, monospace" font-size="9.5" font-weight="400" fill="#00F0FF">Orbit 4</text>
+    <line x1="268" y1="151" x2="298" y2="151" stroke="#00F0FF" stroke-opacity=".45" stroke-width="1.5" stroke-dasharray="4 4" class="conduit-3"/>
+    <circle cx="268" cy="151" r="2.2" fill="#00F0FF" class="sig-dot-3"/>
+    <circle cx="298" cy="151" r="2" fill="#00F0FF"/>
     <text x="308" y="155" font-family="'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI Variable Text', 'Segoe UI', system-ui, sans-serif" font-size="10" font-weight="400" fill="#93A1B6">React, Vite, interface work</text>
-    <text x="654" y="155" font-family="'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'SFMono-Regular', Consolas, ui-monospace, monospace" font-size="9.5" font-weight="400" fill="#60A5FA">myselfdiva</text>
+    <text x="654" y="155" font-family="'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'SFMono-Regular', Consolas, ui-monospace, monospace" font-size="9.5" font-weight="400" fill="#00F0FF">myselfdiva</text>
   </g>
   <g>
     <g transform="translate(34 182)">
-      <circle r="8.5" fill="none" stroke="#FFB020" stroke-opacity=".28" stroke-width=".8" stroke-dasharray="2 3"/>
+      <circle r="8.5" fill="none" stroke="#EF4444" stroke-opacity=".28" stroke-width=".8" stroke-dasharray="2 3"/>
       <g class="mini-orbit-4">
         <circle cx="8.5" cy="0" r="1.4" fill="#F4F7FC" opacity=".9"/>
       </g>
-      <circle r="4.5" fill="#FFB020"/>
-      <circle r="6.5" fill="#FFB020" opacity=".16" class="halo"/>
+      <circle r="4.5" fill="#EF4444"/>
+      <circle r="6.5" fill="#EF4444" opacity=".16" class="halo"/>
     </g>
     <text x="50" y="186" font-family="'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI Variable Text', 'Segoe UI', system-ui, sans-serif" font-size="12.5" font-weight="700" fill="#F4F7FC">C++</text>
-    <text x="168" y="186" font-family="'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'SFMono-Regular', Consolas, ui-monospace, monospace" font-size="9.5" font-weight="400" fill="#FFB020">Orbit 5 / outer</text>
-    <line x1="268" y1="182" x2="298" y2="182" stroke="#FFB020" stroke-opacity=".45" stroke-width="1.5" stroke-dasharray="4 4" class="conduit-4"/>
-    <circle cx="268" cy="182" r="2.2" fill="#FFB020" class="sig-dot-4"/>
-    <circle cx="298" cy="182" r="2" fill="#FFB020"/>
+    <text x="168" y="186" font-family="'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'SFMono-Regular', Consolas, ui-monospace, monospace" font-size="9.5" font-weight="400" fill="#EF4444">Orbit 5 / outer</text>
+    <line x1="268" y1="182" x2="298" y2="182" stroke="#EF4444" stroke-opacity=".45" stroke-width="1.5" stroke-dasharray="4 4" class="conduit-4"/>
+    <circle cx="268" cy="182" r="2.2" fill="#EF4444" class="sig-dot-4"/>
+    <circle cx="298" cy="182" r="2" fill="#EF4444"/>
     <text x="308" y="186" font-family="'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI Variable Text', 'Segoe UI', system-ui, sans-serif" font-size="10" font-weight="400" fill="#93A1B6">Algorithms and data structures</text>
-    <text x="654" y="186" font-family="'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'SFMono-Regular', Consolas, ui-monospace, monospace" font-size="9.5" font-weight="400" fill="#FFB020">HackMe 2024</text>
+    <text x="654" y="186" font-family="'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'SFMono-Regular', Consolas, ui-monospace, monospace" font-size="9.5" font-weight="400" fill="#EF4444">HackMe 2024</text>
   </g>
 
     <text x="28" y="214" font-family="'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'SFMono-Regular', Consolas, ui-monospace, monospace" font-size="9" font-weight="400" fill="#5E6E85">Orbit order is a reading order, not a ranking.</text>

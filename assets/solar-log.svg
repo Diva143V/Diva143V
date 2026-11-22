@@ -139,38 +139,38 @@
 
   <g transform="translate(28 48)">
     <rect width="195" height="80" rx="7" fill="#0C1424" stroke="#1B2A44"/>
-    <rect x="0" y="77" width="195" height="3" rx="1.5" fill="#38BDF8" opacity=".45" class="bar-0"/>
-    <circle cx="179" cy="18" r="2.6" fill="#38BDF8" class="dot-0"/>
-    <circle cx="179" cy="18" r="6" fill="none" stroke="#38BDF8" stroke-opacity=".35" stroke-width=".8" class="ping-0"/>
+    <rect x="0" y="77" width="195" height="3" rx="1.5" fill="#00E599" opacity=".45" class="bar-0"/>
+    <circle cx="179" cy="18" r="2.6" fill="#00E599" class="dot-0"/>
+    <circle cx="179" cy="18" r="6" fill="none" stroke="#00E599" stroke-opacity=".35" stroke-width=".8" class="ping-0"/>
     <text x="16" y="23" font-family="'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'SFMono-Regular', Consolas, ui-monospace, monospace" font-size="9" font-weight="400" fill="#93A1B6" letter-spacing="0.7">CURRENT ORBIT</text>
-    <text x="16" y="56" font-family="'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI Variable Text', 'Segoe UI', system-ui, sans-serif" font-size="21.5" font-weight="800" fill="#38BDF8" letter-spacing="-0.4">AI INTERN</text>
+    <text x="16" y="56" font-family="'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI Variable Text', 'Segoe UI', system-ui, sans-serif" font-size="21.5" font-weight="800" fill="#00E599" letter-spacing="-0.4">AI INTERN</text>
     <text x="16" y="72" font-family="'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'SFMono-Regular', Consolas, ui-monospace, monospace" font-size="9.5" font-weight="400" fill="#93A1B6">Aegion Dynamic</text>
   </g>
   <g transform="translate(238 48)">
     <rect width="195" height="80" rx="7" fill="#0C1424" stroke="#1B2A44"/>
-    <rect x="0" y="77" width="195" height="3" rx="1.5" fill="#818CF8" opacity=".45" class="bar-1"/>
-    <circle cx="179" cy="18" r="2.6" fill="#818CF8" class="dot-1"/>
-    <circle cx="179" cy="18" r="6" fill="none" stroke="#818CF8" stroke-opacity=".35" stroke-width=".8" class="ping-1"/>
+    <rect x="0" y="77" width="195" height="3" rx="1.5" fill="#A855F7" opacity=".45" class="bar-1"/>
+    <circle cx="179" cy="18" r="2.6" fill="#A855F7" class="dot-1"/>
+    <circle cx="179" cy="18" r="6" fill="none" stroke="#A855F7" stroke-opacity=".35" stroke-width=".8" class="ping-1"/>
     <text x="16" y="23" font-family="'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'SFMono-Regular', Consolas, ui-monospace, monospace" font-size="9" font-weight="400" fill="#93A1B6" letter-spacing="0.7">COMMUNITY</text>
-    <text x="16" y="56" font-family="'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI Variable Text', 'Segoe UI', system-ui, sans-serif" font-size="21.5" font-weight="800" fill="#818CF8" letter-spacing="-0.4">185K+</text>
+    <text x="16" y="56" font-family="'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI Variable Text', 'Segoe UI', system-ui, sans-serif" font-size="21.5" font-weight="800" fill="#A855F7" letter-spacing="-0.4">185K+</text>
     <text x="16" y="72" font-family="'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'SFMono-Regular', Consolas, ui-monospace, monospace" font-size="9.5" font-weight="400" fill="#93A1B6">Mecha Break</text>
   </g>
   <g transform="translate(448 48)">
     <rect width="195" height="80" rx="7" fill="#0C1424" stroke="#1B2A44"/>
-    <rect x="0" y="77" width="195" height="3" rx="1.5" fill="#FFB020" opacity=".45" class="bar-2"/>
-    <circle cx="179" cy="18" r="2.6" fill="#FFB020" class="dot-2"/>
-    <circle cx="179" cy="18" r="6" fill="none" stroke="#FFB020" stroke-opacity=".35" stroke-width=".8" class="ping-2"/>
+    <rect x="0" y="77" width="195" height="3" rx="1.5" fill="#EF4444" opacity=".45" class="bar-2"/>
+    <circle cx="179" cy="18" r="2.6" fill="#EF4444" class="dot-2"/>
+    <circle cx="179" cy="18" r="6" fill="none" stroke="#EF4444" stroke-opacity=".35" stroke-width=".8" class="ping-2"/>
     <text x="16" y="23" font-family="'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'SFMono-Regular', Consolas, ui-monospace, monospace" font-size="9" font-weight="400" fill="#93A1B6" letter-spacing="0.7">PODIUM</text>
-    <text x="16" y="56" font-family="'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI Variable Text', 'Segoe UI', system-ui, sans-serif" font-size="21.5" font-weight="800" fill="#FFB020" letter-spacing="-0.4">1ST PLACE</text>
+    <text x="16" y="56" font-family="'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI Variable Text', 'Segoe UI', system-ui, sans-serif" font-size="21.5" font-weight="800" fill="#EF4444" letter-spacing="-0.4">1ST PLACE</text>
     <text x="16" y="72" font-family="'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'SFMono-Regular', Consolas, ui-monospace, monospace" font-size="9.5" font-weight="400" fill="#93A1B6">HackMe 2024</text>
   </g>
   <g transform="translate(658 48)">
     <rect width="195" height="80" rx="7" fill="#0C1424" stroke="#1B2A44"/>
-    <rect x="0" y="77" width="195" height="3" rx="1.5" fill="#E28743" opacity=".45" class="bar-3"/>
-    <circle cx="179" cy="18" r="2.6" fill="#E28743" class="dot-3"/>
-    <circle cx="179" cy="18" r="6" fill="none" stroke="#E28743" stroke-opacity=".35" stroke-width=".8" class="ping-3"/>
+    <rect x="0" y="77" width="195" height="3" rx="1.5" fill="#F97316" opacity=".45" class="bar-3"/>
+    <circle cx="179" cy="18" r="2.6" fill="#F97316" class="dot-3"/>
+    <circle cx="179" cy="18" r="6" fill="none" stroke="#F97316" stroke-opacity=".35" stroke-width=".8" class="ping-3"/>
     <text x="16" y="23" font-family="'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'SFMono-Regular', Consolas, ui-monospace, monospace" font-size="9" font-weight="400" fill="#93A1B6" letter-spacing="0.7">BASED IN</text>
-    <text x="16" y="56" font-family="'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI Variable Text', 'Segoe UI', system-ui, sans-serif" font-size="21.5" font-weight="800" fill="#E28743" letter-spacing="-0.4">Visakhapatnam</text>
+    <text x="16" y="56" font-family="'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI Variable Text', 'Segoe UI', system-ui, sans-serif" font-size="21.5" font-weight="800" fill="#F97316" letter-spacing="-0.4">Visakhapatnam</text>
     <text x="16" y="72" font-family="'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'SFMono-Regular', Consolas, ui-monospace, monospace" font-size="9.5" font-weight="400" fill="#93A1B6">India / UTC+05:30</text>
   </g>
   </g>

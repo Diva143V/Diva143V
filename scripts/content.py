@@ -35,10 +35,10 @@ ABOUT_QUOTE = (
 )
 ABOUT_ROLE = "Software engineer / AI developer / CS '28 Andhra University"
 FACTS = (
-    ("AI intern @ Aegion", "#38BDF8"),
-    ("185K community", "#818CF8"),
-    ("1st place, HackMe 2024", "#FFB020"),
-    (LOCATION, "#E28743"),
+    ("AI intern @ Aegion", "#00E599"),
+    ("185K community", "#A855F7"),
+    ("1st place, HackMe 2024", "#EF4444"),
+    (LOCATION, "#F97316"),
 )
 
 INTRO = """I'm Diwakar, Diva to most people. I'm studying computer science at Andhra University and working as an AI developer intern at Aegion Dynamic Solutions. I live in Visakhapatnam, on the east coast of India.
@@ -108,7 +108,7 @@ PROJECTS = (
             "lines above any app. C# and WPF on .NET 8, shipped as one executable.",
         ),
         tags=("C#", "WPF", ".NET 8", "Windows"),
-        accent="#38BDF8",
+        accent="#A855F7",
         alt=(
             "LiveSubs card: a Windows caption overlay that translates Windows "
             "Live Captions through Google, DeepL, OpenAI or Ollama."
@@ -125,7 +125,7 @@ PROJECTS = (
             "with contradictions surfaced instead of averaged away. Python and Reflex.",
         ),
         tags=("Python", "ChromaDB", "Ollama", "Reflex"),
-        accent="#38BDF8",
+        accent="#00E599",
         alt=(
             "Griffin card: a biomedical evidence workbench using ChromaDB, "
             "Ollama and Reflex."
@@ -142,7 +142,7 @@ PROJECTS = (
             "app is Tauri and React, with SQLite underneath.",
         ),
         tags=("Rust", "MCP", "Tauri", "SQLite"),
-        accent="#E28743",
+        accent="#F97316",
         alt=(
             "Knox card: a Rust MCP server and Tauri desktop app that keeps "
             "context across coding sessions."
@@ -159,7 +159,7 @@ PROJECTS = (
             "binding scores you can inspect. A fork of Griffin.",
         ),
         tags=("Python", "R", "VCF", "Neoantigen"),
-        accent="#818CF8",
+        accent="#00F0FF",
         alt=(
             "SyGriffin card: a neoantigen CLI that reads tumour VCF files and "
             "predicts vaccine-relevant targets. A fork of Griffin."
@@ -179,7 +179,7 @@ PLANETS = (
         orbit="Orbit 1 / inner",
         domain="Biomedical RAG, local models, data pipelines",
         evidence="Griffin / SyGriffin",
-        color="#38BDF8",
+        color="#00E599",
         angle=208,
         radius=60,
         moons=2,
@@ -189,7 +189,7 @@ PLANETS = (
         orbit="Orbit 2",
         domain="Windows overlays, live captions, WPF",
         evidence="LiveSubs",
-        color="#818CF8",
+        color="#A855F7",
         angle=334,
         radius=94,
         moons=1,
@@ -199,7 +199,7 @@ PLANETS = (
         orbit="Orbit 3",
         domain="MCP server, graph core, Tauri",
         evidence="Knox",
-        color="#E28743",
+        color="#F97316",
         angle=154,
         radius=128,
         moons=1,
@@ -210,7 +210,7 @@ PLANETS = (
         orbit="Orbit 4",
         domain="React, Vite, interface work",
         evidence="myselfdiva",
-        color="#60A5FA",
+        color="#00F0FF",
         angle=22,
         radius=162,
         moons=1,
@@ -220,17 +220,17 @@ PLANETS = (
         orbit="Orbit 5 / outer",
         domain="Algorithms and data structures",
         evidence="HackMe 2024",
-        color="#FFB020",
+        color="#EF4444",
         angle=112,
         radius=196,
     ),
 )
 
 STATS = (
-    StatBox("CURRENT ORBIT", "AI INTERN", "Aegion Dynamic", "#38BDF8"),
-    StatBox("COMMUNITY", "185K+", "Mecha Break", "#818CF8"),
-    StatBox("PODIUM", "1ST PLACE", "HackMe 2024", "#FFB020"),
-    StatBox("BASED IN", "Visakhapatnam", "India / UTC+05:30", "#E28743"),
+    StatBox("CURRENT ORBIT", "AI INTERN", "Aegion Dynamic", "#00E599"),
+    StatBox("COMMUNITY", "185K+", "Mecha Break", "#A855F7"),
+    StatBox("PODIUM", "1ST PLACE", "HackMe 2024", "#EF4444"),
+    StatBox("BASED IN", "Visakhapatnam", "India / UTC+05:30", "#F97316"),
 )
 
 ROLES = (
